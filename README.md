@@ -9,18 +9,27 @@ El producto a desarrollar es un software, el cual consiste en un sistema web pro
 
 ------------------------------------------
 
-Requerimientos(En order):
+###Conocimientos Necesarios
 
+A successful Git branching model
+http://nvie.com/posts/a-successful-git-branching-model/
+
+HTML/CSS/JS
+
+CMS y Front Web development
+
+###Requerimientos(En order):
+
+Git
 Ruby
 Node - NPM
 Grunt
 Jekyll
 Bower
 
-
 ###Instalación
 
-First, check your GitHub account, you should be part of **simceg-proto** to have access to the repository.
+Primero, vamos a la cuenta de GitHub y verificamos que seamos parte del repositorio **simceg-proto**.
 
 * 1.On the terminal go to Preferences, Startup, change the opcion "Chell open with: Command and add the path /bin/bash --login".
 
@@ -38,7 +47,7 @@ First, check your GitHub account, you should be part of **simceg-proto** to have
 
 ###Server-side development
 
-Structure of the project:
+Estructura básica del proyecto:
 
 *   ├── Gemfile
 *   ├── Gemfile.lock
