@@ -50,7 +50,7 @@
                 </ul>
               </li>
               <li {% if page.page == "about" %}class="active"{% endif %}><a href="/about.html">Acerca de</a></li>
-              <li><a href="#contact">Contacto</a></li>
+              <li {% if page.page == "contact" %}class="active"{% endif %}><a href="/contact.html">Contacto</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="form">
               <div class="form-group">

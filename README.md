@@ -31,13 +31,15 @@ Bower
 
 Primero, vamos a la cuenta de GitHub y verificamos que seamos parte del repositorio **simceg-proto**.
 
+Asegurarse de que su red no tiene firewalls que impidan la instalación
+
 * 1.On the terminal go to Preferences, Startup, change the opcion "Chell open with: Command and add the path /bin/bash --login".
 
-* 2.Clone the repo: `git clone https://github.com/hangarcr/citi-double-digital-marketing.git`.
+* 2.Clone the repo: `git clone https://github.com/egamboa/simceg-proto.git`.
 
 * 4.Now install all node modules. in Terminal use "npm install"
 
-* 5.Now install all the gems using "bundle install".
+* 5.Now install all the gems using "bundle install". Si no sirve instalar bundler "npm install bundler"
 
 * 6.Now install grunt [**Grunt**](http://gruntjs.com/installing-grunt) `npm install -g grunt`.
 
