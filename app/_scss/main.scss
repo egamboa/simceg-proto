@@ -41,6 +41,31 @@ p { margin: 1em 0; }
 /* Home
 /*
 /*****************************************************************************/
+#home{
+  .profile{
+    display: block;
+    overflow: hidden;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px;
+    padding: 40px;
+
+    .dl-horizontal{
+      dt{
+        width: 80px;
+      }
+    }
+  }
+  .hometabs{
+    margin-top: 10px;
+    #notes{
+      th{
+        text-align: center;
+      }
+    }
+  }
+}
 .posts {
   list-style-type: none;
   margin-bottom: 2em;
