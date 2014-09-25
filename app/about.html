@@ -1,13 +1,19 @@
 ---
 layout: default
-title: Simceg Prototype
-page: home
+title: Simceg Acerca de
+page: about
 ---
 
-<div id="home">
+<div id="about">
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
+			<div class="jumbotron">
+		      <div class="container">
+		        <h1>Acerca de Simceg</h1>
+		        <p>Misión - Visión - Objetivos</p>
+		      </div>
+		    </div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies ligula quis malesuada finibus. Donec hendrerit venenatis mauris eget tempus. Etiam fringilla, libero at dignissim mattis, dui dolor rutrum dui, ut porttitor dolor ligula et quam. Nunc facilisis accumsan erat, eleifend ullamcorper ipsum blandit vel. Maecenas quis quam et odio consequat semper quis a mauris. Vivamus euismod purus eget urna dignissim porttitor. Morbi tempor risus nulla. Maecenas nec euismod mi, vel imperdiet ex. Sed placerat turpis diam, et dapibus nisl condimentum vitae. Suspendisse egestas non purus vitae tempor. Vivamus a pharetra leo. Sed lobortis feugiat lectus ut dapibus. Nam fringilla elit ac dui vestibulum, vel accumsan ante pretium. In at lacinia ex.</p>
 				  	
 				<p>Pellentesque dignissim tellus vel placerat dignissim. Fusce pellentesque libero et urna sollicitudin auctor at ac lacus. Integer sed rutrum ipsum. Donec augue metus, ultrices id tristique ut, vehicula vitae dolor. Aliquam sem nunc, mattis iaculis orci et, euismod vestibulum ante. Sed a vulputate massa, nec blandit nunc. Nunc porttitor eu mi sit amet molestie. In bibendum fringilla bibendum. Mauris placerat hendrerit justo at malesuada. Suspendisse ipsum enim, fringilla quis sollicitudin vel, aliquet sed lorem.</p>
@@ -18,10 +24,4 @@ page: home
 		</div>
 		<div class="col-md-2"></div>
 	</div>
-	<h1>Blog Posts</h1>
-	<ul class="posts">
-	{% for post in site.posts %}
-	  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endfor %}
-	</ul>
 </div>
