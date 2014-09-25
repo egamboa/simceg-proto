@@ -26,13 +26,13 @@ First, check your GitHub account, you should be part of **simceg-proto** to have
 
 * 2.Clone the repo: `git clone https://github.com/hangarcr/citi-double-digital-marketing.git`.
 
-* 3.Now install all node modules. in Terminal use "npm install"
+* 4.Now install all node modules. in Terminal use "npm install"
 
-* 3.Now install all the gems using "bundle install".
+* 5.Now install all the gems using "bundle install".
 
-* 4.Now install grunt [**Grunt**](http://gruntjs.com/installing-grunt) `npm install -g grunt`.
+* 6.Now install grunt [**Grunt**](http://gruntjs.com/installing-grunt) `npm install -g grunt`.
 
-* 5.After that run the command "sudo npm install" to install all the dependencies, after that, you can find a new folder created called **node_modules**, doesn't need to put to the repo, it's excluded by .gitignore file.
+* 7.After that run the command "sudo npm install" to install all the dependencies, after that, you can find a new folder created called **node_modules**, doesn't need to put to the repo, it's excluded by .gitignore file.
 
 * 6.Finally compile with `grunt server`.
 
