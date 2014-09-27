@@ -33,6 +33,9 @@ p { margin: 1em 0; }
   .space{
     padding-top: 60px;
   }
+  .page-header{
+    font-size: 28px;
+  }
 }
 
 
@@ -49,19 +52,28 @@ p { margin: 1em 0; }
     border-color: #ddd;
     border-width: 1px;
     border-radius: 4px 4px;
-    padding: 40px;
+    padding: 15px;
 
-    .dl-horizontal{
-      dt{
-        width: 80px;
+    .profile-image{
+      margin-bottom: 10px;
+    }
+    .profile-info{
+      .dl-horizontal{
+        dt{
+          width: 80px;
+        }
+        dd{
+          margin-left: 80px;
+        }
       }
     }
+    
   }
   .hometabs{
     margin-top: 10px;
     #notes{
       th{
-        text-align: center;
+        text-align: center; 
       }
     }
   }
@@ -78,6 +90,16 @@ p { margin: 1em 0; }
 .posts span {
   color: #aaa;
   font-size: 80%;
+}
+/*****************************************************************************/
+/*
+/* Contact
+/*
+/*****************************************************************************/
+#contact{
+  #contactForm{
+
+  }
 }
 
 
