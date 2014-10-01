@@ -11,28 +11,58 @@
   <ul class="nav navbar-nav">
     <li {% if page.page == "home" %}class="active"{% endif %}><a href="/">Inicio</a></li>
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modulos<span class="caret"></span></a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Padres<span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li class="dropdown-header">Gestión</li>
+        <li class="dropdown-header">Personal</li>
         <li><a href="#">Mensajes</a></li>
         <li><a href="#">Notas</a></li>
-        <li><a href="#">Horario</a></li>
+        <li><a href="#">Calendario</a></li>
         <li class="divider"></li>
         <li class="dropdown-header">Escuela</li>
         <li><a href="#">Aula</a></li>
         <li><a href="#">Archivos</a></li>
       </ul>
     </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-header">Personal</li>
+        <li><a href="#">Mensajes</a></li>
+        <li><a href="#">Calendario</a></li>
+        <li><a href="#">Archivos</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Escuela</li>
+        <li><a href="#">Mis Estudiantes</a></li>
+        <li><a href="#">Grupos</a></li>
+        <li><a href="#">Notas</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración<span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-header">Personal</li>
+        <li><a href="#">Mensajes</a></li>
+        <li><a href="#">Calendario</a></li>
+        <li><a href="#">Archivos</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Escuela</li>
+        <li><a href="#">Estudiantes</a></li>
+        <li><a href="#">Grupos</a></li>
+        <li><a href="#">Notas</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Configuración</li>
+        <li><a href="#">#</a></li>
+      </ul>
+    </li>
     <li {% if page.page == "about" %}class="active"{% endif %}><a href="/about.html">Acerca de</a></li>
     <li><a {% if page.page == "home" %}class="active"{% endif %} href="/contact.html">Contacto</a></li>
   </ul>
-  <form class="navbar-form navbar-right" role="form">
-    <div class="form-group">
-      <input type="text" placeholder="Email" class="form-control">
-    </div>
-    <div class="form-group">
-      <input type="password" placeholder="Password" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-success">Ingresar</button>
-  </form>
+  <div id="login-section">
+    <!-- Button trigger modal -->
+      <button class="btn btn-primary" id="showLogin" data-toggle="modal" data-target="#loginModal">
+        Entrar
+      </button>
+  </div>
+
 </div><!--/.nav-collapse -->
