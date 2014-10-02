@@ -45,7 +45,7 @@ Asegurarse de que su red no tiene firewalls que impidan la instalación
 
 * 7.After that run the command "sudo npm install" to install all the dependencies, after that, you can find a new folder created called **node_modules**, doesn't need to put to the repo, it's excluded by .gitignore file.
 
-* 6.Finally compile with `grunt server`.
+* 6.Finally compile with `grunt serve`.
 
 ###Server-side development
 
