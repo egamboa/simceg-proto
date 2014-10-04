@@ -1,0 +1,135 @@
+---
+layout: default
+title: Estudiantes
+page: profesores-estudiantes
+section: profesores
+---
+<div class="bs-example notas">
+	<div class="row">
+		<p><h1>Mis Estudiantes</h1> </p>
+	</div>
+	<div class="row">
+		<div class="filters">
+			<form class="horizontal">
+				<label>Grupo:</label>
+				<select>
+					<option>Grupo 1</option>
+					<option>Grupo 1</option>
+					<option>Grupo 1</option>
+					<option>Grupo 1</option>
+				</select>
+				<label>Materia:</label>
+				<select>
+					<option>Español</option>
+					<option>Ciencias</option>
+					<option>Matematicas</option>
+					<option>Fisica</option>
+				</select>
+			</form>
+		</div>
+	</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Column heading</th>
+          <th>Promedio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="active">
+          <td>1</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>80</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>90</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr class="success">
+          <td>3</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>60</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>87</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr class="info">
+          <td>5</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>79</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>24</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr class="warning">
+          <td>7</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>45</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>89</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+        <tr class="danger">
+          <td>9</td>
+          <td>Pedrito Clavo Un Clavito</td>
+          <td>Column content</td>
+          <td>34</td>
+          <td>{% include actions.html %}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+    	<div class="col-md-3"></div>
+    	<div class="col-md-6">
+    		<h1>Pedrito Clavo Un Clavito - Editar Nota</h1>
+    		<form role="form">
+		      <div class="form-group has-success has-feedback">
+		        <label class="control-label" for="inputSuccess2">Trabajo Cotidiano</label>
+		        <input type="text" class="form-control" id="inputSuccess2" value="80">
+		        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+		      </div>
+		      <div class="form-group has-warning has-feedback">
+		        <label class="control-label" for="inputWarning2">Concepto</label>
+		        <input type="text" class="form-control" id="inputWarning2" value="70">
+		        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+		      </div>
+		      <div class="form-group has-error has-feedback">
+		        <label class="control-label" for="inputError2">Trabajo Extra Clase</label>
+		        <input type="text" class="form-control" id="inputError2" value="60">
+		        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+		      </div>
+		      <div class="form-group">
+		      	<button class="btn">Guardar</button>
+		      </div>
+		    </form>
+    	</div>
+    </div>
+</div>
+
+

@@ -3,19 +3,42 @@
 		<div class="profile-image">
 			<img src="img/successkid.jpg" class="img-thumbnail" width="100px" height="100px"/>
 		</div>
-		<div class="profile-info">
+		{% if page.section == "padres" %}
+			<div class="profile-info encargado">
+				<dl class="dl-horizontal">
+				  <dt>Nombre</dt>
+				  <dd>Esteban Gamboa</dd>
+				</dl>
+				<dl class="dl-horizontal">
+				  <dt>Grupo</dt>
+				  <dd>2B</dd>
+				</dl>
+				<dl class="dl-horizontal">
+				  <dt>Profesor</dt>
+				  <dd>Juana la Cubana</dd>
+				</dl>
+			</div>
+		{% endif %}
+
+		{% if page.section == "profesor" %}
+			<div class="profile-info profesor">
+				<dl class="dl-horizontal">
+				  <dt>Nombre</dt>
+				  <dd>Esteban Gamboa</dd>
+				</dl>
+				<dl class="dl-horizontal">
+				  <dt>Materias</dt>
+				  <dd>Estudios Sociales</dd>
+				</dl>
+			</div>
+		{% endif %}
+
+		{% if page.section == "admin" %}
+			<div class="profile-info admin">
 			<dl class="dl-horizontal">
 			  <dt>Nombre</dt>
 			  <dd>Esteban Gamboa</dd>
-			</dl>
-			<dl class="dl-horizontal">
-			  <dt>Grupo</dt>
-			  <dd>2B</dd>
-			</dl>
-			<dl class="dl-horizontal">
-			  <dt>Profesor</dt>
-			  <dd>Juana la Cubana</dd>
-			</dl>
-		</div>
+			</dl>		</div>
+		{% endif %}
 	</div>
 </div>

@@ -46,7 +46,9 @@ p { margin: 1em 0; }
 #showLogin{
   margin-top:8px;
 }
-
+.navbar  .active.dropdown-toggle{
+  color:#fff;
+}
 /*****************************************************************************/
 /*
 /* Home
@@ -98,6 +100,11 @@ p { margin: 1em 0; }
 .posts span {
   color: #aaa;
   font-size: 80%;
+}
+.notas{
+  th{
+    text-align: center;
+  }
 }
 /*****************************************************************************/
 /*
