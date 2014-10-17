@@ -39,3 +39,5 @@ node_modules
 .tmp
 
 funky/target/*
+
+proto/app/_bower_components/*
