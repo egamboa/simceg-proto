@@ -34,6 +34,9 @@ grails.mime.types = [ // the first one is the default format
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
+// What URL patterns should be processed by the resources plugin
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
 
@@ -55,11 +58,12 @@ grails {
             }
         }
         // escapes all not-encoded output at final stage of outputting
-        // filteringCodecForContentType.'text/html' = 'html'
+        filteringCodecForContentType {
+            //'text/html' = 'html'
+        }
     }
 }
-
-
+ 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
@@ -79,12 +83,6 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
-// configure passing transaction's read-only attribute to Hibernate session, queries and criterias
-// set "singleSession = false" OSIV mode in hibernate configuration after enabling
-grails.hibernate.pass.readonly = false
-// configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
-grails.hibernate.osiv.readonly = false
-
 environments {
     development {
         grails.logging.jul.usebridge = true
@@ -94,15 +92,16 @@ environments {
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
-
+//mail configuration
+grails {
+}
 // log4j configuration
-log4j.main = {
+log4j = {
     // Example of changing the log pattern for the default console appender:
     //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
-
+    appenders {
+        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+    }
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -115,3 +114,33 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.una.simceg.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.una.simceg.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.una.simceg.Role'
+grails.plugin.springsecurity.logout.postOnly = false
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['ROLE_ADMIN'],
+	'/index':                         ['ROLE_ADMIN'],
+	'/index.gsp':                     ['ROLE_ADMIN'],
+	'/**/js/**':                      ['ROLE_ADMIN'],
+	'/**/css/**':                     ['ROLE_ADMIN'],
+	'/**/images/**':                  ['ROLE_ADMIN'],
+	'/**/favicon.ico':                ['ROLE_ADMIN'],
+	'/register/**':					  ['permitAll']
+]
+
+
+// Added by the Grails Mandrill plugin:
+mandrill {
+	apiKey = ""
+	// insert proxy values if needed
+	//proxy {
+	//    host = ""
+	// The port Value has to be an integer ;)
+	//    port = ""
+	//}
+}
+
