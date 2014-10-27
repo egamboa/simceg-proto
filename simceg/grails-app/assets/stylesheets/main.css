@@ -1,0 +1,167 @@
+
+//proto compile sass
+
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+/* Global Reset */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\000038}}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000313}}
+html, body {
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000315}}
+body {
+  background-color: #FFF;
+  font-size: small;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000321}}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000324}}
+h1 {
+  margin-bottom: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000325}}
+p {
+  margin: 1em 0;
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000333}}
+.container .space {
+  padding-top: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000336}}
+.container .page-header {
+  font-size: 28px;
+}
+
+/*****************************************************************************/
+/*
+/* Header
+/*
+/*****************************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000346}}
+#showLogin {
+  margin-top: 8px;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000356}}
+#home .profile {
+  display: block;
+  overflow: hidden;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px;
+  border-radius: 4px 4px;
+  padding: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000365}}
+#home .profile .profile-image {
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000370}}
+#home .profile .profile-info .dl-horizontal dt {
+  width: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000373}}
+#home .profile .profile-info .dl-horizontal dd {
+  margin-left: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000380}}
+#home .hometabs {
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000383}}
+#home .hometabs #notes th {
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000389}}
+.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000394}}
+.posts li {
+  line-height: 1.75em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000398}}
+.posts span {
+  color: #aaa;
+  font-size: 80%;
+}
+
+/*****************************************************************************/
+/*
+/* Contact
+/*
+/*****************************************************************************/
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+/* standard */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\00003121}}
+.post pre {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .4em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\00003127}}
+.post ul, .post ol {
+  margin-left: 1.35em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\00003131}}
+.post code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\00003137}}
+.post pre code {
+  border: none;
+}
+
+/* terminal */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\00003142}}
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\00003148}}
+.post pre.terminal code {
+  background-color: #333;
+}
+
