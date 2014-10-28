@@ -9,15 +9,15 @@ class BootStrap {
     def init = { servletContext ->
    
         def adminRole = new Role(name: "Administrador")
-        adminRole.addToPermissions("*:*")
+        adminRole.addToPermissions("administrar:*")
         adminRole.save()
        
 		def employeeRole = new Role(name:"Empleado")
-		employeeRole.addToPermissions("Home:index")
+		employeeRole.addToPermissions("profesores:*")
 		employeeRole.save()
 		
         def userRole = new Role(name:"Usuario")
-        userRole.addToPermissions("Home:index")
+        userRole.addToPermissions("encargados:*")
         userRole.save()
        
         def admin = new User(username: "admin", passwordHash: new Sha512Hash("password").toHex())

@@ -13,4 +13,8 @@ class HomeController {
 	def contact(){
 		render(view: "contact")
 	}
+	
+	def services(){
+		render(view: "services")
+	}
 }

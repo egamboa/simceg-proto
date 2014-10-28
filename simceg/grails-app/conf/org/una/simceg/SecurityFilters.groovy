@@ -8,7 +8,7 @@ class SecurityFilters {
     
     def publicActions = [
 		assets: ['*'],
-		home: ['index', 'about', 'contact'],
+		home: ['index', 'about', 'contact', 'services', 'register'],
         auth:['*']
     ]
     
@@ -29,7 +29,7 @@ class SecurityFilters {
                 // Ignore direct views (e.g. the default main index page).
                 if (!controllerName) return true
                 
-                accessControl()
+                accessControl(auth: false)
             }
         }
     }

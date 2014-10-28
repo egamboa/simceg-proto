@@ -1,9 +1,9 @@
+<hr>
+<!-- Footer -->
 <footer>
-  <p>&copy; Company 2014</p>
-  <div class="contact">
-      <p>
-        Esteban Gamboa<br />
-        <a href="mailto:estebangam1@gmail.com">estebangam1@gmail.com</a>
-      </p>
-   </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Simceg 2014. Esteban Gamboa.</p>
+        </div>
+    </div>
 </footer>

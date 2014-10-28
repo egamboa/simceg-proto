@@ -1,3 +1,4 @@
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -12,25 +13,31 @@
 		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-  		<asset:stylesheet src="bootstrap.css"/>
-  		<asset:stylesheet src="application.css"/>
-  		<asset:javascript src="bootstrap.js"/>
-		<asset:javascript src="application.js"/>
+  		<asset:stylesheet src="font-awesome.min.css"/>
+  		<asset:stylesheet src="bootstrap.min.css"/>
+  		<asset:stylesheet src="modern-business.css"/>
+  		<asset:stylesheet src="main.css"/>
 		<g:layoutHead/>
 	</head>
 	<body>
-        <div class="navbar navbar-inverse navbar-fixed-top row" role="navigation">
-        	<div class="col-md-2"></div>
-	        <div class="container col-md-10">
-	          <g:render template="/includes/navigation" />
-	        </div>
-        </div>
-		<div class="container">
-	      <!-- MAIN CONTENT AREA -->
-	      <div class="space"></div>
-	      <g:layoutBody/>
-	      <hr>
-	      <g:render template="/includes/footer" />
-	    </div>
+	
+          <g:render template="/includes/navigation" />
+        
+    	  <!-- Carousel -->
+    	  <!-- Page Content -->
+    	  <div class="container">
+    		<g:layoutBody/>
+    		<!-- FOOTER AREA -->
+	      	<g:render template="/includes/footer" />
+    	  </div>
+    	  
+	    <asset:javascript src="application.js"/>
+	    <asset:javascript src="bootstrap.min.js"/>
+	    <!-- Script to Activate the Carousel -->
+	    <script>
+	    $('.carousel').carousel({
+	        interval: 5000 //changes the speed
+	    })
+	    </script>
 	</body>
 </html>

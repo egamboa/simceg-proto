@@ -5,31 +5,35 @@
   <title>Login</title>
 </head>
 <body>
-  <g:if test="${flash.message}">
-    <div class="message">${flash.message}</div>
-  </g:if>
-  <g:form action="signIn">
-    <input type="hidden" name="targetUri" value="${targetUri}" />
-    <table>
-      <tbody>
-        <tr>
-          <td>Username:</td>
-          <td><input type="text" name="username" value="${username}" /></td>
-        </tr>
-        <tr>
-          <td>Password:</td>
-          <td><input type="password" name="password" value="" /></td>
-        </tr>
-        <tr>
-          <td>Remember me?:</td>
-          <td><g:checkBox name="rememberMe" value="${rememberMe}" /></td>
-        </tr>
-        <tr>
-          <td />
-          <td><input type="submit" value="Sign in" /></td>
-        </tr>
-      </tbody>
-    </table>
-  </g:form>
+  <div class="col-md-4 col-md-offset-4">
+     <div class="login-panel panel panel-default" id="login-form">
+         <div class="panel-heading">
+             <h3 class="panel-title">Bienvenido!</h3>
+         </div>
+         <g:if test="${flash.message}">
+	     	<div class="message"><p class="bg-danger">${flash.message}</p></div>
+	  	 </g:if>
+         <div class="panel-body">
+             <g:form action="signIn">
+             <input type="hidden" name="targetUri" value="${targetUri}" />
+                 <fieldset>
+                     <div class="form-group">
+                     	 <input class="form-control" placeholder="Usuario" type="text" name="username" value="${username}" />
+                     </div>
+                     <div class="form-group">
+                     	 <input class="form-control" placeholder="Password" type="password" name="password" value="" />
+                     </div>
+                     <div class="checkbox">
+                         <label>
+                             <g:checkBox name="rememberMe" value="${rememberMe}" />Remember Me
+                         </label>
+                     </div>
+                     <!-- Change this to a button or input when using this as a form -->
+                     <input type="submit" value="Ingresa" class="btn btn-lg btn-block" />
+                 </fieldset>
+             </g:form>
+         </div>
+     </div>
+  </div>
 </body>
 </html>
