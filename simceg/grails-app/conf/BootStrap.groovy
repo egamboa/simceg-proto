@@ -1,39 +1,31 @@
 import org.una.simceg.Role
 import org.una.simceg.User
-import org.apache.shiro.crypto.hash.Sha512Hash
+import org.una.simceg.UserRole
 
 class BootStrap {
-   
-    def shiroSecurityService
-   
+
     def init = { servletContext ->
-   
-        def adminRole = new Role(name: "Administrador")
-        adminRole.addToPermissions("administrar:*")
-        adminRole.save()
-       
-		def employeeRole = new Role(name:"Empleado")
-		employeeRole.addToPermissions("profesores:*")
-		employeeRole.save()
 		
-        def userRole = new Role(name:"Usuario")
-        userRole.addToPermissions("encargados:*")
-        userRole.save()
-       
-        def admin = new User(username: "admin", passwordHash: new Sha512Hash("password").toHex())
-        admin.addToRoles(adminRole)
-        admin.save()
-       
-		def employee = new User(username: "profesor", passwordHash: new Sha512Hash("password").toHex())
-		employee.addToRoles(employeeRole)
-		employee.save()
+		def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
+		def teacherRole = new Role(authority: 'ROLE_TEACHER').save(flush: true)		
+		def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
+  
+		def testUser = new User(username: 'padre', password: 'password1')
+		testUser.save(flush: true)
+		UserRole.create testUser, userRole, true
 		
-        def user = new User(username: "padre", passwordHash: new Sha512Hash("password").toHex())
-        user.addToRoles(userRole)
-        user.save()
-              
+		def testAdmin = new User(username: 'admin', password: 'password2')
+		testAdmin.save(flush: true)
+		UserRole.create testAdmin, adminRole, true
+		
+		def testProfe = new User(username: 'profe', password: 'password3')
+		testProfe.save(flush: true)
+		UserRole.create testProfe, teacherRole, true
+  
+		assert User.count() == 3
+		assert Role.count() == 3
+		assert UserRole.count() == 3
     }
-   
     def destroy = {
     }
 }

@@ -1,4 +1,3 @@
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -13,9 +12,8 @@
 		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-  		<asset:stylesheet src="font-awesome.min.css"/>
-  		<asset:stylesheet src="bootstrap.min.css"/>
-  		<asset:stylesheet src="modern-business.css"/>
+  		<asset:stylesheet src="plugins.css"/>
+  		<asset:stylesheet src="plantillas.css"/>
   		<asset:stylesheet src="main.css"/>
 		<g:layoutHead/>
 	</head>
@@ -42,7 +40,9 @@
     		<!-- FOOTER AREA -->
 	      	<g:render template="/includes/footer" />
     	  </div>
+    	
 	    <asset:javascript src="application.js"/>
+	    <asset:javascript src="plugins.js"/>
 	    <asset:javascript src="bootstrap.min.js"/>
 	</body>
 </html>

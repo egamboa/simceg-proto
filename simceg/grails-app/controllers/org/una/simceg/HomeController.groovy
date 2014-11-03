@@ -1,7 +1,8 @@
 package org.una.simceg
 
 class HomeController {
-
+	
+	
     def index() {
 		render(view: "index")
 	}
@@ -16,5 +17,11 @@ class HomeController {
 	
 	def services(){
 		render(view: "services")
+	}
+	def newUser(){
+		render(view: "register", model: [user: new User()])
+	}
+	def register() {
+		render('registrando')
 	}
 }

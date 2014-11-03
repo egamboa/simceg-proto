@@ -1,20 +1,91 @@
-<div id="status" role="complementary">
-	<h1>Application Status</h1>
-	<ul>
-		<li>App version: <g:meta name="app.version"/></li>
-		<li>Grails version: <g:meta name="app.grails.version"/></li>
-		<li>Groovy version: ${GroovySystem.getVersion()}</li>
-		<li>JVM version: ${System.getProperty('java.version')}</li>
-		<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-		<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-		<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-		<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-		<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-	</ul>
-	<h1>Installed Plugins</h1>
-	<ul>
-		<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-			<li>${plugin.name} - ${plugin.version}</li>
-		</g:each>
-	</ul>
-</div>
+<div class="navbar-default sidebar" role="navigation">
+     <div class="sidebar-nav navbar-collapse" id="sidebar-toggle">
+         <ul class="nav" id="side-menu">
+             <li>
+             	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</g:link>
+             </li>
+             <li>
+                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level">
+                     <li>
+                         <a href="flot.html">Flot Charts</a>
+                     </li>
+                     <li>
+                         <a href="morris.html">Morris.js Charts</a>
+                     </li>
+                 </ul>
+                 <!-- /.nav-second-level -->
+             </li>
+             <li>
+                 <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+             </li>
+             <li>
+                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+             </li>
+             <li>
+                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level">
+                     <li>
+                         <a href="panels-wells.html">Panels and Wells</a>
+                     </li>
+                     <li>
+                         <a href="buttons.html">Buttons</a>
+                     </li>
+                     <li>
+                         <a href="notifications.html">Notifications</a>
+                     </li>
+                     <li>
+                         <a href="typography.html">Typography</a>
+                     </li>
+                     <li>
+                         <a href="grid.html">Grid</a>
+                     </li>
+                 </ul>
+                 <!-- /.nav-second-level -->
+             </li>
+             <li>
+                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level">
+                     <li>
+                         <a href="#">Second Level Item</a>
+                     </li>
+                     <li>
+                         <a href="#">Second Level Item</a>
+                     </li>
+                     <li>
+                         <a href="#">Third Level <span class="fa arrow"></span></a>
+                         <ul class="nav nav-third-level">
+                             <li>
+                                 <a href="#">Third Level Item</a>
+                             </li>
+                             <li>
+                                 <a href="#">Third Level Item</a>
+                             </li>
+                             <li>
+                                 <a href="#">Third Level Item</a>
+                             </li>
+                             <li>
+                                 <a href="#">Third Level Item</a>
+                             </li>
+                         </ul>
+                         <!-- /.nav-third-level -->
+                     </li>
+                 </ul>
+                 <!-- /.nav-second-level -->
+             </li>
+             <li>
+                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level">
+                     <li>
+                         <a href="blank.html">Blank Page</a>
+                     </li>
+                     <li>
+                         <a href="login.html">Login Page</a>
+                     </li>
+                 </ul>
+                 <!-- /.nav-second-level -->
+             </li>
+         </ul>
+     </div>
+     <!-- /.sidebar-collapse -->
+ </div>

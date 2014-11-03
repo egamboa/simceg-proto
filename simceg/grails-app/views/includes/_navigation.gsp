@@ -3,11 +3,15 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <g:if test="${controllerName == "dashboard"? true : false}">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-toggle">
+                	<span class="sr-only">Toggle Dashboard</span>
+                	<span class="glyphicon glyphicon-cog" style="color:white;"></span>
+            	</button>
+            </g:if>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="glyphicon glyphicon-home" style="color:white;"></span>
             </button>
             <g:link controller="home" action="index" class="navbar-brand" >SIMCEG Prototipo</g:link>
         </div>
@@ -23,67 +27,72 @@
                 <li>
                     <g:link controller="home" action="contact">Contacto</g:link>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Noticias <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="blog-home-1.html">Noticia 1</a>
-                        </li>
-                        <li>
-                            <a href="blog-home-2.html">Noticia 2</a>
-                        </li>
-                        <li>
-                            <a href="blog-post.html">Noticia 3</a>
-                        </li>
-                    </ul>
-                </li>
-                
+                <!-- 
                 <li class="dropdown">
 			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Padres<span class="caret"></span></a>
 			      <ul class="dropdown-menu">
-			        <li><a href="/">Perfil</a></li>
-			        <li><a href="/padres/mensajes.html">Mensajes</a></li>
-			        <li><a href="/padres/notas.html">Notas</a></li>
-			        <li><a href="/padres/calendario.html">Calendario</a></li>
-			        <li><a href="/padres/archivos.html">Archivos</a></li>
+			        <li><a href="#">Perfil</a></li>
+			        <li><a href="#">Mensajes</a></li>
+			        <li><a href="#">Notas</a></li>
+			        <li><a href="#">Calendario</a></li>
+			        <li><a href="#">Archivos</a></li>
 			      </ul>
 			    </li>
 			    <li class="dropdown">
 			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<span class="caret"></span></a>
 			      <ul class="dropdown-menu">
 			        <li class="dropdown-header">Personal</li>
-			        <li><a href="/">Perfil</a></li>
-			        <li><a href="/profesores/mensajes.html">Mensajes</a></li>
-			        <li><a href="/profesores/calendario.html">Calendario</a></li>
-			        <li><a href="/profesores/archivos.html">Archivos</a></li>
+			        <li><a href="#">Perfil</a></li>
+			        <li><a href="#">Mensajes</a></li>
+			        <li><a href="#">Calendario</a></li>
+			        <li><a href="#">Archivos</a></li>
 			        <li class="divider"></li>
 			        <li class="dropdown-header">Escuela</li>
-			        <li><a href="/profesores/estudiantes.html">Mis Estudiantes</a></li>
+			        <li><a href="#">Mis Estudiantes</a></li>
 			      </ul>
 			    </li>
 			    <li class="dropdown">
 			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración<span class="caret"></span></a>
 			      <ul class="dropdown-menu">
 			        <li class="dropdown-header">Personal</li>
-			        <li><a href="/">Perfil</a></li>
-			        <li><a href="/administracion/mensajes.html">Mensajes</a></li>
-			        <li><a href="/administracion/calendario.html">Calendario</a></li>
-			        <li><a href="/administracion/archivos.html">Archivos</a></li>
+			        <li><a href="#">Perfil</a></li>
+			        <li><a href="#">Mensajes</a></li>
+			        <li><a href="#">Calendario</a></li>
+			        <li><a href="#">Archivos</a></li>
 			        <li class="divider"></li>
 			        <li class="dropdown-header">Escuela</li>
-			        <li><a href="/administracion/estudiantes.html">Estudiantes</a></li>
-			        <li><a href="/administracion/eventos.html">Eventos</a></li>
+			        <li><a href="#">Estudiantes</a></li>
+			        <li><a href="#">Encargados</a></li>
+			        <li><a href="#">Profesores</a></li>
+			        <li><a href="#">Eventos</a></li>
 			        <li class="divider"></li>
 			        <li class="dropdown-header">Configuración</li>
-			        <li><a href="/administracion/propiedades.html">Propiedades</a></li>
-			        <li><a href="/administracion/roles.html">Roles</a></li>
-			        <li><a href="/administracion/usuarios.html">Usuarios</a></li>
-			        <li><a href="/administracion/grupos.html">Grupos</a></li>
-			        <li><a href="/administracion/materias.html">Materias</a></li>
+			        <li><a href="#">Propiedades</a></li>
+			        <li><a href="#">Roles</a></li>
+			        <li><a href="#">Usuarios</a></li>
+			        <li><a href="#">Grupos</a></li>
+			        <li><a href="#">Materias</a></li>
+			        <li><a href="#">Periodo Lectivo</a></li>
 			      </ul>
 			    </li>
+			    -->
+			    <li>					
+					<sec:ifNotLoggedIn>
+						<g:link controller="home" action="newUser">Registrar</g:link>
+					</sec:ifNotLoggedIn>
+                </li>
+			    <li>
+			    	<sec:ifLoggedIn>
+						<g:link controller="dashboard" action="index">Dashboard</g:link>
+					</sec:ifLoggedIn>
+                </li>
                 <li>
-                		<g:link controller="auth" action="login">Ingresa</g:link>
+                	<sec:ifNotLoggedIn>
+						<g:link controller='login' action='auth'>Ingresa</g:link>
+					</sec:ifNotLoggedIn>
+					<sec:ifLoggedIn>
+						<g:link controller='logout' action=''>Salir</g:link>
+					</sec:ifLoggedIn>
                 </li>
             </ul>
         </div>

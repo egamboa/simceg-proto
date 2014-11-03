@@ -20,24 +20,18 @@
 	<body>
 	
           <g:render template="/includes/navigation" />
-        
     	  <!-- Carousel -->
-    	  <g:render template="/includes/home-carousel" />
     	  <!-- Page Content -->
     	  <div class="container">
+    	  	<g:render template="/includes/sidebar" />
     		<g:layoutBody/>
     		<!-- FOOTER AREA -->
 	      	<g:render template="/includes/footer" />
     	  </div>
     	  
+	    
 	    <asset:javascript src="application.js"/>
 	    <asset:javascript src="plugins.js"/>
 	    <asset:javascript src="bootstrap.min.js"/>
-	    <!-- Script to Activate the Carousel -->
-	    <script>
-	    $('.carousel').carousel({
-	        interval: 5000 //changes the speed
-	    })
-	    </script>
 	</body>
 </html>
