@@ -2,86 +2,48 @@
      <div class="sidebar-nav navbar-collapse" id="sidebar-toggle">
          <ul class="nav" id="side-menu">
              <li>
-             	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</g:link>
+             	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
              </li>
              <li>
-                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+             	<g:link><i class="glyphicon glyphicon-comment"></i> Nuevo Mensaje</g:link>
+             </li>
+             <li>
+                 <a href="#"><i class="glyphicon glyphicon-user"></i> <span class="fa arrow"></span>Personal</a>
                  <ul class="nav nav-second-level">
+			        <li><a href="#"><i class="fa fa-comments-o"></i> Mensajes</a></li>
+			        <li><a href="#"><i class="fa fa-calendar"></i> Calendario</a></li>
+			        <li><a href="#"><i class="fa fa-archive"></i> Archivos</a></li>
+                 </ul>
+                 <!-- /.nav-second-level -->
+             </li>
+             <li>
+                 <a href="#"><i class="fa fa-university"></i> Escuela<span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level">
+                 	 <li>
+                 	 	<a href="#"><i class="fa fa-check-square"></i> Notas</a>
+                 	 </li>
+                 	 <li>
+                 	 	<a href="#"><i class="fa fa-tasks"></i> Tareas</a>
+                 	 </li>
                      <li>
-                         <a href="flot.html">Flot Charts</a>
+                         <a href="#"><i class="fa fa-users"></i> Estudiantes</a>
                      </li>
                      <li>
-                         <a href="morris.html">Morris.js Charts</a>
+                     	<a href="#"><i class="fa fa-bars"></i> Grupos</a>
                      </li>
                  </ul>
                  <!-- /.nav-second-level -->
              </li>
              <li>
-                 <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-             </li>
-             <li>
-                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-             </li>
-             <li>
-                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
-                     <li>
-                         <a href="panels-wells.html">Panels and Wells</a>
-                     </li>
-                     <li>
-                         <a href="buttons.html">Buttons</a>
-                     </li>
-                     <li>
-                         <a href="notifications.html">Notifications</a>
-                     </li>
-                     <li>
-                         <a href="typography.html">Typography</a>
-                     </li>
-                     <li>
-                         <a href="grid.html">Grid</a>
-                     </li>
-                 </ul>
-                 <!-- /.nav-second-level -->
-             </li>
-             <li>
-                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                 <ul class="nav nav-second-level">
-                     <li>
-                         <a href="#">Second Level Item</a>
-                     </li>
-                     <li>
-                         <a href="#">Second Level Item</a>
-                     </li>
-                     <li>
-                         <a href="#">Third Level <span class="fa arrow"></span></a>
-                         <ul class="nav nav-third-level">
-                             <li>
-                                 <a href="#">Third Level Item</a>
-                             </li>
-                             <li>
-                                 <a href="#">Third Level Item</a>
-                             </li>
-                             <li>
-                                 <a href="#">Third Level Item</a>
-                             </li>
-                             <li>
-                                 <a href="#">Third Level Item</a>
-                             </li>
-                         </ul>
-                         <!-- /.nav-third-level -->
-                     </li>
-                 </ul>
-                 <!-- /.nav-second-level -->
-             </li>
-             <li>
-                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                 <ul class="nav nav-second-level">
-                     <li>
-                         <a href="blank.html">Blank Page</a>
-                     </li>
-                     <li>
-                         <a href="login.html">Login Page</a>
-                     </li>
+			        <li><a href="#">Roles</a></li>
+			        <li><a href="#">Usuarios</a></li>
+			        <li><a href="#">Grupos</a></li>
+			        <li><a href="#">Materias</a></li>
+			        <li><a href="#">Periodo Lectivo</a></li>
+			        <li><a href="#">Evaluación</a></li>
+			        <li><a href="#">Configuración</a></li>
                  </ul>
                  <!-- /.nav-second-level -->
              </li>

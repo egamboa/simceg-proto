@@ -27,64 +27,12 @@
                 <li>
                     <g:link controller="home" action="contact">Contacto</g:link>
                 </li>
-                <!-- 
-                <li class="dropdown">
-			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Padres<span class="caret"></span></a>
-			      <ul class="dropdown-menu">
-			        <li><a href="#">Perfil</a></li>
-			        <li><a href="#">Mensajes</a></li>
-			        <li><a href="#">Notas</a></li>
-			        <li><a href="#">Calendario</a></li>
-			        <li><a href="#">Archivos</a></li>
-			      </ul>
-			    </li>
-			    <li class="dropdown">
-			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesores<span class="caret"></span></a>
-			      <ul class="dropdown-menu">
-			        <li class="dropdown-header">Personal</li>
-			        <li><a href="#">Perfil</a></li>
-			        <li><a href="#">Mensajes</a></li>
-			        <li><a href="#">Calendario</a></li>
-			        <li><a href="#">Archivos</a></li>
-			        <li class="divider"></li>
-			        <li class="dropdown-header">Escuela</li>
-			        <li><a href="#">Mis Estudiantes</a></li>
-			      </ul>
-			    </li>
-			    <li class="dropdown">
-			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración<span class="caret"></span></a>
-			      <ul class="dropdown-menu">
-			        <li class="dropdown-header">Personal</li>
-			        <li><a href="#">Perfil</a></li>
-			        <li><a href="#">Mensajes</a></li>
-			        <li><a href="#">Calendario</a></li>
-			        <li><a href="#">Archivos</a></li>
-			        <li class="divider"></li>
-			        <li class="dropdown-header">Escuela</li>
-			        <li><a href="#">Estudiantes</a></li>
-			        <li><a href="#">Encargados</a></li>
-			        <li><a href="#">Profesores</a></li>
-			        <li><a href="#">Eventos</a></li>
-			        <li class="divider"></li>
-			        <li class="dropdown-header">Configuración</li>
-			        <li><a href="#">Propiedades</a></li>
-			        <li><a href="#">Roles</a></li>
-			        <li><a href="#">Usuarios</a></li>
-			        <li><a href="#">Grupos</a></li>
-			        <li><a href="#">Materias</a></li>
-			        <li><a href="#">Periodo Lectivo</a></li>
-			      </ul>
-			    </li>
-			    -->
-			    <li>					
-					<sec:ifNotLoggedIn>
-						<g:link controller="home" action="newUser">Registrar</g:link>
-					</sec:ifNotLoggedIn>
-                </li>
 			    <li>
-			    	<sec:ifLoggedIn>
-						<g:link controller="dashboard" action="index">Dashboard</g:link>
-					</sec:ifLoggedIn>
+			    	<g:if test="${controllerName != 'dashboard'}">
+				    	<sec:ifLoggedIn>
+							<g:link controller="dashboard" action="index">Cuenta</g:link>
+						</sec:ifLoggedIn>
+			    	</g:if>
                 </li>
                 <li>
                 	<sec:ifNotLoggedIn>
