@@ -15,6 +15,7 @@
   		<asset:stylesheet src="plugins.css"/>
   		<asset:stylesheet src="plantillas.css"/>
   		<asset:stylesheet src="main.css"/>
+  		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
 	</head>
 	<body>
@@ -28,9 +29,7 @@
     		<!-- FOOTER AREA -->
 	      	<g:render template="/includes/footer" />
     	  </div>
-    	  
-	    
-	    <asset:javascript src="application.js"/>
+    
 	    <asset:javascript src="plugins.js"/>
 	    <asset:javascript src="bootstrap.min.js"/>
 	</body>

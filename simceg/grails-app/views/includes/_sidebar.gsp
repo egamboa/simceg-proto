@@ -25,20 +25,35 @@
                  	 <li>
                  	 	<a href="#"><i class="fa fa-tasks"></i> Tareas</a>
                  	 </li>
-                     <li>
-                         <a href="#"><i class="fa fa-users"></i> Estudiantes</a>
-                     </li>
-                     <li>
-                     	<a href="#"><i class="fa fa-bars"></i> Grupos</a>
-                     </li>
+                 	 <sec:access expression="hasRole('ROLE_TEACHER')">
+						 <li>
+	                         <a href="#"><i class="fa fa-users"></i> Estudiantes</a>
+	                     </li>
+	                     <li>
+	                     	<a href="#"><i class="fa fa-bars"></i> Grupos</a>
+	                     </li>
+                     </sec:access>
                  </ul>
                  <!-- /.nav-second-level -->
              </li>
+             <sec:access expression="hasRole('ROLE_ADMIN')">
              <li>
                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
+                 	<li><a href="#">Eventos</a></li>
 			        <li><a href="#">Roles</a></li>
-			        <li><a href="#">Usuarios</a></li>
+			        <li>
+			        	<g:link controller='encargado'>Encargados</g:link>
+			        </li>
+			        <li>
+			        	<g:link controller='empleado'>Empleados</g:link>
+			        </li>
+			        <li>
+			        	<g:link controller='estudiante'>Estudiante</g:link>
+			        </li>
+			        <li>
+			        	<g:link controller='usuario'>Usuarios</g:link>
+			        </li>
 			        <li><a href="#">Grupos</a></li>
 			        <li><a href="#">Materias</a></li>
 			        <li><a href="#">Periodo Lectivo</a></li>
@@ -47,6 +62,7 @@
                  </ul>
                  <!-- /.nav-second-level -->
              </li>
+             </sec:access>
          </ul>
      </div>
      <!-- /.sidebar-collapse -->
