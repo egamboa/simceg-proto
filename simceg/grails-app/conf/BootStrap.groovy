@@ -11,15 +11,15 @@ class BootStrap {
 		def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
   
 		def testUser = new User(username: 'padre', password: 'password1')
-		testUser.save flush: true, failOnError: true 
+		testUser.save flush: true
 		UserRole.create testUser, userRole, true
 		
 		def testAdmin = new User(username: 'admin', password: 'password2')
-		testAdmin.save flush: true, failOnError: true
+		testAdmin.save flush: true
 		UserRole.create testAdmin, adminRole, true
 		
 		def testProfe = new User(username: 'profe', password: 'password3')
-		testProfe.save flush: true, failOnError: true
+		testProfe.save flush: true
 		UserRole.create testProfe, teacherRole, true
   
 		assert User.count() == 3
