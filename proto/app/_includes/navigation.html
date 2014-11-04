@@ -1,0 +1,65 @@
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="/">{{ site.description }}</a>
+</div>
+<div class="navbar-collapse collapse">
+  <ul class="nav navbar-nav">
+    <li class="dropdown">
+      <a href="#" class=" {% if page.section == "padres" %}active{% endif %}
+                          dropdown-toggle" data-toggle="dropdown">Padres<span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="/">Perfil</a></li>
+        <li><a href="/padres/mensajes.html">Mensajes</a></li>
+        <li><a href="/padres/notas.html">Notas</a></li>
+        <li><a href="/padres/calendario.html">Calendario</a></li>
+        <li><a href="/padres/archivos.html">Archivos</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="{% if page.section == "profesores" %}active{% endif %} dropdown-toggle" data-toggle="dropdown">Profesores<span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-header">Personal</li>
+        <li><a href="/profesores/mensajes.html">Mensajes</a></li>
+        <li><a href="/profesores/calendario.html">Calendario</a></li>
+        <li><a href="/profesores/archivos.html">Archivos</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Escuela</li>
+        <li><a href="/profesores/estudiantes.html">Mis Estudiantes</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="{% if page.section == "admin" %}active{% endif %} dropdown-toggle" data-toggle="dropdown">Administración<span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-header">Personal</li>
+        <li><a href="/administracion/mensajes.html">Mensajes</a></li>
+        <li><a href="/administracion/calendario.html">Calendario</a></li>
+        <li><a href="/administracion/archivos.html">Archivos</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Escuela</li>
+        <li><a href="/administracion/estudiantes.html">Estudiantes</a></li>
+        <li><a href="/administracion/eventos.html">Eventos</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Configuración</li>
+        <li><a href="/administracion/propiedades.html">Propiedades</a></li>
+        <li><a href="/administracion/roles.html">Roles</a></li>
+        <li><a href="/administracion/usuarios.html">Usuarios</a></li>
+        <li><a href="/administracion/grupos.html">Grupos</a></li>
+        <li><a href="/administracion/materias.html">Materias</a></li>
+      </ul>
+    </li>
+    <li {% if page.page == "about" %}class="active"{% endif %}><a href="/about.html">Acerca de</a></li>
+    <li><a {% if page.page == "home" %}class="active"{% endif %} href="/contact.html">Contacto</a></li>
+  </ul>
+  <div id="login-section">
+    <!-- Button trigger modal -->
+      <button class="btn btn-primary" id="showLogin" data-toggle="modal" data-target="#loginModal">
+        Entrar
+      </button>
+  </div>
+
+</div><!--/.nav-collapse -->

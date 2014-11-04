@@ -38,4 +38,24 @@ dist
 node_modules
 .tmp
 
-proto/app/_bower_components/
+funky/target/*
+
+proto/app/_bower_components/*
+
+simceg/*.iws
+simceg/*Db.properties
+simceg/*Db.script
+simceg/.settings
+simceg/stacktrace.log
+simceg/*.zip
+simceg/plugin.xml
+simceg/*.log
+simceg/*DB.*
+/simceg/.project
+.DS_Store
+simceg/target/
+simceg/out/
+simceg/web-app/plugins
+simceg/web-app/WEB-INF/classes
+simceg/.link_to_grails_plugins/
+simceg/target-eclipse/
