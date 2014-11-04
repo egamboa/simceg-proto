@@ -2,6 +2,8 @@ package org.una.simceg
 
 class Encargado {
 	
+	User usuario
+	
 	String 	nacionalidad,
 			estadoCivil,
 			telefono,

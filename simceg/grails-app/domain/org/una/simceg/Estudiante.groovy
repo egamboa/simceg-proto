@@ -18,11 +18,7 @@ class Estudiante {
 			talla,
 			problemasLenguaje
 
-	String 	nombre, 
-			email, 
-			avatarType, 
-			telefono, 
-			alimentacion, 
+	String 	alimentacion, 
 			tipoAdecuacion, 
 			religion, 
 			habilidades, 
@@ -30,8 +26,6 @@ class Estudiante {
 			descAlergias,
 			tipoSangre,
 			nacionalidad
-
-	byte[] 	avatar
 
 	Date 	fechaIngreso, 
 			fechaSalida, 
