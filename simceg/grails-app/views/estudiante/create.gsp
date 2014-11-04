@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'estudiante.label', default: 'Estudiante')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
@@ -25,7 +25,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:estudianteInstance, action:'save']"  enctype="multipart/form-data">
+			<g:form url="[resource:estudianteInstance, action:'save']" >
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>

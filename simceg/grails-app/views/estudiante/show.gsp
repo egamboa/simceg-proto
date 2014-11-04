@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'estudiante.label', default: 'Estudiante')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -41,63 +41,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${estudianteInstance?.alergias}">
-				<li class="fieldcontain">
-					<span id="alergias-label" class="property-label"><g:message code="estudiante.alergias.label" default="Alergias" /></span>
-					
-						<span class="property-value" aria-labelledby="alergias-label"><g:formatBoolean boolean="${estudianteInstance?.alergias}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.alimentacion}">
-				<li class="fieldcontain">
-					<span id="alimentacion-label" class="property-label"><g:message code="estudiante.alimentacion.label" default="Alimentacion" /></span>
-					
-						<span class="property-value" aria-labelledby="alimentacion-label"><g:fieldValue bean="${estudianteInstance}" field="alimentacion"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.avatar}">
-				<li class="fieldcontain">
-					<span id="avatar-label" class="property-label"><g:message code="estudiante.avatar.label" default="Avatar" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.avatarType}">
-				<li class="fieldcontain">
-					<span id="avatarType-label" class="property-label"><g:message code="estudiante.avatarType.label" default="Avatar Type" /></span>
-					
-						<span class="property-value" aria-labelledby="avatarType-label"><g:fieldValue bean="${estudianteInstance}" field="avatarType"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.descAlergias}">
-				<li class="fieldcontain">
-					<span id="descAlergias-label" class="property-label"><g:message code="estudiante.descAlergias.label" default="Desc Alergias" /></span>
-					
-						<span class="property-value" aria-labelledby="descAlergias-label"><g:fieldValue bean="${estudianteInstance}" field="descAlergias"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${estudianteInstance?.direccion}">
 				<li class="fieldcontain">
 					<span id="direccion-label" class="property-label"><g:message code="estudiante.direccion.label" default="Direccion" /></span>
 					
 						<span class="property-value" aria-labelledby="direccion-label"><g:fieldValue bean="${estudianteInstance}" field="direccion"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.email}">
-				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="estudiante.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${estudianteInstance}" field="email"/></span>
 					
 				</li>
 				</g:if>
@@ -129,69 +77,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${estudianteInstance?.fechaSalida}">
-				<li class="fieldcontain">
-					<span id="fechaSalida-label" class="property-label"><g:message code="estudiante.fechaSalida.label" default="Fecha Salida" /></span>
-					
-						<span class="property-value" aria-labelledby="fechaSalida-label"><g:formatDate date="${estudianteInstance?.fechaSalida}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.habilidades}">
-				<li class="fieldcontain">
-					<span id="habilidades-label" class="property-label"><g:message code="estudiante.habilidades.label" default="Habilidades" /></span>
-					
-						<span class="property-value" aria-labelledby="habilidades-label"><g:fieldValue bean="${estudianteInstance}" field="habilidades"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.haceTareas}">
-				<li class="fieldcontain">
-					<span id="haceTareas-label" class="property-label"><g:message code="estudiante.haceTareas.label" default="Hace Tareas" /></span>
-					
-						<span class="property-value" aria-labelledby="haceTareas-label"><g:formatBoolean boolean="${estudianteInstance?.haceTareas}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.horasDormir}">
-				<li class="fieldcontain">
-					<span id="horasDormir-label" class="property-label"><g:message code="estudiante.horasDormir.label" default="Horas Dormir" /></span>
-					
-						<span class="property-value" aria-labelledby="horasDormir-label"><g:fieldValue bean="${estudianteInstance}" field="horasDormir"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.horasTv}">
-				<li class="fieldcontain">
-					<span id="horasTv-label" class="property-label"><g:message code="estudiante.horasTv.label" default="Horas Tv" /></span>
-					
-						<span class="property-value" aria-labelledby="horasTv-label"><g:fieldValue bean="${estudianteInstance}" field="horasTv"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.lentes}">
-				<li class="fieldcontain">
-					<span id="lentes-label" class="property-label"><g:message code="estudiante.lentes.label" default="Lentes" /></span>
-					
-						<span class="property-value" aria-labelledby="lentes-label"><g:formatBoolean boolean="${estudianteInstance?.lentes}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.medicamentos}">
-				<li class="fieldcontain">
-					<span id="medicamentos-label" class="property-label"><g:message code="estudiante.medicamentos.label" default="Medicamentos" /></span>
-					
-						<span class="property-value" aria-labelledby="medicamentos-label"><g:formatBoolean boolean="${estudianteInstance?.medicamentos}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${estudianteInstance?.nacionalidad}">
 				<li class="fieldcontain">
 					<span id="nacionalidad-label" class="property-label"><g:message code="estudiante.nacionalidad.label" default="Nacionalidad" /></span>
@@ -210,74 +95,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${estudianteInstance?.ortopedicos}">
+				<g:if test="${estudianteInstance?.primerApellido}">
 				<li class="fieldcontain">
-					<span id="ortopedicos-label" class="property-label"><g:message code="estudiante.ortopedicos.label" default="Ortopedicos" /></span>
+					<span id="primerApellido-label" class="property-label"><g:message code="estudiante.primerApellido.label" default="Primer Apellido" /></span>
 					
-						<span class="property-value" aria-labelledby="ortopedicos-label"><g:formatBoolean boolean="${estudianteInstance?.ortopedicos}" /></span>
+						<span class="property-value" aria-labelledby="primerApellido-label"><g:fieldValue bean="${estudianteInstance}" field="primerApellido"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${estudianteInstance?.problemasLenguaje}">
+				<g:if test="${estudianteInstance?.segundoApellido}">
 				<li class="fieldcontain">
-					<span id="problemasLenguaje-label" class="property-label"><g:message code="estudiante.problemasLenguaje.label" default="Problemas Lenguaje" /></span>
+					<span id="segundoApellido-label" class="property-label"><g:message code="estudiante.segundoApellido.label" default="Segundo Apellido" /></span>
 					
-						<span class="property-value" aria-labelledby="problemasLenguaje-label"><g:formatBoolean boolean="${estudianteInstance?.problemasLenguaje}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.religion}">
-				<li class="fieldcontain">
-					<span id="religion-label" class="property-label"><g:message code="estudiante.religion.label" default="Religion" /></span>
-					
-						<span class="property-value" aria-labelledby="religion-label"><g:fieldValue bean="${estudianteInstance}" field="religion"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.supervisionTv}">
-				<li class="fieldcontain">
-					<span id="supervisionTv-label" class="property-label"><g:message code="estudiante.supervisionTv.label" default="Supervision Tv" /></span>
-					
-						<span class="property-value" aria-labelledby="supervisionTv-label"><g:formatBoolean boolean="${estudianteInstance?.supervisionTv}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.talla}">
-				<li class="fieldcontain">
-					<span id="talla-label" class="property-label"><g:message code="estudiante.talla.label" default="Talla" /></span>
-					
-						<span class="property-value" aria-labelledby="talla-label"><g:formatBoolean boolean="${estudianteInstance?.talla}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.telefono}">
-				<li class="fieldcontain">
-					<span id="telefono-label" class="property-label"><g:message code="estudiante.telefono.label" default="Telefono" /></span>
-					
-						<span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${estudianteInstance}" field="telefono"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.television}">
-				<li class="fieldcontain">
-					<span id="television-label" class="property-label"><g:message code="estudiante.television.label" default="Television" /></span>
-					
-						<span class="property-value" aria-labelledby="television-label"><g:formatBoolean boolean="${estudianteInstance?.television}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${estudianteInstance?.tipoAdecuacion}">
-				<li class="fieldcontain">
-					<span id="tipoAdecuacion-label" class="property-label"><g:message code="estudiante.tipoAdecuacion.label" default="Tipo Adecuacion" /></span>
-					
-						<span class="property-value" aria-labelledby="tipoAdecuacion-label"><g:fieldValue bean="${estudianteInstance}" field="tipoAdecuacion"/></span>
+						<span class="property-value" aria-labelledby="segundoApellido-label"><g:fieldValue bean="${estudianteInstance}" field="segundoApellido"/></span>
 					
 				</li>
 				</g:if>

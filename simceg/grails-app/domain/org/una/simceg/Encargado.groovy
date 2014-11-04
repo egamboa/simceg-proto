@@ -4,13 +4,9 @@ class Encargado {
 	
 	User usuario
 	
-	String 	nacionalidad,
-			estadoCivil,
-			telefono,
-			celular,
-			direccion
+	String 	estadoCivil, telefono
 	
-	boolean viveAlumno
+	boolean viveEstudiante
 
     static constraints = {
     }

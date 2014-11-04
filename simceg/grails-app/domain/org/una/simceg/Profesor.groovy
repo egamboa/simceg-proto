@@ -12,8 +12,7 @@ class Profesor {
 			descripcion
 
 	Date 	fechaIngreso, 
-			fechaSalida, 
-			fechaNacimiento
+			fechaSalida
 
     static constraints = {
 		

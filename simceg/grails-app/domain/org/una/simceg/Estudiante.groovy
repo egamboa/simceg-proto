@@ -7,32 +7,17 @@ class Estudiante {
 	Encargado encargado
 
 	boolean activo, 
-			television, 
-			supervisionTv, 
-			adecuacion, 
-			haceTareas,
-			alergias,
-			ortopedicos,
-			lentes,
-			medicamentos,
-			talla,
-			problemasLenguaje
+			adecuacion
 
-	String 	alimentacion, 
-			tipoAdecuacion, 
-			religion, 
-			habilidades, 
+	String 	nombre,
+			primerApellido,
+			segundoApellido,
 			direccion,
-			descAlergias,
 			tipoSangre,
 			nacionalidad
 
-	Date 	fechaIngreso, 
-			fechaSalida, 
+	Date 	fechaIngreso,
 			fechaNacimiento
-
-	Integer horasDormir,
-			horasTv
 
     static constraints = {
     }

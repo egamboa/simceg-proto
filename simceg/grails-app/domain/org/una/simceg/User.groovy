@@ -4,9 +4,15 @@ class User {
 
 	transient springSecurityService
 
-	String username, password, nombre, primerApellido, segundoApellido, telefono, cedula, email
-
-	byte[] 	avatar
+	String username, password, 
+		   nombre = "", 
+		   primerApellido = "", 
+		   segundoApellido = "", 
+		   telefono = "", 
+		   cedula = "", 
+		   email = "", 
+		   direccion = "", 
+		   nacionalidad = ""
 	
 	boolean enabled = true
 	

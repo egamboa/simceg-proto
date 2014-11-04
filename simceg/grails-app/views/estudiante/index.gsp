@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'estudiante.label', default: 'Estudiante')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -28,13 +28,13 @@
 					
 						<g:sortableColumn property="adecuacion" title="${message(code: 'estudiante.adecuacion.label', default: 'Adecuacion')}" />
 					
-						<g:sortableColumn property="alergias" title="${message(code: 'estudiante.alergias.label', default: 'Alergias')}" />
+						<g:sortableColumn property="direccion" title="${message(code: 'estudiante.direccion.label', default: 'Direccion')}" />
 					
-						<g:sortableColumn property="alimentacion" title="${message(code: 'estudiante.alimentacion.label', default: 'Alimentacion')}" />
+						<th><g:message code="estudiante.encargado.label" default="Encargado" /></th>
 					
-						<g:sortableColumn property="avatar" title="${message(code: 'estudiante.avatar.label', default: 'Avatar')}" />
+						<g:sortableColumn property="fechaIngreso" title="${message(code: 'estudiante.fechaIngreso.label', default: 'Fecha Ingreso')}" />
 					
-						<g:sortableColumn property="avatarType" title="${message(code: 'estudiante.avatarType.label', default: 'Avatar Type')}" />
+						<g:sortableColumn property="fechaNacimiento" title="${message(code: 'estudiante.fechaNacimiento.label', default: 'Fecha Nacimiento')}" />
 					
 					</tr>
 				</thead>
@@ -46,13 +46,13 @@
 					
 						<td><g:formatBoolean boolean="${estudianteInstance.adecuacion}" /></td>
 					
-						<td><g:formatBoolean boolean="${estudianteInstance.alergias}" /></td>
+						<td>${fieldValue(bean: estudianteInstance, field: "direccion")}</td>
 					
-						<td>${fieldValue(bean: estudianteInstance, field: "alimentacion")}</td>
+						<td>${fieldValue(bean: estudianteInstance, field: "encargado")}</td>
 					
-						<td>${fieldValue(bean: estudianteInstance, field: "avatar")}</td>
+						<td><g:formatDate date="${estudianteInstance.fechaIngreso}" /></td>
 					
-						<td>${fieldValue(bean: estudianteInstance, field: "avatarType")}</td>
+						<td><g:formatDate date="${estudianteInstance.fechaNacimiento}" /></td>
 					
 					</tr>
 				</g:each>

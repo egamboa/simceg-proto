@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'estudiante.label', default: 'Estudiante')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
@@ -27,7 +27,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:estudianteInstance, action:'update']" method="PUT"  enctype="multipart/form-data">
+			<g:form url="[resource:estudianteInstance, action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${estudianteInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
