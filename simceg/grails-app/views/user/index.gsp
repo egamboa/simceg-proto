@@ -3,61 +3,58 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+			<ul class="nav nav-pills" role="tablist">
+				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-user" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
-					
-						<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Password')}" />
-					
-						<g:sortableColumn property="accountExpired" title="${message(code: 'user.accountExpired.label', default: 'Account Expired')}" />
-					
-						<g:sortableColumn property="accountLocked" title="${message(code: 'user.accountLocked.label', default: 'Account Locked')}" />
-					
-						<g:sortableColumn property="cedula" title="${message(code: 'user.cedula.label', default: 'Cedula')}" />
-					
-						<g:sortableColumn property="direccion" title="${message(code: 'user.direccion.label', default: 'Direccion')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${userInstanceList}" status="i" var="userInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
-					
-						<td>${fieldValue(bean: userInstance, field: "password")}</td>
-					
-						<td><g:formatBoolean boolean="${userInstance.accountExpired}" /></td>
-					
-						<td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
-					
-						<td>${fieldValue(bean: userInstance, field: "cedula")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "direccion")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+			
+			<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Usuarios
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <g:sortableColumn property="cedula" title="Cedula" />
+                                            <g:sortableColumn property="accountLocked" title="Bloqueado" />
+                                            <g:sortableColumn property="username" title="Usuario" />
+                                            <g:sortableColumn property="email" title="email" />
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <g:each in="${userInstanceList}" status="i" var="userInstance">
+											<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
+												<td>${fieldValue(bean: userInstance, field: "cedula")}</td>
+												
+												<td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
+												
+												<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
+												
+												<td>${fieldValue(bean: userInstance, field: "email")}</td>
+											</tr>
+										</g:each>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+		
 			<div class="pagination">
 				<g:paginate total="${userInstanceCount ?: 0}" />
 			</div>

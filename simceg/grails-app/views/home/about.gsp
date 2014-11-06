@@ -18,7 +18,7 @@
                 </ol>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <img class="img-responsive" src="http://mightydadspodcast.com/wp-content/uploads/2013/11/120909105910-education-empty-desks-story-top.jpg" alt="">
             </div>
             <div class="col-md-6">
                 <h2>Acerca de SIMCEG</h2>

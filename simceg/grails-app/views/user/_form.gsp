@@ -2,42 +2,47 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
-	<label for="username">
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required form-group">
+	<label for="username"  class="col-sm-2 control-label">
 		<g:message code="user.username.label" default="Username" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="username" required="" value="${userInstance?.username}"/>
-
+	<div class="col-sm-10">
+      <g:textField class="form-control" name="username" required="" value="${userInstance?.username}"/>
+    </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required">
-	<label for="password">
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required form-group">
+	<label for="password" class="col-sm-2 control-label">
 		<g:message code="user.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="password" required="" value="${userInstance?.password}"/>
-
+	<div class="col-sm-10">
+      <g:textField class="form-control" name="password" required="" value="${userInstance?.password}"/>
+    </div>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountExpired', 'error')} ">
-	<label for="accountExpired">
-		<g:message code="user.accountExpired.label" default="Account Expired" />
-		
-	</label>
-	<g:checkBox name="accountExpired" value="${userInstance?.accountExpired}" />
-
+<div class="row">
+<div class="col-md-2"></div>
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountExpired', 'error')} form-group col-md-2">
+   <div class="">
+     <div class="checkbox">
+       <label>
+         <g:checkBox name="accountExpired" value="${userInstance?.accountExpired}" /> Expiró
+       </label>
+     </div>
+   </div>
 </div>
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountLocked', 'error')} form-group col-md-2">
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountLocked', 'error')} ">
-	<label for="accountLocked">
-		<g:message code="user.accountLocked.label" default="Account Locked" />
-		
-	</label>
-	<g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
-
+	<div class="">
+     <div class="checkbox">
+       <label>
+         <g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" /> Bloqueado
+       </label>
+     </div>
+   </div>
 </div>
-
+</div>
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'cedula', 'error')} required">
 	<label for="cedula">
 		<g:message code="user.cedula.label" default="Cedula" />
