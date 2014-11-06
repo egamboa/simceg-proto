@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="dashboard">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'estudiante.label', default: 'Estudiante')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -54,7 +54,7 @@
 				<li class="fieldcontain">
 					<span id="encargado-label" class="property-label"><g:message code="estudiante.encargado.label" default="Encargado" /></span>
 					
-						<span class="property-value" aria-labelledby="encargado-label"><g:link controller="encargado" action="show" id="${estudianteInstance?.encargado?.id}">${estudianteInstance?.encargado?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="encargado-label"><g:link controller="user" action="show" id="${estudianteInstance?.encargado?.id}">${estudianteInstance?.encargado?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -118,6 +118,15 @@
 					<span id="tipoSangre-label" class="property-label"><g:message code="estudiante.tipoSangre.label" default="Tipo Sangre" /></span>
 					
 						<span class="property-value" aria-labelledby="tipoSangre-label"><g:fieldValue bean="${estudianteInstance}" field="tipoSangre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${estudianteInstance?.viveEncargado}">
+				<li class="fieldcontain">
+					<span id="viveEncargado-label" class="property-label"><g:message code="estudiante.viveEncargado.label" default="Vive Encargado" /></span>
+					
+						<span class="property-value" aria-labelledby="viveEncargado-label"><g:formatBoolean boolean="${estudianteInstance?.viveEncargado}" /></span>
 					
 				</li>
 				</g:if>

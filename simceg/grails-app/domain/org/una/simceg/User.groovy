@@ -12,7 +12,8 @@ class User {
 		   cedula = "", 
 		   email = "", 
 		   direccion = "", 
-		   nacionalidad = ""
+		   nacionalidad = "",
+		   estadoCivil = ""
 	
 	boolean enabled = true
 	

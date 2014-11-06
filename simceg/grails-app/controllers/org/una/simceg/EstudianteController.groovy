@@ -1,12 +1,11 @@
 package org.una.simceg
 
 
-import grails.plugin.springsecurity.annotation.Secured
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
 class EstudianteController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]

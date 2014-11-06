@@ -24,4 +24,7 @@ class HomeController {
 	def register() {
 		render('registrando')
 	}
+	def eventos(){
+		render(view:'eventos')
+	}
 }

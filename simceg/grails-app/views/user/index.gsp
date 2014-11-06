@@ -32,9 +32,9 @@
 					
 						<g:sortableColumn property="accountLocked" title="${message(code: 'user.accountLocked.label', default: 'Account Locked')}" />
 					
-						<g:sortableColumn property="enabled" title="${message(code: 'user.enabled.label', default: 'Enabled')}" />
+						<g:sortableColumn property="cedula" title="${message(code: 'user.cedula.label', default: 'Cedula')}" />
 					
-						<g:sortableColumn property="passwordExpired" title="${message(code: 'user.passwordExpired.label', default: 'Password Expired')}" />
+						<g:sortableColumn property="direccion" title="${message(code: 'user.direccion.label', default: 'Direccion')}" />
 					
 					</tr>
 				</thead>
@@ -50,9 +50,9 @@
 					
 						<td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
 					
-						<td><g:formatBoolean boolean="${userInstance.enabled}" /></td>
+						<td>${fieldValue(bean: userInstance, field: "cedula")}</td>
 					
-						<td><g:formatBoolean boolean="${userInstance.passwordExpired}" /></td>
+						<td>${fieldValue(bean: userInstance, field: "direccion")}</td>
 					
 					</tr>
 				</g:each>

@@ -1,13 +1,14 @@
 package org.una.simceg
-import java.sql.Date
+import java.util.Date
 
 
 class Estudiante {
 	
-	Encargado encargado
+	User encargado
 
 	boolean activo, 
-			adecuacion
+			adecuacion,
+			viveEncargado
 
 	String 	nombre,
 			primerApellido,

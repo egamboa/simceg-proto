@@ -34,7 +34,7 @@
 		<g:message code="estudiante.encargado.label" default="Encargado" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="encargado" name="encargado.id" from="${org.una.simceg.Encargado.list()}" optionKey="id" required="" value="${estudianteInstance?.encargado?.id}" class="many-to-one"/>
+	<g:select id="encargado" name="encargado.id" from="${org.una.simceg.User.list()}" optionKey="id" required="" value="${estudianteInstance?.encargado?.id}" class="many-to-one"/>
 
 </div>
 
@@ -98,6 +98,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="tipoSangre" required="" value="${estudianteInstance?.tipoSangre}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'viveEncargado', 'error')} ">
+	<label for="viveEncargado">
+		<g:message code="estudiante.viveEncargado.label" default="Vive Encargado" />
+		
+	</label>
+	<g:checkBox name="viveEncargado" value="${estudianteInstance?.viveEncargado}" />
 
 </div>
 

@@ -16,6 +16,8 @@
                  </ul>
                  <!-- /.nav-second-level -->
              </li>
+             
+             <sec:ifAnyGranted  roles="ROLE_TEACHER,ROLE_USER">
              <li>
                  <a href="#"><i class="fa fa-university"></i> Escuela<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
@@ -36,15 +38,15 @@
                  </ul>
                  <!-- /.nav-second-level -->
              </li>
+             </sec:ifAnyGranted >
+             
              <sec:access expression="hasRole('ROLE_ADMIN')">
-             <li>
+             <li class="active">
                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
-                 	<li><a href="#">Eventos</a></li>
-			        <li><a href="#">Roles</a></li>
-			        <li>
-			        	<g:link controller='encargado'>Encargados</g:link>
-			        </li>
+                 	<li>
+                 		<g:link controller="home" action="eventos">Eventos</g:link>
+                 	</li>
 			        <li>
 			        	<g:link controller='empleado'>Empleados</g:link>
 			        </li>
@@ -52,12 +54,11 @@
 			        	<g:link controller='estudiante'>Estudiante</g:link>
 			        </li>
 			        <li>
-			        	<g:link controller='usuario'>Usuarios</g:link>
+			        	<g:link controller='user'>Usuarios</g:link>
 			        </li>
 			        <li><a href="#">Grupos</a></li>
 			        <li><a href="#">Materias</a></li>
 			        <li><a href="#">Periodo Lectivo</a></li>
-			        <li><a href="#">Evaluación</a></li>
 			        <li><a href="#">Configuración</a></li>
                  </ul>
                  <!-- /.nav-second-level -->

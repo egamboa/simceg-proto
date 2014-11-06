@@ -14,23 +14,28 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
   		<asset:stylesheet src="plugins.css"/>
   		<asset:stylesheet src="plantillas.css"/>
+  		<asset:stylesheet src="fullcalendar.css"/>
   		<asset:stylesheet src="main.css"/>
+  		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
 	</head>
 	<body>
-	
-          <g:render template="/includes/navigation" />
-    	  <!-- Carousel -->
-    	  <!-- Page Content -->
-    	  <div class="container">
-    	  	<g:render template="/includes/sidebar" />
-    		<g:layoutBody/>
-    		<!-- FOOTER AREA -->
-	      	<g:render template="/includes/footer" />
-    	  </div>
-    	  
-	    
-	    <asset:javascript src="application.js"/>
+		<g:render template="/includes/navigation" />
+		<!-- Carousel -->
+		<!-- Page Content -->
+		<div class="container">
+			<g:render template="/includes/sidebar" />
+			<div class="row">
+				<div class="col-md-8 col-md-offset-3">
+					<g:layoutBody/>
+				</div>
+			</div>
+			<!-- FOOTER AREA -->
+			<g:render template="/includes/footer" />
+		</div>
+	    <asset:javascript src="moment.min.js"/>
+	    <asset:javascript src="es.js"/>
+	    <asset:javascript src="fullcalendar.min.js"/>
 	    <asset:javascript src="plugins.js"/>
 	    <asset:javascript src="bootstrap.min.js"/>
 	</body>

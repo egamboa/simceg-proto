@@ -59,6 +59,33 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${userInstance?.cedula}">
+				<li class="fieldcontain">
+					<span id="cedula-label" class="property-label"><g:message code="user.cedula.label" default="Cedula" /></span>
+					
+						<span class="property-value" aria-labelledby="cedula-label"><g:fieldValue bean="${userInstance}" field="cedula"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.direccion}">
+				<li class="fieldcontain">
+					<span id="direccion-label" class="property-label"><g:message code="user.direccion.label" default="Direccion" /></span>
+					
+						<span class="property-value" aria-labelledby="direccion-label"><g:fieldValue bean="${userInstance}" field="direccion"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="user.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${userInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${userInstance?.enabled}">
 				<li class="fieldcontain">
 					<span id="enabled-label" class="property-label"><g:message code="user.enabled.label" default="Enabled" /></span>
@@ -68,11 +95,65 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${userInstance?.estadoCivil}">
+				<li class="fieldcontain">
+					<span id="estadoCivil-label" class="property-label"><g:message code="user.estadoCivil.label" default="Estado Civil" /></span>
+					
+						<span class="property-value" aria-labelledby="estadoCivil-label"><g:fieldValue bean="${userInstance}" field="estadoCivil"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.nacionalidad}">
+				<li class="fieldcontain">
+					<span id="nacionalidad-label" class="property-label"><g:message code="user.nacionalidad.label" default="Nacionalidad" /></span>
+					
+						<span class="property-value" aria-labelledby="nacionalidad-label"><g:fieldValue bean="${userInstance}" field="nacionalidad"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="user.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${userInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${userInstance?.passwordExpired}">
 				<li class="fieldcontain">
 					<span id="passwordExpired-label" class="property-label"><g:message code="user.passwordExpired.label" default="Password Expired" /></span>
 					
 						<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${userInstance?.passwordExpired}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.primerApellido}">
+				<li class="fieldcontain">
+					<span id="primerApellido-label" class="property-label"><g:message code="user.primerApellido.label" default="Primer Apellido" /></span>
+					
+						<span class="property-value" aria-labelledby="primerApellido-label"><g:fieldValue bean="${userInstance}" field="primerApellido"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.segundoApellido}">
+				<li class="fieldcontain">
+					<span id="segundoApellido-label" class="property-label"><g:message code="user.segundoApellido.label" default="Segundo Apellido" /></span>
+					
+						<span class="property-value" aria-labelledby="segundoApellido-label"><g:fieldValue bean="${userInstance}" field="segundoApellido"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.telefono}">
+				<li class="fieldcontain">
+					<span id="telefono-label" class="property-label"><g:message code="user.telefono.label" default="Telefono" /></span>
+					
+						<span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${userInstance}" field="telefono"/></span>
 					
 				</li>
 				</g:if>
