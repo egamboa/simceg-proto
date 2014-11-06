@@ -24,4 +24,9 @@ class HomeController {
 	def register() {
 		render('registrando')
 	}
+
+	def nuevoEstudiante(){
+		render('nuevoEstudiante')
+	}
+
 }

@@ -9,79 +9,38 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Bienvenido a SIMCEG
+                    Centro Educativo GANDHI
                 </h1>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> Mision</h4>
+                        <h3> Mision</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Leer..</a>
+                        <p>Promover el establecimiento de la autoestima en cada estudiante, aprendiendo con la vivencia diaria, de manera real y positiva, fomentando los valores de amor, respeto y solidaridad.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> Vision</h4>
+                        <h3> Vision</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Leer..</a>
+                        <p>Desarrollar en cada estudiante una sensación de orgullo y realizaci&oacute;n personal, trabajar con compa&ntilde;erismo y solidaridad, involucrando a la madre, padre o encargado, la comunidad y la escuela.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> Valores</h4>
+                        <h3> Lema</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Leer..</a>
+                        <p>"Nuestra recompensa se encuentra en el esfuerzo y no en el resultado, un esfuerzo total es una victoria completa." </br>-Gandhi-</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Historias Valiosas</h2>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
             </div>
         </div>
         <!-- /.row -->
@@ -92,19 +51,19 @@
                 <h2 class="page-header">Nuestro trabajo importa.</h2>
             </div>
             <div class="col-md-6">
-                <p>Una escuela con servicios de primera:</p>
+                <h3>Una escuela con servicios de primera:</h3></br>
                 <ul>
-                    <li>Personal Docente calificado</li>
-                    <li>Area de juegos</li>
-                    <li>Comedor</li>
-                    <li>Proteccion</li>
-                    <li>Cercania y conveniencia</li>
-                    <li>Sevicios Web</li>
+                    <li>Atenci&oacute;n Personalizada</li>
+                    <li>Acercamiento a la Naturaleza</li>
+                    <li>Seguridad en las Instalaciones</li>
+                    <li>Servicio de Transporte</li>
+                    <li>Grupos Peque&ntilde;os</li>
+                    <li>Banda y Soda</li>
                 </ul>
-                <p>Estamos ampliando nuestra plataforma de servicios para el cliente.</p>
+                <p>Centro Educativo Gandhi. Una opci&oacute;n diferente!.</p>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+                <img class="img-responsive" src="${asset.assetPath(src: 'kids_index.jpg')}" alt="Kids Hugging">
             </div>
         </div>
         <!-- /.row -->
@@ -115,10 +74,10 @@
         <div class="well">
             <div class="row">
                 <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                    <p>En el Centro Educativo Gandhi hacemos de la educaci&oacute;n de su hijo algo integral. Vis&iacute;tenos, ser&aacute; un placer atenderle. Si desea mas informaci&oacute;n de nuestros servicios llene el formulario en la p&aacute;gina de contacto.</p>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="#">Contactenos</a>
+                    <a class="btn btn-lg btn-default btn-block" href="contact.gsp">Contactenos</a>
                 </div>
             </div>
         </div>

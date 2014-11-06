@@ -10,21 +10,18 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Simceg');"></div>
+                <div class="fill" style="background-image:url('${asset.assetPath(src: 'banner_kids.jpg')}');"></div>
                 <div class="carousel-caption">
-                    <h2>La Escuela</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Profesores');"></div>
-                <div class="carousel-caption">
-                    <h2>El Personal</h2>
+                <div class="fill" style="background-image:url('${asset.assetPath(src: 'banner_dog.jpg')}');"></div>
+                <div class="carousel-caption"> 
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Niños');"></div>
+                <div class="fill" style="background-image:url('${asset.assetPath(src: 'banner_bus.jpg')}');"></div>
                 <div class="carousel-caption">
-                    <h2>Jugando</h2>
                 </div>
             </div>
         </div>
