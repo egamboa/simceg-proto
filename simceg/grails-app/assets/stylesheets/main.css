@@ -246,3 +246,7 @@ p {
 #login-form .message{
 	padding: 15px 10px 0;
 }
+
+ul{
+	list-style: none;
+}

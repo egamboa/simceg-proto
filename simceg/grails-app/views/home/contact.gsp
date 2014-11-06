@@ -7,24 +7,34 @@
 	<body>	
 		<!-- Content Row -->
         <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">CONTACTO
+                    <small>Cont&aacute;ctenos</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Inicio</a>
+                    </li>
+                    <li class="active">Contacto</li>
+                </ol>
+            </div>
             <!-- Map Column -->
             <div class="col-md-8">
                 <!-- Embedded Google Map -->
-                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&ie=UTF8&ll=9.973584,-84.120377&spn=56.506174,79.013672&t=m&z=18&output=embed"></iframe>
             </div>
             <!-- Contact Details Column -->
             <div class="col-md-4">
-                <h3>Contacto</h3>
+                <h3>Informaci&oacute;n de Contacto</h3>
                 <p>
-                    Heredia, Costa Rica<br>
+                    Estamos ubicados en Los Lagos #2 de Heredia, de la Iglesia Fuente de Luz 200 metros nor-oeste, 25 metros oeste, Portón negro, final de la calle mano derecha.</br></br>
                 </p>
                 <p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">P</abbr>: (506) 8888-8888</p>
-                <p><i class="fa fa-envelope-o"></i> 
-                    <abbr title="Email">E</abbr>: <a href="mailto:info@simceg.com">info@simceg.com</a>
-                </p>
+                    <abbr title="Tel&eacute;fono">Tel&eacute;fonos:</abbr></br> 2263-5839</br>2260-6428</br>2262-6287</br>8868-3387</p></br>
+                <p><i class="fa fa-envelope-o"></i>
+                    <abbr title="Email">Correo Electr&oacute;nico:</abbr> </br><a href="mailto:linitacordero@hotmail.com">linitacordero@hotmail.com</a></br><a href="mailto:rutsanchezcampos@gmail.com">rutsanchezcampos@gmail.com</a>
+                </p></br>
                 <p><i class="fa fa-clock-o"></i> 
-                    <abbr title="Hours">H</abbr>: Lunes - Viernes: 9:00 AM to 5:00 PM</p>
+                    <abbr title="Horario">Horario:</abbr> </br>Lunes - Jueves: 8:00 AM a 4:00 PM</br>Viernes: 8:00 AM a 12:00 MD</p></br>
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
                         <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -47,7 +57,7 @@
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
             <div class="col-md-8">
-                <h3>Envia un Mensaje</h3>
+                <h3>Fromulario de Contacto</h3>
                 <form name="sentMessage" id="contactForm" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
