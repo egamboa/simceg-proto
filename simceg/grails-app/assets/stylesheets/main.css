@@ -250,3 +250,13 @@ p {
 ul{
 	list-style: none;
 }
+
+.sidebar .nav-second-level li.active {
+	background-color: #3a87ad;
+}
+.sidebar .nav-second-level li.active a {
+	color: #fff;
+}
+.sidebar .nav-second-level li:hover a {
+	color: #2a6496;
+}

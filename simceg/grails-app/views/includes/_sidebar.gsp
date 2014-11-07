@@ -41,19 +41,19 @@
              <li class="active">
                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
-                 	<li>
+                 	<li class="${controllerName == 'dashboard' && actionName == 'eventos' ? 'active':''}">
                  		<g:link controller="dashboard" action="eventos">Eventos</g:link>
                  	</li>
-			        <li>
+			        <li class="${controllerName == 'dashboard' && actionName == 'empleados' ? 'active':''}">
 			        	<g:link controller='empleado'>Empleados</g:link>
 			        </li>
-			        <li>
+			        <li class="${controllerName == 'estudiante' ? 'active':''}">
 			        	<g:link controller='estudiante'>Estudiantes</g:link>
 			        </li>
-			        <li>
+			        <li class="${controllerName == 'user' ? 'active':''}">
 			        	<g:link controller='user'>Usuarios</g:link>
 			        </li>
-			        <li>
+			        <li class="${controllerName == 'grupo' ? 'active':''}">
 			        	<g:link controller='grupo'>Grupos</g:link>
 			        </li>
 			        <li><a href="#">Materias</a></li>

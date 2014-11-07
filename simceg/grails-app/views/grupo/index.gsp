@@ -8,44 +8,55 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-grupo" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			<ul class="nav nav-pills" role="tablist">
+				<li> <g:link controller="dashboard">Principal</g:link> </li>
+				<li><g:link class="create" action="create">Nuevo Grupo</g:link></li>
 			</ul>
 		</div>
 		<div id="list-grupo" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="descripcion" title="${message(code: 'grupo.descripcion.label', default: 'Descripcion')}" />
-					
-						<th><g:message code="grupo.nivel.label" default="Nivel" /></th>
-					
-						<th><g:message code="grupo.periodo.label" default="Periodo" /></th>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${grupoInstanceList}" status="i" var="grupoInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${grupoInstance.id}">${fieldValue(bean: grupoInstance, field: "descripcion")}</g:link></td>
-					
-						<td>${fieldValue(bean: grupoInstance, field: "nivel")}</td>
-					
-						<td>${fieldValue(bean: grupoInstance, field: "periodo")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+			
+				<div class="panel panel-default">
+                   <div class="panel-heading">
+                       Lista de Grupos
+                   </div>
+                   <!-- /.panel-heading -->
+                   <div class="panel-body">
+                       <div class="table-responsive">
+                           <table class="table table-striped">
+								<thead>
+									<tr>
+									
+										<g:sortableColumn property="descripcion" title="${message(code: 'grupo.descripcion.label', default: 'Descripcion')}" />
+									
+										<th><g:message code="grupo.nivel.label" default="Nivel" /></th>
+									
+										<th><g:message code="grupo.periodo.label" default="Periodo" /></th>
+									
+									</tr>
+								</thead>
+								<tbody>
+								<g:each in="${grupoInstanceList}" status="i" var="grupoInstance">
+									<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
+									
+										<td><g:link action="show" id="${grupoInstance.id}">${fieldValue(bean: grupoInstance, field: "descripcion")}</g:link></td>
+									
+										<td>${grupoInstance.nivel.descripcion}</td>
+									
+										<td>${grupoInstance.periodo.descripcion}</td>
+									
+									</tr>
+								</g:each>
+								</tbody>
+							</table>
+                       </div>
+                       <!-- /.table-responsive -->
+                   </div>
+                   <!-- /.panel-body -->
+            </div>
 			<div class="pagination">
 				<g:paginate total="${grupoInstanceCount ?: 0}" />
 			</div>

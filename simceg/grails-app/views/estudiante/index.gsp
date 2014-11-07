@@ -15,48 +15,47 @@
 			</ul>
 		</div>
 		<div id="list-estudiante" class="content scaffold-list" role="main">
-			<h1>Lista Estudiantes</h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 
 			<div class="panel panel-default">
-                        <div class="panel-heading">
-                            Usuarios
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <g:sortableColumn property="nombre" title="Nombre" />
-                                            <g:sortableColumn property="primerApellido" title="1er Apellido" />
-                                            <g:sortableColumn property="segundoApellido" title="2do Apellido" />
-                                            <g:sortableColumn property="activo" title="Activo" />
-                                            <g:sortableColumn property="fechaNacimiento" title="Fecha Nacimiento" />
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <g:each in="${estudianteInstanceList}" status="i" var="estudianteInstance">
-											<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-												<td><g:link action="show" id="${estudianteInstance.id}">${fieldValue(bean: estudianteInstance, field: "nombre")}</g:link></td>
-												
-												<td>${fieldValue(bean: estudianteInstance, field: "primerApellido")}</td>
-												
-												<td>${fieldValue(bean: estudianteInstance, field: "segundoApellido")}</td>
-
-												<td><g:formatBoolean boolean="${estudianteInstance.activo}" /></td>
-												
-												<td>${fieldValue(bean: estudianteInstance, field: "fechaNacimiento")}</td>
-											</tr>
-										</g:each>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
+                   <div class="panel-heading">
+                       Lista de Estudiantes
+                   </div>
+                   <!-- /.panel-heading -->
+                   <div class="panel-body">
+                       <div class="table-responsive">
+                           <table class="table table-striped">
+                               <thead>
+                                   <tr class="text-center">
+                                       <g:sortableColumn property="nombre" title="Nombre" />
+                                       <g:sortableColumn property="primerApellido" title="1er Apellido" />
+                                       <g:sortableColumn property="segundoApellido" title="2do Apellido" />
+                                       <g:sortableColumn property="activo" title="Activo" />
+                                       <g:sortableColumn property="fechaNacimiento" title="Fecha Nacimiento" />
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <g:each in="${estudianteInstanceList}" status="i" var="estudianteInstance">
+										<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
+											<td><g:link action="show" id="${estudianteInstance.id}">${fieldValue(bean: estudianteInstance, field: "nombre")}</g:link></td>
+											
+											<td>${fieldValue(bean: estudianteInstance, field: "primerApellido")}</td>
+											
+											<td>${fieldValue(bean: estudianteInstance, field: "segundoApellido")}</td>
+				
+											<td><g:formatBoolean boolean="${estudianteInstance.activo}" /></td>
+											
+											<td>${fieldValue(bean: estudianteInstance, field: "fechaNacimiento")}</td>
+										</tr>
+									</g:each>
+                               </tbody>
+                           </table>
+                       </div>
+                       <!-- /.table-responsive -->
+                   </div>
+                   <!-- /.panel-body -->
             </div>
 			<div class="pagination">
 				<g:paginate total="${estudianteInstanceCount ?: 0}" />
