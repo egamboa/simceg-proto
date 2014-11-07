@@ -26,7 +26,7 @@
 		<div class="container">
 			<g:render template="/includes/sidebar" />
 			<div class="row">
-				<div class="col-md-8 col-md-offset-3">
+				<div class="col-md-9 col-md-offset-3">
 					<g:layoutBody/>
 				</div>
 			</div>

@@ -58,35 +58,37 @@
         <div class="row">
             <div class="col-md-8">
                 <h3>Formulario de Contacto</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form name="sentMessage" class="text-left" id="contactForm" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Nombre Completo:</label>
+                            <label class="col-md-3">Nombre Completo:</label>
                             <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Número de Teléfono:</label>
+                            <label class="col-md-3">Número de Teléfono:</label>
                             <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Correo Electronico:</label>
+                            <label class="col-md-3">Correo Electronico:</label>
                             <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Mensaje:</label>
+                            <label class="col-md-3">Mensaje:</label>
                             <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="pull-right">
+                    	<button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
                 </form>
             </div>
 
