@@ -71,7 +71,7 @@
 				padres.add(user)
 		}
 	 %>
-		<g:select id="encargado" name="encargado.id" class="form-control" from="${padres}" optionKey="id" optionValue="nombre" required="" value="${estudianteInstance?.encargado?.id}" class="many-to-one"/>
+		<g:select id="encargado" name="encargado.id" class="form-control" from="${padres}" optionKey="id" optionValue="${{it.nombreCompleto()}}" required="" value="${estudianteInstance?.encargado?.id}" class="many-to-one"/>
 	</div>
 </div>
 

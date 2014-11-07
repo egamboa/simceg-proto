@@ -43,8 +43,8 @@
                  	<li class="${controllerName == 'dashboard' && actionName == 'eventos' ? 'active':''}">
                  		<g:link controller="dashboard" action="eventos">Eventos</g:link>
                  	</li>
-			        <li class="${controllerName == 'dashboard' && actionName == 'empleados' ? 'active':''}">
-			        	<g:link controller='empleado'>Profesor</g:link>
+			        <li class="${controllerName == 'profesor' ? 'active':''}">
+			        	<g:link controller='profesor'>Profesores</g:link>
 			        </li>
 			        <li class="${controllerName == 'estudiante' ? 'active':''}">
 			        	<g:link controller='estudiante'>Estudiantes</g:link>
@@ -58,8 +58,12 @@
 			        <li class="${controllerName == 'materia' ? 'active':''}">
 			        	<g:link controller='materia'>Materias</g:link>
 			        </li>
-			        <li><a href="#">Niveles</a></li>
-			        <li><a href="#">Periodo Lectivo</a></li>
+			        <li class="${controllerName == 'nivel' ? 'active':''}">
+			        	<g:link controller='nivel'>Niveles</g:link>
+			        </li>
+			        <li class="${controllerName == 'periodoLectivo' ? 'active':''}">
+			        	<g:link controller='periodoLectivo'>Periodos Lectivos</g:link>
+			        </li>
                  </ul>
                  <!-- /.nav-second-level -->
              </li>
