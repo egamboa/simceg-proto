@@ -102,14 +102,16 @@ class BootStrap {
 			grupo.save flush: true
 			
 			def profesor = new Profesor(activo: true, 
+										usuario: User.findById(3),
 										gradoProfesional: 'Master', 
 										descripcion: 'Soy un profesor buenisimo', 
 										fechaIngreso: new Date(114, 0, 1), 
 										fechaSalida: null )
 			profesor.save flush: true
 			
-			def materia = new Materia(profesor: profesor, 
-									  materia: CatalogoMateria.findByDescripcion('Primero'))
+			def materia = new Materia(grupo: grupo,
+									  profesor: profesor, 
+									  materia: CatalogoMateria.findByDescripcion('Ciencias'))
 			materia.save flush: true
 			
 		}

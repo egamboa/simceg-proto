@@ -1,7 +1,5 @@
 package org.una.simceg
 
-import java.sql.Date
-
 class Profesor {
 	
 	User usuario
@@ -15,6 +13,6 @@ class Profesor {
 			fechaSalida
 
     static constraints = {
-		
+		fechaSalida nullable: true
     }
 }

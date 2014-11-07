@@ -44,7 +44,7 @@
                  		<g:link controller="dashboard" action="eventos">Eventos</g:link>
                  	</li>
 			        <li class="${controllerName == 'dashboard' && actionName == 'empleados' ? 'active':''}">
-			        	<g:link controller='empleado'>Empleados</g:link>
+			        	<g:link controller='empleado'>Profesor</g:link>
 			        </li>
 			        <li class="${controllerName == 'estudiante' ? 'active':''}">
 			        	<g:link controller='estudiante'>Estudiantes</g:link>
