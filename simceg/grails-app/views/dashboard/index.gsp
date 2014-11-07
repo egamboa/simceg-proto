@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="mensajes.gsp">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Mensajes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="eventos.gsp">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Eventos</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -63,17 +63,17 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-book fa-5x"></i>
+                                    <i class="fa fa-check-circle fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">2</div>
-                                    <div>Nuevas<br> Tareas!</div>
+                                    <div>Nuevas<br> Calificaciones!</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="notas.gsp">
                             <div class="panel-footer">
-                                <span class="pull-left">Ver Tareas</span>
+                                <span class="pull-left">Ver Calificaciones</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -115,7 +115,7 @@
                         <div class="panel-body">
                             <ul class="timeline">
                                 <li>
-                                    <div class="timeline-badge warning"><i class="fa fa-book"></i>
+                                    <div class="timeline-badge warning"><i class="fa fa-check-circle"></i>
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
