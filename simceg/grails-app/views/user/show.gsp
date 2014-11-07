@@ -121,7 +121,7 @@
             </div>
             <div class="row">
             	<div class="col-md-2 col-md-offset-10">
-            		<g:link class="edit btn btn-primary" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+            		<g:link class="edit btn btn-primary" action="edit" resource="${userInstance}">Editar</g:link>
             	</div>
             </div>
 			<!--

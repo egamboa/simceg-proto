@@ -32,7 +32,7 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons text-right">
-					<g:actionSubmit class="save btn btn-primary" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+					<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
 				</fieldset>
 			</g:form>
 		</div>

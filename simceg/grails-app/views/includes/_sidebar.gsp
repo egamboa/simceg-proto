@@ -24,9 +24,6 @@
                  	 <li>
                  	 	<a href="#"><i class="fa fa-check-square"></i> Notas</a>
                  	 </li>
-                 	 <li>
-                 	 	<a href="#"><i class="fa fa-tasks"></i> Tareas</a>
-                 	 </li>
                  	 <sec:access expression="hasRole('ROLE_TEACHER')">
 						 <li>
 	                         <a href="#"><i class="fa fa-users"></i> Estudiantes</a>

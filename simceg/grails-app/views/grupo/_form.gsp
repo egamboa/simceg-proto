@@ -40,7 +40,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<div class="col-sm-9">
-		<g:select class="form-control" id="nivel" name="nivel.id" from="${org.una.simceg.Nivel.list()}" optionKey="id" required="" value="${grupoInstance?.nivel?.id}" class="many-to-one"/>
+		<g:select class="form-control" id="nivel" name="nivel.id" from="${org.una.simceg.Nivel.list()}" optionKey="id" optionValue="descripcion" required="" value="${grupoInstance?.nivel?.id}" class="many-to-one"/>
 	</div>
 </div>
 <div class="fieldcontain ${hasErrors(bean: grupoInstance, field: 'periodo', 'error')} required form-group">
@@ -49,6 +49,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<div class="col-md-9">
-		<g:select class="form-control" id="periodo" name="periodo.id" from="${org.una.simceg.PeriodoLectivo.list()}" optionKey="id" required="" value="${grupoInstance?.periodo?.id}" class="many-to-one"/>
+		<g:select class="form-control" id="periodo" name="periodo.id" from="${org.una.simceg.PeriodoLectivo.list()}" optionKey="id" optionValue="descripcion" required="" value="${grupoInstance?.periodo?.id}" class="many-to-one"/>
 	</div>
 </div>

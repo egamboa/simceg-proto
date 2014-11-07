@@ -44,7 +44,7 @@
 						</td>
 						<td>
 							<g:each in="${grupoInstance.estudiantes}" var="e">
-								<span class="property-value" aria-labelledby="estudiantes-label"><g:link controller="estudiante" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
+								<span class="property-value" aria-labelledby="estudiantes-label"><g:link controller="estudiante" action="show" id="${e.id}">${e?.nombreCompleto()}</g:link></span>
 							</g:each>
 						</td>
 					</tr>
@@ -90,7 +90,7 @@
 			</div>
 			<div class="row">
             	<div class="col-md-2 col-md-offset-10">
-            		<g:link class="edit btn btn-primary" action="edit" resource="${grupoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+            		<g:link class="edit btn btn-primary" action="edit" resource="${grupoInstance}">Editar</g:link>
             	</div>
             </div>
             <!-- 
