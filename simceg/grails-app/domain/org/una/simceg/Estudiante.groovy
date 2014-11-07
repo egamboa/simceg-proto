@@ -1,12 +1,10 @@
 package org.una.simceg
-import java.util.Date
-
 
 class Estudiante {
 	
 	User encargado
 
-	boolean activo, 
+	boolean activo = true, 
 			adecuacion,
 			viveEncargado
 
@@ -22,5 +20,9 @@ class Estudiante {
 
     static constraints = {
     }
+	
+	def nombreCompleto(){
+		nombre + ' ' + primerApellido + ' ' + segundoApellido
+	}
 
 }

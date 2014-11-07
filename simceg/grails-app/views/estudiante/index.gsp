@@ -11,7 +11,7 @@
 		<div class="nav" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li> <g:link controller="dashboard">Principal</g:link> </li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create">Nuevo Estudiante</g:link></li>
 			</ul>
 		</div>
 		<div id="list-estudiante" class="content scaffold-list" role="main">
@@ -31,9 +31,10 @@
                                     <thead>
                                         <tr class="text-center">
                                             <g:sortableColumn property="nombre" title="Nombre" />
-                                            <g:sortableColumn property="edad" title="Edad" />
-                                            <g:sortableColumn property="activo" title="Estado" />
-                                            <g:sortableColumn property="adecuacion" title="Adecuacion" />
+                                            <g:sortableColumn property="primerApellido" title="1er Apellido" />
+                                            <g:sortableColumn property="segundoApellido" title="2do Apellido" />
+                                            <g:sortableColumn property="activo" title="Activo" />
+                                            <g:sortableColumn property="fechaNacimiento" title="Fecha Nacimiento" />
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,11 +42,13 @@
 											<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
 												<td><g:link action="show" id="${estudianteInstance.id}">${fieldValue(bean: estudianteInstance, field: "nombre")}</g:link></td>
 												
-												<td>${fieldValue(bean: estudianteInstance, field: "fechaNacimiento")}</td>
+												<td>${fieldValue(bean: estudianteInstance, field: "primerApellido")}</td>
+												
+												<td>${fieldValue(bean: estudianteInstance, field: "segundoApellido")}</td>
 
 												<td><g:formatBoolean boolean="${estudianteInstance.activo}" /></td>
 												
-												<td><g:formatBoolean boolean="${estudianteInstance.adecuacion}" /></td>
+												<td>${fieldValue(bean: estudianteInstance, field: "fechaNacimiento")}</td>
 											</tr>
 										</g:each>
                                     </tbody>

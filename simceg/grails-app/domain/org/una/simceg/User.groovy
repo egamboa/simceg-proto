@@ -39,6 +39,10 @@ class User {
 	def beforeInsert() {
 		encodePassword()
 	}
+	
+	def nombreCompleto(){
+		nombre + ' ' + primerApellido + ' ' + segundoApellido
+	}
 
 	def beforeUpdate() {
 		if (isDirty('password')) {

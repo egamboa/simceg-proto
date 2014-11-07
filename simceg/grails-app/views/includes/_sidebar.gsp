@@ -31,9 +31,6 @@
 						 <li>
 	                         <a href="#"><i class="fa fa-users"></i> Estudiantes</a>
 	                     </li>
-	                     <li>
-	                     	<a href="#"><i class="fa fa-bars"></i> Grupos</a>
-	                     </li>
                      </sec:access>
                  </ul>
                  <!-- /.nav-second-level -->
@@ -59,7 +56,6 @@
 			        <li><a href="#">Grupos</a></li>
 			        <li><a href="#">Materias</a></li>
 			        <li><a href="#">Periodo Lectivo</a></li>
-			        <li><a href="#">Configuración</a></li>
                  </ul>
                  <!-- /.nav-second-level -->
              </li>

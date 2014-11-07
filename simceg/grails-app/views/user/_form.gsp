@@ -43,7 +43,22 @@
 	   </div>
 	</div>
 </div>
-
+<div class="fieldcontain  form-group">
+	<label for="rol"  class="col-sm-3 control-label">
+		Rol
+		<span class="required-indicator">*</span>
+	</label>
+	<div class="col-sm-9">
+	  <g:select 
+	  	class="form-control custom-dd many-to-one" 
+	  	id="rol" 
+	  	name="rol.id" 
+	  	from="${org.una.simceg.Role.list()}" 
+	  	optionKey="id" 
+	  	optionValue="authority" 
+	  	value="${org.una.simceg.UserRole.findByUser(userInstance).role.id}"/>
+    </div>
+</div>
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required form-group">
 	<label for="username"  class="col-sm-3 control-label">
 		<g:message code="user.username.label" default="Username" />

@@ -5,7 +5,10 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
 class DashboardController {
 	
+	def springSecurityService
+	
     def index() {
-		render(view: "index")
+		def user = springSecurityService.currentUser
+		render(view: "index", model:[user: user])
 	}
 }

@@ -12,7 +12,7 @@
     <div class="col-md-6 col-xs-12">
     	
     	<div class="login">
-          	<form role="form" class="form-signin" action='${postUrl}' method='POST' id="loginForm" name="loginForm" autocomplete='off'>
+          	<form role="form" class="form-signin text-left" action='${postUrl}' method='POST' id="loginForm" name="loginForm" autocomplete='off'>
                 <div class="submit-form">
                     <div class="login-label">
                         <h3>Ingresar al Sistema SIMCEG</h3>

@@ -19,7 +19,7 @@
 		<div id="show-user" class="content scaffold-show" role="main">
 			<h1>Ver Usuario</h1>
 			<g:if test="${flash.message}">
-			<div class="message alert alert-info" role="status">${flash.message}</div>
+				<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>
 			
 			<div class="row">
@@ -27,6 +27,10 @@
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
+					  <tr class="fieldcontain">
+                        <td><span id="rol-label" class="property-label">Rol</span>:</td>
+                        <td><span class="property-value" aria-labelledby="rol-label"><g:fieldValue bean="${org.una.simceg.UserRole.findByUser(userInstance).role}" field="authority"/></span></td>
+                      </tr>
                       <g:if test="${userInstance?.username}">
                       <tr class="fieldcontain">
                         <td><span id="username-label" class="property-label"><g:message code="user.username.label" default="Username" /></span>:</td>

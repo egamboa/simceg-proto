@@ -7,7 +7,6 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#edit-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li> <g:link controller="dashboard">Principal</g:link> </li>

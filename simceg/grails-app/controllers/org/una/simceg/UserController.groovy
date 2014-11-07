@@ -18,6 +18,7 @@ class UserController {
     }
 
     def show(User userInstance) {
+		
         respond userInstance
     }
 
@@ -38,6 +39,7 @@ class UserController {
         }
 
         userInstance.save flush:true
+		
 
         request.withFormat {
             form multipartForm {

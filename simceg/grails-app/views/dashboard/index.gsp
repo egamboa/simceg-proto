@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<meta name="layout" content="dashboard">
-		<title>P&acute;gina Principal</title>
+		<title>P&aacute;gina Principal</title>
 	</head>
 	<body>
 		<div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Resumen</h1>
+                <div class="col-lg-12 text-left">
+                    <h1 class="page-header">Bienvenido ${user.nombreCompleto()}</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

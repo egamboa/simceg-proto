@@ -32,7 +32,8 @@
                                         	<g:sortableColumn property="username" title="Usuario" />
                                             <g:sortableColumn property="cedula" title="Cedula" />
                                             <g:sortableColumn property="accountLocked" title="Bloqueado" />
-                                            <g:sortableColumn property="email" title="email" />
+                                            <g:sortableColumn property="email" title="Email" />
+                                            <th class="sortable"><a href="#">Rol</a></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -46,6 +47,13 @@
 												<td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
 												
 												<td>${fieldValue(bean: userInstance, field: "email")}</td>
+												
+												<td>
+													<%
+														def role = org.una.simceg.UserRole.findByUser(userInstance)
+													%>
+													${role.role.authority}
+												</td>
 												
 											</tr>
 										</g:each>
