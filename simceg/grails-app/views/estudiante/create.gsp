@@ -9,7 +9,7 @@
 		<div class="nav" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li> <g:link controller="dashboard">Principal</g:link> </li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="index">Lista Estudiantes</g:link></li>
 			</ul>
 		</div>
 		<div id="create-estudiante" class="content scaffold-create" role="main">
@@ -28,8 +28,8 @@
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-				<fieldset class="buttons text-right">
-					<g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+				<fieldset class="buttons text-center">
+					<g:submitButton name="create" class="save btn btn-primary" value="Crear"/>
 				</fieldset>
 			</g:form>
 		</div>
