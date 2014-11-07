@@ -2,7 +2,7 @@ package org.una.simceg
 
 class Mensaje {
 	
-	String mensaje
+	String mensaje, asunto
 	User emisor, receptor
 	Date fechaEnvio
 	
