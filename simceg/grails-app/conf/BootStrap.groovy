@@ -136,7 +136,7 @@ class BootStrap {
 		assert Nivel.count() == 6
 		assert Grupo.count() == 1
 		assert CatalogoMateria.count() == 6
-		assert Estudiante.count() == 1
+		assert Estudiante.count() == 2
 		assert User.count() == 3
 		assert Role.count() == 3
 		assert UserRole.count() == 3
