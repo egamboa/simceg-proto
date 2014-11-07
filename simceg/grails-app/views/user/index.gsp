@@ -11,7 +11,7 @@
 		<div class="nav" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li> <g:link controller="dashboard">Principal</g:link> </li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create">Nuevo Usuario</g:link></li>
 			</ul>
 		</div>
 		<div id="list-user" class="content scaffold-list" role="main">
@@ -29,22 +29,24 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr class="text-center">
+                                        	<g:sortableColumn property="username" title="Usuario" />
                                             <g:sortableColumn property="cedula" title="Cedula" />
                                             <g:sortableColumn property="accountLocked" title="Bloqueado" />
-                                            <g:sortableColumn property="username" title="Usuario" />
                                             <g:sortableColumn property="email" title="email" />
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <g:each in="${userInstanceList}" status="i" var="userInstance">
 											<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
+												
+												<td><g:link action="show" id="${userInstance.id}"><i class="glyphicon glyphicon-user"></i> ${fieldValue(bean: userInstance, field: "username")}</g:link></td>
+												
 												<td>${fieldValue(bean: userInstance, field: "cedula")}</td>
 												
 												<td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
 												
-												<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
-												
 												<td>${fieldValue(bean: userInstance, field: "email")}</td>
+												
 											</tr>
 										</g:each>
                                     </tbody>
