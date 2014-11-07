@@ -96,7 +96,7 @@ class BootStrap {
 		}
 		
 		if(CatalogoMateria.count() == 0 ){
-			ArrayList materias = ['Matemáticas', 'Estudios Sociales', 'Ciencias', 'Español', 'Ingles', 'Música']
+			ArrayList materias = ['Matematicas', 'Estudios Sociales', 'Ciencias', 'Español', 'Ingles', 'Música']
 			materias.each { materia->
 				new CatalogoMateria(descripcion: materia).save flush: true
 			}
@@ -128,9 +128,19 @@ class BootStrap {
 									  materia: CatalogoMateria.findByDescripcion('Ciencias'))
 			materia.save flush: true
 			
+			def materia1 = new Materia(grupo: grupo,
+				profesor: profesor,
+				materia: CatalogoMateria.findByDescripcion('Matematicas'))
+			materia1.save flush: true
+			
+			def materia2 = new Materia(grupo: grupo,
+				profesor: profesor,
+				materia: CatalogoMateria.findByDescripcion('Ingles'))
+			materia2.save flush: true
+			
 		}
 		
-		assert Materia.count() == 1
+		assert Materia.count() == 3
 		assert Profesor.count() == 1
 		assert PeriodoLectivo.count() == 1
 		assert Nivel.count() == 6
