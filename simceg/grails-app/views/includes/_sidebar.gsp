@@ -25,14 +25,14 @@
                  <a href="#"><i class="fa fa-university"></i> Escuela<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
                  	 <li>
-                        <g:link controller="dashboard" action="notas"><i class="fa fa-check-square"></i> Notas</g:link>
+                        
                  	 </li>
                  	 <sec:access expression="hasRole('ROLE_TEACHER')">
 						 <li>
 						 	<g:link controller="dashboard" action="estudiantes"><i class="fa fa-users"></i> Estudiantes</g:link>
 	                     </li>
                          <li>
-                             <a href="#"><i class="fa fa-users"></i> Calificar Estudiante</a>
+                            <g:link controller="dashboard" action="calificar"><i class="fa fa-check-square"></i> Calificar Estudiante</g:link>
                          </li>
                      </sec:access>
                  </ul>
