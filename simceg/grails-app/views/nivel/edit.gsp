@@ -2,17 +2,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'nivel.label', default: 'Nivel')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#edit-nivel" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			<ul class="nav nav-pills" role="tablist">
+				<li> <g:link controller="dashboard">Principal</g:link> </li>
+				<li><g:link class="list" action="index">Lista de Niveles</g:link></li>
+				<li><g:link class="create" action="create">Nuevo Nivel</g:link></li>
 			</ul>
 		</div>
 		<div id="edit-nivel" class="content scaffold-edit" role="main">
@@ -32,8 +31,8 @@
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+				<fieldset class="buttons text-right">
+					<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
 				</fieldset>
 			</g:form>
 		</div>

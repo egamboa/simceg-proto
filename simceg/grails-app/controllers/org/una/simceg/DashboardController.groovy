@@ -23,5 +23,11 @@ class DashboardController {
 	def nuevoMensaje(){
 		render(view:'nuevoMensaje')
 	}
+	def nuevoEvento(){
+		render(view: 'nuevoEvento')
+	}
 	
+	def calendario(){
+		render(view: 'calendar')
+	}
 }

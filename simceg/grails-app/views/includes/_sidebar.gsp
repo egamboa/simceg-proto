@@ -13,8 +13,9 @@
 			        <li>
                         <g:link controller="dashboard" action="mensajes"><i class="fa fa-envelope"></i> Mensajes</g:link>
                     </li>
-			        <li><a href="#"><i class="fa fa-calendar"></i> Calendario</a></li>
-			        <li><a href="#"><i class="fa fa-archive"></i> Archivos</a></li>
+			        <li>
+			        	<g:link controller="dashboard" action="calendario"><i class="fa fa-calendar"></i> Calendario</g:link>
+			        </li>
                  </ul>
                  <!-- /.nav-second-level -->
              </li>

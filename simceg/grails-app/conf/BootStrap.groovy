@@ -78,6 +78,20 @@ class BootStrap {
 				)
 			 
 			 testEstudiante.save flush: true, failOnError: true
+			 
+			 def testEstudiante2 = new Estudiante(
+				 nombre: 'Cesar',
+				 primerApellido: 'Yada',
+				 segundoApellido: 'Perez',
+				 direccion: 'Algun lugar',
+				 tipoSangre: 'o+',
+				 nacionalidad: 'Costarricense',
+				 fechaIngreso: new Date(114, 0, 1),
+				 fechaNacimiento: new Date(105, 0, 1),
+				 encargado: testUser
+				 )
+			  
+			  testEstudiante2.save flush: true, failOnError: true
 			
 		}
 		

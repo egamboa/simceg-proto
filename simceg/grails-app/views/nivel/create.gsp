@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'nivel.label', default: 'Nivel')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#create-nivel" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+			<ul class="nav nav-pills" role="tablist">
+				<li> <g:link controller="dashboard">Principal</g:link> </li>
+				<li><g:link class="list" action="index">Lista de Niveles</g:link></li>
 			</ul>
 		</div>
 		<div id="create-nivel" class="content scaffold-create" role="main">

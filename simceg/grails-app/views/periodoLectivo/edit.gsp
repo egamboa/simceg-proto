@@ -2,21 +2,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="dashboard">
 		<g:set var="entityName" value="${message(code: 'periodoLectivo.label', default: 'PeriodoLectivo')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#edit-periodoLectivo" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			<ul class="nav nav-pills" role="tablist">
+				<li> <g:link controller="dashboard">Principal</g:link> </li>
+				<li><g:link class="list" action="index">Lista de Periodos</g:link></li>
+				<li><g:link class="create" action="create">Nuevo Periodo</g:link></li>
 			</ul>
 		</div>
 		<div id="edit-periodoLectivo" class="content scaffold-edit" role="main">
-			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+			<h1>Editar Periodo Lectivo</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -32,8 +31,8 @@
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+				<fieldset class="buttons text-right">
+					<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
 				</fieldset>
 			</g:form>
 		</div>

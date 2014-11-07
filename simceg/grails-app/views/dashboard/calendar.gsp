@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Eventos</title>
+		<title>Calendario</title>
 		<meta name="layout" content="dashboard">
 	</head>
 	<body>
@@ -10,14 +10,6 @@
 				<h1 class="text-left">Calendario</h1>
 				<hr>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<g:link controller="dashboard" action="nuevoEvento">
-					<span class="glyphicon glyphicon-plus"></span> Crear Evento
-				</g:link>
-			</div>
-			<hr/>
 		</div>
 		<div class="row">
 			<div class="col-md-12 notas">
