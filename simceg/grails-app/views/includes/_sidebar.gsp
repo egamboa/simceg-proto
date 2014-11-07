@@ -51,7 +51,7 @@
 			        	<g:link controller='empleado'>Empleados</g:link>
 			        </li>
 			        <li>
-			        	<g:link controller='estudiante'>Estudiante</g:link>
+			        	<g:link controller='estudiante'>Estudiantes</g:link>
 			        </li>
 			        <li>
 			        	<g:link controller='user'>Usuarios</g:link>

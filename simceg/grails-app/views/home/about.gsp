@@ -22,9 +22,8 @@
             </div>
             <div class="col-md-6">
                 <h2>Acerca del Centro Educativo Gandhi</h2></br>
-                <p>Fundada en el a&ntilde;o 2005 por un grupo de mujeres emprendedoras, muchas jefas de hogar, nos mantenemos con la consigna de crecer y mejorar para brindar la mejor educaci&oacute;n y formar ni&ntilde;os de bien que ser&aacute;n jovenes &iacute;ntegros que representaran los valores de GANDHI.</p>
-                
-                <p>El Centro Educativo GANDHI nace a partir de la necesidad de brindar una opci&oacute;n en educaci&oacute;n privada a la comunidad de Los Lagos de Heredia y alrededores.</p>
+                <p>Fundado en el a&ntilde;o 2005 por un grupo de mujeres emprendedoras, muchas jefas de hogar, nos mantenemos con la consigna de crecer y mejorar para brindar la mejor educaci&oacute;n y formar ni&ntilde;os de bien que ser&aacute;n jovenes &iacute;ntegros que representaran los valores de GANDHI.</p></br>
+                <p>El Centro Educativo GANDHI nace a partir de la necesidad de brindar una opci&oacute;n en educaci&oacute;n privada a la comunidad de Los Lagos de Heredia y alrededores.</p></br>
                 <p>El Centro Educativo es el resultado del esfuerzo de un equipo de mujeres asociadas a la cooperativa Coopesolidaridad R.L. las cuales fundaron la escuela como una actividad de ingresos y beneficios para sus asociadas.</p>
             </div>
         </div>
