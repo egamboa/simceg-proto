@@ -26,13 +26,13 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:materiaInstance, action:'update']" method="PUT" >
+			<g:form url="[resource:materiaInstance, action:'update']" method="PUT" class="form-horizontal text-left">
 				<g:hiddenField name="version" value="${materiaInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+				<fieldset class="buttons text-right">
+					<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
 				</fieldset>
 			</g:form>
 		</div>
