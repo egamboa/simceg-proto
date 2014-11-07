@@ -18,7 +18,7 @@
           <form role="form" class="form-horizontal">
               <div class="form-group">
                 <label class="col-sm-2" for="inputTo">Para</label>
-                <div class="col-sm-10"><input type="email" class="form-control" id="inputTo" placeholder="ID Receptor"></div>
+                <div class="col-sm-10"><input type="email" class="form-control" id="inputTo" placeholder="Receptor"></div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2" for="inputSubject">Asunto</label>

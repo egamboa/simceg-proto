@@ -25,7 +25,7 @@
                  <a href="#"><i class="fa fa-university"></i> Escuela<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
                  	 <li>
-                 	 	<a href="#"><i class="fa fa-check-square"></i> Notas</a>
+                        <g:link controller="dashboard" action="notas"><i class="fa fa-check-square"></i> Notas</g:link>
                  	 </li>
                  	 <sec:access expression="hasRole('ROLE_TEACHER')">
 						 <li>
