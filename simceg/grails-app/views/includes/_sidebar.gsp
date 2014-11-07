@@ -26,7 +26,9 @@
                  <ul class="nav nav-second-level">
                  	<sec:access expression="hasRole('ROLE_USER')">
                  	 <li>
-                        
+                        <li>
+						 	<g:link controller="dashboard" action="notas"><i class="fa fa-check-circle"></i> Notas</g:link>
+	                     </li>
                  	 </li>
                  	 </sec:access>
                  	 <sec:access expression="hasRole('ROLE_TEACHER')">
