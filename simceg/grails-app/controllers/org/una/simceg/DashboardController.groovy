@@ -11,4 +11,9 @@ class DashboardController {
 		def user = springSecurityService.currentUser
 		render(view: "index", model:[user: user])
 	}
+	
+	def eventos(){
+		render(view:'eventos')
+	}
+	
 }

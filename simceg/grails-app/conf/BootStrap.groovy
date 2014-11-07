@@ -1,8 +1,13 @@
+import java.util.Date;
+
 import org.una.simceg.Role
 import org.una.simceg.User
 import org.una.simceg.UserRole
 import org.una.simceg.Estudiante
 import org.una.simceg.CatalogoMateria
+import org.una.simceg.PeriodoLectivo
+import org.una.simceg.Nivel
+import org.una.simceg.Grupo
 
 class BootStrap {
 
@@ -10,12 +15,25 @@ class BootStrap {
 		
 		if(CatalogoMateria.count() == 0 ){
 			ArrayList materias = ['Matemáticas', 'Estudios Sociales', 'Ciencias', 'Español', 'Ingles', 'Música']
-			materias.each { it->
-				new CatalogoMateria(descripcion: it).save flush: true
+			materias.each { materia->
+				new CatalogoMateria(descripcion: materia).save flush: true
 			}
 		}
 		
-		assert CatalogoMateria.count() == 6
+		if( PeriodoLectivo.count() == 0 && Nivel.count() == 0 && Grupo.count() == 0 ){
+			
+			def periodo = new PeriodoLectivo(descripcion:'Perido 2014', tiempoInicio: new Date(114, 0, 1), tiempoFinal: new Date(114, 11, 31), anio: 2014 )
+			periodo.save flush: true
+			
+			ArrayList niveles = ['Primero', 'Segundo', 'Tercero', 'Cuarto', 'Quinto', 'Sexto']
+			niveles.each{ nivel ->
+				new Nivel(descripcion: nivel).save flush: true
+			}
+			
+			def grupo = new Grupo(descripcion:'1-A', periodo: periodo, nivel: Nivel.findByDescripcion('Primero'))
+			grupo.save flush: true
+			
+		}
 		
 		if(Role.count() == 0 && User.count() == 0 && Estudiante.count() == 0){
 			def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
@@ -83,6 +101,10 @@ class BootStrap {
 			
 		}
 		
+		assert PeriodoLectivo.count() == 1
+		assert Nivel.count() == 6
+		assert Grupo.count() == 1
+		assert CatalogoMateria.count() == 6
 		assert Estudiante.count() == 1
 		assert User.count() == 3
 		assert Role.count() == 3

@@ -42,7 +42,7 @@
                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
                  	<li>
-                 		<g:link controller="home" action="eventos">Eventos</g:link>
+                 		<g:link controller="dashboard" action="eventos">Eventos</g:link>
                  	</li>
 			        <li>
 			        	<g:link controller='empleado'>Empleados</g:link>
@@ -53,8 +53,11 @@
 			        <li>
 			        	<g:link controller='user'>Usuarios</g:link>
 			        </li>
-			        <li><a href="#">Grupos</a></li>
+			        <li>
+			        	<g:link controller='grupo'>Grupos</g:link>
+			        </li>
 			        <li><a href="#">Materias</a></li>
+			        <li><a href="#">Niveles</a></li>
 			        <li><a href="#">Periodo Lectivo</a></li>
                  </ul>
                  <!-- /.nav-second-level -->

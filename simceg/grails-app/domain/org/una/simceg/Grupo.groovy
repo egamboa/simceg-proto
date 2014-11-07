@@ -3,7 +3,6 @@ package org.una.simceg
 class Grupo {
 	
 	String descripcion
-	Integer anio
 	Nivel nivel
 	PeriodoLectivo periodo
 	

@@ -17,7 +17,4 @@ class HomeController {
 	def services(){
 		render(view: "services")
 	}
-	def eventos(){
-		render(view:'eventos')
-	}
 }
