@@ -24,9 +24,11 @@
              <li>
                  <a href="#"><i class="fa fa-university"></i> Escuela<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
+                 	<sec:access expression="hasRole('ROLE_USER')">
                  	 <li>
                         
                  	 </li>
+                 	 </sec:access>
                  	 <sec:access expression="hasRole('ROLE_TEACHER')">
 						 <li>
 						 	<g:link controller="dashboard" action="estudiantes"><i class="fa fa-users"></i> Estudiantes</g:link>
