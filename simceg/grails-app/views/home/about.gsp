@@ -8,23 +8,24 @@
 		<!-- Intro Content -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Nombre de Pagina
-                    <small>Texto Extra de Pagina</small>
+                <h1 class="page-header">Acerca De
+                    <small>Centro Educativo GANDHI</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Inicio</a>
                     </li>
-                    <li class="active">Nombre de Pagina</li>
+                    <li class="active">Acerca De</li>
                 </ol>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="http://mightydadspodcast.com/wp-content/uploads/2013/11/120909105910-education-empty-desks-story-top.jpg" alt="">
+                <img class="img-responsive" src="${asset.assetPath(src: 'school_board_about.jpg')}" alt="Imagen Pizarra">
             </div>
             <div class="col-md-6">
-                <h2>Acerca de SIMCEG</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                <h2>Acerca del Centro Educativo Gandhi</h2></br>
+                <p>Fundada en el a&ntilde;o 2005 por un grupo de mujeres emprendedoras, muchas jefas de hogar, nos mantenemos con la consigna de crecer y mejorar para brindar la mejor educaci&oacute;n y formar ni&ntilde;os de bien que ser&aacute;n jovenes &iacute;ntegros que representaran los valores de GANDHI.</p>
+                
+                <p>El Centro Educativo GANDHI nace a partir de la necesidad de brindar una opci&oacute;n en educaci&oacute;n privada a la comunidad de Los Lagos de Heredia y alrededores.</p>
+                <p>El Centro Educativo es el resultado del esfuerzo de un equipo de mujeres asociadas a la cooperativa Coopesolidaridad R.L. las cuales fundaron la escuela como una actividad de ingresos y beneficios para sus asociadas.</p>
             </div>
         </div>
         <!-- /.row -->
@@ -38,10 +39,10 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <div class="caption">
-                        <h3>Carlos Ramos<br>
-                            <small>Director</small>
+                        <h3>Lina Cordero Arias<br>
+                            <small>Directora</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>Educadora con habilidades pedag&oacute;gicas y amor por la educaci&oacute;n</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
@@ -57,10 +58,10 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <div class="caption">
-                        <h3>Anabel Sanchez<br>
-                            <small>Docente</small>
+                        <h3>Ruth Sanchez Campos<br>
+                            <small>Administradora</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>Mujer emprendedora. Lidera al equipo de docentes y funcionarios del centro educativo.</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
@@ -76,10 +77,10 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <div class="caption">
-                        <h3>Laura Chinchilla<br>
-                            <small>Asistente</small>
+                        <h3>Sonia Rivera Solano<br>
+                            <small>Presidenta del Consejo de Administraci&oacute;n</small>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                        <p>Contadora de profesi&oacute;n. Coordina temas administrativos y de contabilidad.</p>
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
                             </li>
@@ -91,90 +92,5 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <div class="caption">
-                        <h3>Leo Garnier<br>
-                            <small>Ministro de Educación</small>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <div class="caption">
-                        <h3>Karina Bolaños<br>
-                            <small>Docente</small>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <div class="caption">
-                        <h3>Ana Belen<br>
-                            <small>Cantante</small>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Our Customers -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Nuestros Niños</h2>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://placehold.it/500x300" alt="">
-            </div>
-        </div>
-        <!-- /.row -->
 	</body>
 </html>

@@ -14,7 +14,7 @@
                 <ol class="breadcrumb">
                     <li><a href="index.html">Inicio</a>
                     </li>
-                    <li class="active">Nombre de Pagina</li>
+                    <li class="active">Servicios</li>
                 </ol>
             </div>
             <div class="col-lg-12">

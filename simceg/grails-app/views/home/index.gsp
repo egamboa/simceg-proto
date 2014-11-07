@@ -77,7 +77,7 @@
                     <p>En el Centro Educativo Gandhi hacemos de la educaci&oacute;n de su hijo algo integral. Vis&iacute;tenos, ser&aacute; un placer atenderle. Si desea mas informaci&oacute;n de nuestros servicios llene el formulario en la p&aacute;gina de contacto.</p>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="contact.gsp">Contactenos</a>
+                    <a class="btn btn-lg btn-default btn-block" href="contact.gsp">Cont&aacute;ctenos</a>
                 </div>
             </div>
         </div>
