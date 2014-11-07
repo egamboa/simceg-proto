@@ -39,4 +39,8 @@ class DashboardController {
 	def calendario(){
 		render(view: 'calendar')
 	}
+	
+	def estudiantes(){
+		render(view: 'estudiantes')
+	}
 }

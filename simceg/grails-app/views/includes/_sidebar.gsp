@@ -29,7 +29,7 @@
                  	 </li>
                  	 <sec:access expression="hasRole('ROLE_TEACHER')">
 						 <li>
-	                         <a href="#"><i class="fa fa-users"></i> Estudiantes</a>
+						 	<g:link controller="dashboard" action="estudiantes"><i class="fa fa-users"></i> Estudiantes</g:link>
 	                     </li>
                          <li>
                              <a href="#"><i class="fa fa-users"></i> Calificar Estudiante</a>
