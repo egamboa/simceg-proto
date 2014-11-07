@@ -56,7 +56,7 @@
 	  	from="${org.una.simceg.Role.list()}" 
 	  	optionKey="id" 
 	  	optionValue="authority" 
-	  	value="${org.una.simceg.UserRole.findByUser(userInstance).role.id}"/>
+	  	value="${userInstance.id? org.una.simceg.UserRole.findByUser(userInstance).role.id : ''}"/>
     </div>
 </div>
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required form-group">
