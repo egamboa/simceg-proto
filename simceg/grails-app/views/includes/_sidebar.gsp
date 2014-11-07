@@ -5,7 +5,7 @@
              	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
              </li>
              <li>
-             	<g:link><i class="fa fa-envelope"></i> Nuevo Mensaje</g:link>
+             	<g:link controller="dashboard" action="nuevoMensaje"><i class="fa fa-envelope"></i> Nuevo Mensaje</g:link>
              </li>
              <li>
                  <a href="#"><i class="glyphicon glyphicon-user"></i> <span class="fa arrow"></span>Personal</a>
