@@ -26,7 +26,7 @@
 	<div class="col-sm-9">
 		<ul class="one-to-many">
 			<g:each in="${grupoInstance?.materias?}" var="m">
-			    <li><g:link controller="materia" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></li>
+			    <li><g:link controller="materia" action="show" id="${m.id}">${m?.materia.descripcion + ' - ' +m?.profesor.usuario.nombreCompleto()}</g:link></li>
 			</g:each>
 			<li class="add">
 				<g:link controller="materia" action="create" params="['grupo.id': grupoInstance?.id]">Agregar Materia</g:link>

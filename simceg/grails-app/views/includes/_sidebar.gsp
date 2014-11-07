@@ -55,7 +55,9 @@
 			        <li class="${controllerName == 'grupo' ? 'active':''}">
 			        	<g:link controller='grupo'>Grupos</g:link>
 			        </li>
-			        <li><a href="#">Materias</a></li>
+			        <li class="${controllerName == 'materia' ? 'active':''}">
+			        	<g:link controller='materia'>Materias</g:link>
+			        </li>
 			        <li><a href="#">Niveles</a></li>
 			        <li><a href="#">Periodo Lectivo</a></li>
                  </ul>

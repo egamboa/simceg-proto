@@ -57,7 +57,7 @@
 						</td>
 						<td>
 							<g:each in="${grupoInstance.materias}" var="m">
-								<span class="property-value" aria-labelledby="materias-label"><g:link controller="materia" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
+								<span class="property-value" aria-labelledby="materias-label"><g:link controller="materia" action="show" id="${m.id}">${m?.materia.descripcion + ' - ' +m?.profesor.usuario.nombreCompleto()}</g:link></span>
 							</g:each>
 						</td>
 					</tr>
