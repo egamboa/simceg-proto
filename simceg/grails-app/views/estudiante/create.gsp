@@ -9,7 +9,7 @@
 		<div class="nav" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li> <g:link controller="dashboard">Principal</g:link> </li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="index">Lista Estudiantes</g:link></li>
 			</ul>
 		</div>
 		<div id="create-estudiante" class="content scaffold-create" role="main">
