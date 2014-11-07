@@ -5,12 +5,14 @@
              	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
              </li>
              <li>
-             	<g:link><i class="glyphicon glyphicon-comment"></i> Nuevo Mensaje</g:link>
+             	<g:link><i class="fa fa-envelope"></i> Nuevo Mensaje</g:link>
              </li>
              <li>
                  <a href="#"><i class="glyphicon glyphicon-user"></i> <span class="fa arrow"></span>Personal</a>
                  <ul class="nav nav-second-level">
-			        <li><a href="#"><i class="fa fa-comments-o"></i> Mensajes</a></li>
+			        <li>
+                        <g:link controller="dashboard" action="mensajes"><i class="fa fa-envelope"></i> Mensajes</g:link>
+                    </li>
 			        <li><a href="#"><i class="fa fa-calendar"></i> Calendario</a></li>
 			        <li><a href="#"><i class="fa fa-archive"></i> Archivos</a></li>
                  </ul>
