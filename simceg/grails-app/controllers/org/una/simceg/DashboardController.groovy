@@ -27,9 +27,13 @@ class DashboardController {
 	def nuevoEvento(){
 		render(view: 'nuevoEvento')
 	}
-	
+
 	def notas(){
 		render(view:'notas')
+	}
+
+	def calificar(){
+		render(view:'calificar')
 	}
 	
 	def calendario(){

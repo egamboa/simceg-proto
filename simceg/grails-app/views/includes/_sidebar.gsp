@@ -31,6 +31,9 @@
 						 <li>
 	                         <a href="#"><i class="fa fa-users"></i> Estudiantes</a>
 	                     </li>
+                         <li>
+                             <a href="#"><i class="fa fa-users"></i> Calificar Estudiante</a>
+                         </li>
                      </sec:access>
                  </ul>
                  <!-- /.nav-second-level -->

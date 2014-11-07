@@ -17,83 +17,54 @@
 				<table class="table table-user-information">
                     <tbody>
             <tr class="fieldcontain">
-                        <td><span id="rol-label" class="property-label">Rol</span>:</td>
-                        <td><span class="property-value" aria-labelledby="rol-label">ROLE_USER</span></td>
+                        <td><span id="rol-label" class="property-label">1er Examen Parcial</span>:</td>
+                        <td><span class="property-value" aria-labelledby="rol-label">20%</span></td>
                       </tr>
                       
                       <tr class="fieldcontain">
-                        <td><span id="username-label" class="property-label">Username</span>:</td>
-                        <td><span class="property-value" aria-labelledby="username-label">padre</span></td>
-                      </tr>
-                      
-                      
-                      <tr class="fieldcontain">
-                        <td><span id="nombre-label" class="property-label">Nombre</span>:</td>
-                        <td><span class="property-value" aria-labelledby="nombre-label">Ramesh</span></td>
+                        <td><span id="username-label" class="property-label">2do Examen Parcial</span>:</td>
+                        <td><span class="property-value" aria-labelledby="username-label">20%</span></td>
                       </tr>
                       
                       
                       <tr class="fieldcontain">
-                        <td><span id="primerApellido-label" class="property-label">Primer Apellido</span>:</td>
-                        <td><span class="property-value" aria-labelledby="primerApellido-label">Yada</span></td>
+                        <td><span id="nombre-label" class="property-label">3er Examen Parcial</span>:</td>
+                        <td><span class="property-value" aria-labelledby="nombre-label">20%</span></td>
                       </tr>
                       
                       
                       <tr class="fieldcontain">
-                        <td><span id="segundoApellido-label" class="property-label">Segundo Apellido</span>:</td>
-                        <td><span class="property-value" aria-labelledby="segundoApellido-label">Sanchez</span></td>
+                        <td><span id="primerApellido-label" class="property-label">Trabajo Cotidiano</span>:</td>
+                        <td><span class="property-value" aria-labelledby="primerApellido-label">10%</span></td>
+                      </tr>
+                      
+                      
+                      <tr class="fieldcontain">
+                        <td><span id="segundoApellido-label" class="property-label">Trabajo Extra Clase</span>:</td>
+                        <td><span class="property-value" aria-labelledby="segundoApellido-label">10%</span></td>
                       </tr>
                       
                       
                       
                       
                       <tr class="fieldcontain">
-                        <td><span id="cedula-label" class="property-label">Cedula</span>:</td>
-                        <td><span class="property-value" aria-labelledby="cedula-label">1111-1111</span></td>
+                        <td><span id="cedula-label" class="property-label">Tareas y Quices</span>:</td>
+                        <td><span class="property-value" aria-labelledby="cedula-label">10%</span></td>
                       </tr>
                       
                       
                       <tr class="fieldcontain">
-                        <td><span id="direccion-label" class="property-label">Direccion</span>:</td>
-                        <td><span class="property-value" aria-labelledby="direccion-label">Alguna dirección</span></td>
+                        <td><span id="direccion-label" class="property-label">Concepto</span>:</td>
+                        <td><span class="property-value" aria-labelledby="direccion-label">10%</span></td>
                       </tr>
                       
                       
                       <tr class="fieldcontain">
-                        <td><span id="email-label" class="property-label">Email</span>:</td>
-                        <td><span class="property-value" aria-labelledby="email-label">algun@email.com</span></td>
+                        <td><span id="email-label" class="property-label" style="font-weight:bold; color:red; font-size:16px">Nota Final:</span></td>
+                        <td><span class="property-value" aria-labelledby="email-label" style="font-weight:bold; color:red; font-size:16px">100</span></td>
                       </tr>
-                      
-                      
-                      <tr class="fieldcontain">
-                        <td><span id="enabled-label" class="property-label">Enabled</span>:</td>
-                        <td><span class="property-value" aria-labelledby="enabled-label">True</span></td>
-                      </tr>
-                      
-                      
-                      <tr class="fieldcontain">
-                        <td><span id="estadoCivil-label" class="property-label">Estado Civil</span>:</td>
-                        <td><span class="property-value" aria-labelledby="estadoCivil-label">soltero</span></td>
-                      </tr>
-                      
-                      
-                      <tr class="fieldcontain">
-                        <td><span id="nacionalidad-label" class="property-label">Nacionalidad</span>:</td>
-                        <td><span class="property-value" aria-labelledby="nacionalidad-label">Costarricense</span></td>
-                      </tr>
-                      
-                      
-                      
-                      <tr class="fieldcontain">
-                        <td><span id="telefono-label" class="property-label">Telefono</span>:</td>
-                        <td><span class="property-value" aria-labelledby="telefono-label">8888-8888</span></td>
-                      </tr>
-                      
                     </tbody>
                   </table>
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button> 
-          <button type="button" class="btn btn-warning pull-left">Guardar</button>
-          <button type="button" class="btn btn-primary ">Enviar <i class="fa fa-arrow-circle-right fa-lg"></i></button>
           
         </div>
   		</div>
