@@ -16,7 +16,7 @@
 			</ul>
 		</div>
 		<div id="show-profesor" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1>Mostrar Profesor</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -72,7 +72,7 @@
 			</div>
 			<div class="row">
             	<div class="col-md-2 col-md-offset-10">
-            		<g:link class="edit btn btn-primary" action="edit" resource="${profesorInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+            		<g:link class="edit btn btn-primary" action="edit" resource="${profesorInstance}">Editar</g:link>
             	</div>
             </div>
             <!-- 

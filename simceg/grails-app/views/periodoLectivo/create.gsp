@@ -13,7 +13,7 @@
 			</ul>
 		</div>
 		<div id="create-periodoLectivo" class="content scaffold-create" role="main">
-			<h1>Crear Periodo</h1>
+			<h1>Crear Periodo Lectivo</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

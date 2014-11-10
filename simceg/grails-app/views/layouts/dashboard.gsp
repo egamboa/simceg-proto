@@ -24,8 +24,10 @@
 		<!-- Carousel -->
 		<!-- Page Content -->
 		<div class="container">
-			<g:render template="/includes/sidebar" />
 			<div class="row">
+				<div class="col-md-3">
+					<g:render template="/includes/sidebar" />
+				</div>
 				<div class="col-md-9 col-md-offset-3">
 					<g:layoutBody/>
 				</div>

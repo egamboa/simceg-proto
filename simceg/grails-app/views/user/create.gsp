@@ -6,7 +6,6 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li> <g:link controller="dashboard">Principal</g:link> </li>
@@ -14,7 +13,7 @@
 			</ul>
 		</div>
 		<div id="create-user" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			<h1>Crear Usuario</h1>
 			<g:if test="${flash.message}">
 			<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>

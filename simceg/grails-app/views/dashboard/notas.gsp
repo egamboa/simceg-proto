@@ -1,4 +1,5 @@
 <%@ page import="org.una.simceg.Materia" %>
+<%@ page import="org.una.simceg.Estudiante" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +8,10 @@
 	</head>
 	<body>
 		<div class="row">
+			<h1 class="text-left">Notas de: ${Estudiante.findByEncargado(user).nombreCompleto()}</h1>
+			<h1 class="text-left">
+				<g:select name="hijos" from="${Estudiante.findAllByEncargado(user)}" value="nombre" optionKey="" optionValue="${{it.nombreCompleto()}}"/>
+			</h1>
 			<div class="col-md-12">
         <h2>Seleccione una materia</h2></br>
         <g:select name="materias"

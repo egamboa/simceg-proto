@@ -13,7 +13,7 @@
 			</ul>
 		</div>
 		<div id="create-nivel" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			<h1>Crear Nivel</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -24,12 +24,12 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:nivelInstance, action:'save']" >
+			<g:form url="[resource:nivelInstance, action:'save']" class="form-horizontal text-left">
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+				<fieldset class="buttons text-right">
+					<g:submitButton name="create" class="save btn btn-primary" value="Crear Nivel" />
 				</fieldset>
 			</g:form>
 		</div>

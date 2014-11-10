@@ -11,7 +11,6 @@
 		<div class="nav" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li> <g:link controller="dashboard">Principal</g:link> </li>
-				<li><g:link class="list" action="index">Lista de Niveles</g:link></li>
 				<li><g:link class="create" action="create">Nuevo Nivel</g:link></li>
 			</ul>
 		</div>

@@ -15,7 +15,7 @@ class EstudianteController {
         params.max = Math.min(max ?: 10, 100)
         respond Estudiante.list(params), model:[estudianteInstanceCount: Estudiante.count()]
     }
-	@Secured(['ROLE_TEACHER'])
+	@Secured(['ROLE_TEACHER', 'ROLE_ADMIN'])
     def show(Estudiante estudianteInstance) {
         respond estudianteInstance
     }

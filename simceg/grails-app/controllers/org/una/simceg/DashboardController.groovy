@@ -29,7 +29,8 @@ class DashboardController {
 	}
 
 	def notas(){
-		render(view:'notas')
+		def user = springSecurityService.currentUser
+		render(view:'notas', model:[user: user])
 	}
 
 	def calificar(){
