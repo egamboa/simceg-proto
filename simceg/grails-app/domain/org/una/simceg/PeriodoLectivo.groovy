@@ -8,4 +8,8 @@ class PeriodoLectivo {
 	
     static constraints = {
     }
+    
+    String toString(){
+        descripcion
+    }
 }

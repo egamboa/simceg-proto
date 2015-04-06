@@ -15,4 +15,8 @@ class Profesor {
     static constraints = {
 		fechaSalida nullable: true
     }
+
+    String toString(){
+    	return usuario.nombreCompleto()
+    }
 }

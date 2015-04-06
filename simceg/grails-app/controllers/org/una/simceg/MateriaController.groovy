@@ -18,7 +18,7 @@ class MateriaController {
     }
 
     def show(Materia materiaInstance) {
-        respond materiaInstance
+        redirect(controllerName: 'index')
     }
 
     def create() {
@@ -48,7 +48,7 @@ class MateriaController {
         }
     }
 
-    def edit(Materia materiaInstance) {
+    def editar(Materia materiaInstance) {
         respond materiaInstance
     }
 

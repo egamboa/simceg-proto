@@ -21,8 +21,14 @@ class Estudiante {
     static constraints = {
     }
 	
-	def nombreCompleto(){
+	String nombreCompleto(){
 		nombre + ' ' + primerApellido + ' ' + segundoApellido
 	}
 
+	String toString(){
+		nombre + ' ' + primerApellido + ' ' + segundoApellido
+	}
+	static mapping = {
+        sort "primerApellido"
+    }
 }

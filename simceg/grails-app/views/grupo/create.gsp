@@ -6,14 +6,13 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="list" action="index">Lista de Grupos</g:link></li>
 			</ul>
 		</div>
 		<div id="create-grupo" class="content scaffold-create" role="main">
-			<h1>Crear Grupo</h1>
+			<h1 class="main-title text-left">Crear Grupo</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -24,12 +23,14 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:grupoInstance, action:'save']" class="form-horizontal text-left">
+			<g:form url="[resource:grupoInstance, action:'save']" class="text-left">
 				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons text-right">
-					<g:submitButton name="create" class="save btn btn-primary" value="Crear" />
+					<div class="col-md-5">
+						<g:render template="form"/>
+						<div class="text-right">
+							<g:actionSubmit name="create" class="save btn btn-primary" action="update" value="Crear" />
+						</div>
+					</div>
 				</fieldset>
 			</g:form>
 		</div>

@@ -77,9 +77,9 @@ class BootStrap {
 				encargado: testUser
 				)
 			 
-			 testEstudiante.save flush: true, failOnError: true
+			testEstudiante.save flush: true, failOnError: true
 			 
-			 def testEstudiante2 = new Estudiante(
+			def testEstudiante2 = new Estudiante(
 				 nombre: 'Cesar',
 				 primerApellido: 'Yada',
 				 segundoApellido: 'Perez',
@@ -89,17 +89,22 @@ class BootStrap {
 				 fechaIngreso: new Date(114, 0, 1),
 				 fechaNacimiento: new Date(105, 0, 1),
 				 encargado: testUser
-				 )
+				)
 			  
-			  testEstudiante2.save flush: true, failOnError: true
-			
+			testEstudiante2.save flush: true, failOnError: true
+
+			assert Estudiante.count() == 2
+			assert User.count() == 3
+			assert Role.count() == 3
+			assert UserRole.count() == 3
 		}
 		
-		if(CatalogoMateria.count() == 0 ){
+		if(Materia.count() == 0 ){
 			ArrayList materias = ['Matematicas', 'Estudios Sociales', 'Ciencias', 'Español', 'Ingles', 'Música']
 			materias.each { materia->
-				new CatalogoMateria(descripcion: materia).save flush: true
+				new Materia(descripcion: materia).save flush: true
 			}
+			assert Materia.count() == 6
 		}
 		
 		if( PeriodoLectivo.count() == 0 && Nivel.count() == 0 && Grupo.count() == 0 && Materia.count() == 0 && Profesor.count() == 0 ){
@@ -109,11 +114,8 @@ class BootStrap {
 			
 			ArrayList niveles = ['Primero', 'Segundo', 'Tercero', 'Cuarto', 'Quinto', 'Sexto']
 			niveles.each{ nivel ->
-				new Nivel(descripcion: nivel).save flush: true
+				new Nivel(descripcion: nivel, ciclos: 3, periodo: periodo).save flush: true
 			}
-			
-			def grupo = new Grupo(descripcion:'1-A', periodo: periodo, nivel: Nivel.findByDescripcion('Primero'))
-			grupo.save flush: true
 			
 			def profesor = new Profesor(activo: true, 
 										usuario: User.findById(3),
@@ -123,33 +125,14 @@ class BootStrap {
 										fechaSalida: null )
 			profesor.save flush: true
 			
-			def materia = new Materia(grupo: grupo,
-									  profesor: profesor, 
-									  materia: CatalogoMateria.findByDescripcion('Ciencias'))
-			materia.save flush: true
-			
-			def materia1 = new Materia(grupo: grupo,
-				profesor: profesor,
-				materia: CatalogoMateria.findByDescripcion('Matematicas'))
-			materia1.save flush: true
-			
-			def materia2 = new Materia(grupo: grupo,
-				profesor: profesor,
-				materia: CatalogoMateria.findByDescripcion('Ingles'))
-			materia2.save flush: true
-			
+			def grupo = new Grupo(descripcion:'1-A', periodo: periodo, nivel: Nivel.findByDescripcion('Primero'), profesor:profesor)
+			grupo.save flush: true, failOnError: true
+
+			assert PeriodoLectivo.count() == 1
+			assert Profesor.count() == 1
+			assert Grupo.count() == 1
+			assert Nivel.count() == 6
 		}
-		
-		assert Materia.count() == 3
-		assert Profesor.count() == 1
-		assert PeriodoLectivo.count() == 1
-		assert Nivel.count() == 6
-		assert Grupo.count() == 1
-		assert CatalogoMateria.count() == 6
-		assert Estudiante.count() == 2
-		assert User.count() == 3
-		assert Role.count() == 3
-		assert UserRole.count() == 3
     }
     def destroy = {
     }

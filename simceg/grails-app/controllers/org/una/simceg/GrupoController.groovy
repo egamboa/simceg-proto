@@ -47,7 +47,7 @@ class GrupoController {
         }
     }
 
-    def edit(Grupo grupoInstance) {
+    def editar(Grupo grupoInstance) {
         respond grupoInstance
     }
 

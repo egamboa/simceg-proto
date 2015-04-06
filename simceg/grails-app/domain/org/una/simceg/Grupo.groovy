@@ -5,9 +5,11 @@ class Grupo {
 	String descripcion
 	Nivel nivel
 	PeriodoLectivo periodo
+	Profesor profesor
 	
-	static hasMany = [materias: Materia, estudiantes: Estudiante]
+	static hasMany = [estudiantes: Estudiante]
 	
     static constraints = {
     }
+
 }

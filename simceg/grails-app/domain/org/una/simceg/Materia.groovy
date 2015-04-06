@@ -1,13 +1,13 @@
 package org.una.simceg
 
 class Materia {
-	
-	CatalogoMateria materia
-	Profesor profesor
-	
-	static belongsTo = [grupo:Grupo]
+
+	String descripcion
 
     static constraints = {
     }
-	
+
+    String toString(){
+    	return descripcion
+    }
 }

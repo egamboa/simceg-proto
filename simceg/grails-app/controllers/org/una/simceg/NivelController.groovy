@@ -1,7 +1,5 @@
 package org.una.simceg
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -18,7 +16,7 @@ class NivelController {
     }
 
     def show(Nivel nivelInstance) {
-        respond nivelInstance
+        redirect(controllerName: 'index')
     }
 
     def create() {
@@ -48,7 +46,7 @@ class NivelController {
         }
     }
 
-    def edit(Nivel nivelInstance) {
+    def editar(Nivel nivelInstance) {
         respond nivelInstance
     }
 

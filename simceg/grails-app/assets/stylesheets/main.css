@@ -266,3 +266,34 @@ ul{
 		display:none;
 	}
 }
+
+/*Aqui inicia el app*/
+.table.table-striped td{
+	vertical-align: middle;
+}
+span.property-value {
+  display: block;
+}
+.panel{
+	border-radius: 0;
+}
+.btn, input, input.form-control, select, select.form-control{
+	border-radius: 0px;
+}
+h1.main-title{
+	font-size: 18px;
+}
+.edit-form select{
+	width: 25%;
+	display: inline-block;
+}
+.nav-inner{
+	margin: 10px 0 10px 0px; 
+}
+.nav-inner .nav-pills > li{
+	margin-right: 10px;
+}
+.nav-inner .nav-pills > li > a{
+	border-radius: 0px;
+	border: 1px solid #ddd;
+}

@@ -13,10 +13,34 @@ $(function() {
 
 });
 
+//App functions
+var app = {
+    init: function(){
+        this.fixSelects();
+        this.validaCiclos();
+        $(function () {
+          $('[data-toggle="popover"]').popover()
+        })
+    },
+    fixSelects: function(){
+        $('.edit-form select').addClass('form-control');
+    },
+    validaCiclos: function(){
+        $('#ciclos').bind('change', function(event){
+            if($(this).val() > 4 || $(this).val() < 1 ){
+                $(this).val(1);
+            }
+        });
+    }
+}
+
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size
 $(function() {
+    $(window).bind("load", function() {
+        app.init();
+    });
     $(window).bind("load resize", function() {
         topOffset = 50;
         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
@@ -33,5 +57,5 @@ $(function() {
         if (height > topOffset) {
             $("#page-wrapper").css("min-height", (height) + "px");
         }
-    })
+    });
 })

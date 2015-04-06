@@ -3,12 +3,10 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <g:if test="${controllerName == "dashboard"? true : false}">
-            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-toggle">
-                	<span class="sr-only">Toggle Dashboard</span>
-                	<span class="glyphicon glyphicon-cog" style="color:white;"></span>
-            	</button>
-            </g:if>
+        	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-toggle">
+            	<span class="sr-only">Toggle Dashboard</span>
+            	<span class="glyphicon glyphicon-cog" style="color:white;"></span>
+        	</button>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="glyphicon glyphicon-home" style="color:white;"></span>

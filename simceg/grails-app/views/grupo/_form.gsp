@@ -1,54 +1,49 @@
 <%@ page import="org.una.simceg.Grupo" %>
 
-<div class="fieldcontain ${hasErrors(bean: grupoInstance, field: 'descripcion', 'error')} required form-group">
-	<label for="descripcion" class="col-sm-3 control-label">
+
+
+<div class="fieldcontain form-group ${hasErrors(bean: grupoInstance, field: 'descripcion', 'error')} required">
+	<label for="descripcion">
 		<g:message code="grupo.descripcion.label" default="Descripcion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<div class="col-sm-9">
-		<g:textField class="form-control" name="descripcion" required="" value="${grupoInstance?.descripcion}"/>
-	</div>
+	<g:textField name="descripcion" class="form-control" required="" value="${grupoInstance?.descripcion}"/>
+
 </div>
-<div class="fieldcontain ${hasErrors(bean: grupoInstance, field: 'estudiantes', 'error')} form-group">
-	<label for="estudiantes" class="col-sm-3 control-label">
+
+<div class="fieldcontain form-group ${hasErrors(bean: grupoInstance, field: 'estudiantes', 'error')} ">
+	<label for="estudiantes">
 		<g:message code="grupo.estudiantes.label" default="Estudiantes" />
 		
 	</label>
-	<div class="col-sm-9">
-		<g:select class="form-control" style="width:100%;" name="estudiantes" from="${org.una.simceg.Estudiante.list()}" multiple="multiple" optionKey="id" optionValue="${{it.nombreCompleto()}}" size="5" value="${grupoInstance?.estudiantes*.id}" class="many-to-many"/>
-	</div>
+	<g:select name="estudiantes" from="${org.una.simceg.Estudiante.list()}" multiple="multiple" optionKey="id" size="5" value="${grupoInstance?.estudiantes*.id}" class="many-to-many form-control"/>
+
 </div>
-<div class="fieldcontain ${hasErrors(bean: grupoInstance, field: 'materias', 'error')} form-group">
-	<label for="materias" class="col-sm-3 control-label">
-		<g:message code="grupo.materias.label" default="Materias" />
-		
-	</label>
-	<div class="col-sm-9">
-		<ul class="one-to-many">
-			<g:each in="${grupoInstance?.materias?}" var="m">
-			    <li><g:link controller="materia" action="show" id="${m.id}">${m?.materia.descripcion + ' - ' +m?.profesor.usuario.nombreCompleto()}</g:link></li>
-			</g:each>
-			<li class="add">
-				<g:link controller="materia" action="create" params="['grupo.id': grupoInstance?.id]">Agregar Materia</g:link>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="fieldcontain ${hasErrors(bean: grupoInstance, field: 'nivel', 'error')} required form-group">
-	<label for="nivel" class="col-sm-3 control-label">
+
+<div class="fieldcontain form-group ${hasErrors(bean: grupoInstance, field: 'nivel', 'error')} required">
+	<label for="nivel">
 		<g:message code="grupo.nivel.label" default="Nivel" />
 		<span class="required-indicator">*</span>
 	</label>
-	<div class="col-sm-9">
-		<g:select class="form-control" id="nivel" name="nivel.id" from="${org.una.simceg.Nivel.list()}" optionKey="id" optionValue="descripcion" required="" value="${grupoInstance?.nivel?.id}" class="many-to-one"/>
-	</div>
+	<g:select id="nivel" name="nivel.id" from="${org.una.simceg.Nivel.list()}" optionKey="id" required="" value="${grupoInstance?.nivel?.id}" class="many-to-one form-control"/>
+
 </div>
-<div class="fieldcontain ${hasErrors(bean: grupoInstance, field: 'periodo', 'error')} required form-group">
-	<label for="periodo" class="col-md-3 control-label">
+
+<div class="fieldcontain form-group ${hasErrors(bean: grupoInstance, field: 'periodo', 'error')} required">
+	<label for="periodo">
 		<g:message code="grupo.periodo.label" default="Periodo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<div class="col-md-9">
-		<g:select class="form-control" id="periodo" name="periodo.id" from="${org.una.simceg.PeriodoLectivo.list()}" optionKey="id" optionValue="descripcion" required="" value="${grupoInstance?.periodo?.id}" class="many-to-one"/>
-	</div>
+	<g:select id="periodo" name="periodo.id" from="${org.una.simceg.PeriodoLectivo.list()}" optionKey="id" required="" value="${grupoInstance?.periodo?.id}" class="many-to-one form-control"/>
+
 </div>
+
+<div class="fieldcontain form-group ${hasErrors(bean: grupoInstance, field: 'profesor', 'error')} required">
+	<label for="profesor">
+		<g:message code="grupo.profesor.label" default="Profesor" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="profesor" name="profesor.id" from="${org.una.simceg.Profesor.list()}" optionKey="id" required="" value="${grupoInstance?.profesor?.id}" class="many-to-one form-control"/>
+
+</div>
+

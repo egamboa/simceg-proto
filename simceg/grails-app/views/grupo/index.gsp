@@ -8,9 +8,8 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="create" action="create">Nuevo Grupo</g:link></li>
 			</ul>
 		</div>
@@ -21,7 +20,7 @@
 			
 				<div class="panel panel-default">
                    <div class="panel-heading">
-                       Lista de Grupos
+                       Grupos
                    </div>
                    <!-- /.panel-heading -->
                    <div class="panel-body">
@@ -35,6 +34,8 @@
 										<th><g:message code="grupo.nivel.label" default="Nivel" /></th>
 									
 										<th><g:message code="grupo.periodo.label" default="Periodo" /></th>
+
+										<th><g:message code="grupo.profesor.label" default="Profesor" /></th>
 									
 									</tr>
 								</thead>
@@ -47,7 +48,11 @@
 										<td>${grupoInstance.nivel.descripcion}</td>
 									
 										<td>${grupoInstance.periodo.descripcion}</td>
-									
+
+										<td>${grupoInstance.profesor}</td>
+										
+										<td><g:link action="editar" id="${grupoInstance.id}">Editar</g:link></td>
+
 									</tr>
 								</g:each>
 								</tbody>

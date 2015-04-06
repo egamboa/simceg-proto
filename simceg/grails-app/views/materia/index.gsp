@@ -8,9 +8,8 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="create" action="create">Nueva Materia</g:link></li>
 			</ul>
 		</div>
@@ -21,37 +20,22 @@
 			
 			<div class="panel panel-default">
                    <div class="panel-heading">
-                       Lista de Grupos
+                       Materias
                    </div>
                    <!-- /.panel-heading -->
                    <div class="panel-body">
                        <div class="table-responsive">
                            <table class="table table-striped">
 							<thead>
-									<tr>
-										
-										<th>Grupo | Materia</th>
-									
-										<th><g:message code="materia.grupo.label" default="Grupo" /></th>
-									
-										<th><g:message code="materia.materia.label" default="Materia" /></th>
-									
-										<th><g:message code="materia.profesor.label" default="Profesor" /></th>
-									
-									</tr>
-								</thead>
+								<tr>
+									<th><g:message code="materia.materia.label" default="Materia" /></th>
+								</tr>
+							</thead>
 								<tbody>
 								<g:each in="${materiaInstanceList}" status="i" var="materiaInstance">
 									<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-										
-										<td><g:link action="show" id="${materiaInstance.id}">${materiaInstance.grupo.descripcion + ' | ' + materiaInstance.materia.descripcion}</g:link></td>
-										
-										<td>${materiaInstance.grupo.descripcion}</td>
-									
-										<td>${materiaInstance.materia.descripcion}</td>
-									
-										<td>${materiaInstance.profesor.usuario.nombreCompleto()}</td>
-									
+										<td>${materiaInstance.descripcion}</td>
+										<td><g:link action="editar" id="${materiaInstance.id}">Editar</g:link></td>
 									</tr>
 								</g:each>
 								</tbody>

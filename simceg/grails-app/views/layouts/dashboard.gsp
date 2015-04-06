@@ -36,9 +36,9 @@
 			<g:render template="/includes/footer" />
 		</div>
 	    <asset:javascript src="moment.min.js"/>
-	    <asset:javascript src="es.js"/>
 	    <asset:javascript src="fullcalendar.min.js"/>
 	    <asset:javascript src="plugins.js"/>
+	    <asset:javascript src="es.js"/>
 	    <asset:javascript src="bootstrap.min.js"/>
 	</body>
 </html>

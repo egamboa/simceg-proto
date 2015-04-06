@@ -8,9 +8,8 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="create" action="create">Nuevo Nivel</g:link></li>
 			</ul>
 		</div>
@@ -21,7 +20,7 @@
 			
 			<div class="panel panel-default">
                    <div class="panel-heading">
-                       Lista de Niveles
+                       Niveles
                    </div>
                    <!-- /.panel-heading -->
                    <div class="panel-body">
@@ -29,17 +28,22 @@
                            <table class="table table-striped">
 								<thead>
 										<tr>
-										
 											<g:sortableColumn property="descripcion" title="${message(code: 'nivel.descripcion.label', default: 'Descripcion')}" />
-										
+											<th>Materias</th>
 										</tr>
 									</thead>
 									<tbody>
 									<g:each in="${nivelInstanceList}" status="i" var="nivelInstance">
 										<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-										
-											<td><g:link action="show" id="${nivelInstance.id}">${fieldValue(bean: nivelInstance, field: "descripcion")}</g:link></td>
-										
+											<td>${fieldValue(bean: nivelInstance, field: "descripcion")}</td>
+											<td>
+												<g:if test="${nivelInstance.materias.size() > 0}">
+													<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="${nivelInstance.listaMaterias()}">
+													  ver
+													</button>
+												</g:if>
+											</td>
+											<td><g:link action="editar" id="${nivelInstance.id}">Editar</g:link></td>
 										</tr>
 									</g:each>
 									</tbody>

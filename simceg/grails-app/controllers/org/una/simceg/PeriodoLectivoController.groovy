@@ -18,7 +18,7 @@ class PeriodoLectivoController {
     }
 
     def show(PeriodoLectivo periodoLectivoInstance) {
-        respond periodoLectivoInstance
+        redirect(actionName: 'index')
     }
 
     def create() {
@@ -48,7 +48,7 @@ class PeriodoLectivoController {
         }
     }
 
-    def edit(PeriodoLectivo periodoLectivoInstance) {
+    def editar(PeriodoLectivo periodoLectivoInstance) {
         respond periodoLectivoInstance
     }
 
