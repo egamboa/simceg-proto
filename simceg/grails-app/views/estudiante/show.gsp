@@ -35,7 +35,39 @@
 			            </td>
 			          </tr>
 			        </g:if>
-			        
+
+			        <g:if test="${estudianteInstance?.nombre}">
+			          <tr class="fieldcontain">
+			            <td>
+			              <span id="nombre-label" class="property-label"><g:message code="estudiante.nombre.label" default="Nombre" /></span>
+			            </td>
+			            <td>
+			              <span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${estudianteInstance}" field="nombre"/></span>
+			            </td>
+			          </tr>
+			        </g:if>
+			      
+			        <g:if test="${estudianteInstance?.primerApellido}">
+			          <tr class="fieldcontain">
+			            <td>
+			              <span id="primerApellido-label" class="property-label"><g:message code="estudiante.primerApellido.label" default="Primer Apellido" /></span>
+			            </td>
+			            <td>
+			              <span class="property-value" aria-labelledby="primerApellido-label"><g:fieldValue bean="${estudianteInstance}" field="primerApellido"/></span>
+			            </td>            
+			          </tr>
+			        </g:if>
+			      
+			        <g:if test="${estudianteInstance?.segundoApellido}">
+			          <tr class="fieldcontain">
+			            <td>
+			              <span id="segundoApellido-label" class="property-label"><g:message code="estudiante.segundoApellido.label" default="Segundo Apellido" /></span>
+			            </td>
+			            <td>
+			              <span class="property-value" aria-labelledby="segundoApellido-label"><g:fieldValue bean="${estudianteInstance}" field="segundoApellido"/></span>
+			            </td>
+			          </tr>
+			        </g:if>			        
 			
 			        <g:if test="${estudianteInstance?.adecuacion}">
 			          <tr class="fieldcontain">
@@ -99,39 +131,6 @@
 			            </td>
 			            <td>
 			              <span class="property-value" aria-labelledby="nacionalidad-label"><g:fieldValue bean="${estudianteInstance}" field="nacionalidad"/></span>
-			            </td>
-			          </tr>
-			        </g:if>
-			      
-			        <g:if test="${estudianteInstance?.nombre}">
-			          <tr class="fieldcontain">
-			            <td>
-			              <span id="nombre-label" class="property-label"><g:message code="estudiante.nombre.label" default="Nombre" /></span>
-			            </td>
-			            <td>
-			              <span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${estudianteInstance}" field="nombre"/></span>
-			            </td>
-			          </tr>
-			        </g:if>
-			      
-			        <g:if test="${estudianteInstance?.primerApellido}">
-			          <tr class="fieldcontain">
-			            <td>
-			              <span id="primerApellido-label" class="property-label"><g:message code="estudiante.primerApellido.label" default="Primer Apellido" /></span>
-			            </td>
-			            <td>
-			              <span class="property-value" aria-labelledby="primerApellido-label"><g:fieldValue bean="${estudianteInstance}" field="primerApellido"/></span>
-			            </td>            
-			          </tr>
-			        </g:if>
-			      
-			        <g:if test="${estudianteInstance?.segundoApellido}">
-			          <tr class="fieldcontain">
-			            <td>
-			              <span id="segundoApellido-label" class="property-label"><g:message code="estudiante.segundoApellido.label" default="Segundo Apellido" /></span>
-			            </td>
-			            <td>
-			              <span class="property-value" aria-labelledby="segundoApellido-label"><g:fieldValue bean="${estudianteInstance}" field="segundoApellido"/></span>
 			            </td>
 			          </tr>
 			        </g:if>

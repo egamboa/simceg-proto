@@ -8,15 +8,14 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="list" action="index">Lista de Profesores</g:link></li>
 				<li><g:link class="create" action="create">Nuevo Profesor</g:link></li>
 			</ul>
 		</div>
 		<div id="show-profesor" class="content scaffold-show" role="main">
-			<h1>Mostrar Profesor</h1>
+			<h1 class="main-title text-left">${profesorInstance?.usuario?.nombreCompleto()}</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -35,7 +34,21 @@
 						<g:if test="${profesorInstance?.activo}">
 						<tr class="fieldcontain">
 							<td><span id="activo-label" class="property-label"><g:message code="profesor.activo.label" default="Activo" /></span></td>
-							<td><span class="property-value" aria-labelledby="activo-label"><g:formatBoolean boolean="${profesorInstance?.activo}" /></span></td>
+							<td><span class="property-value" aria-labelledby="activo-label">${profesorInstance.activo ? 'Activo' : 'Inactivo'}</span></td>
+						</tr>
+						</g:if>
+
+						<g:if test="${profesorInstance?.usuario}">
+						<tr class="fieldcontain">
+							<td><span id="usuario-label" class="property-label"><g:message code="profesor.usuario.label" default="Usuario" /></span></td>
+							<td><span class="property-value" aria-labelledby="usuario-label"><g:link controller="user" action="show" id="${profesorInstance?.usuario?.id}">${profesorInstance?.usuario?.nombreCompleto()}</g:link></span></td>
+						</tr>
+						</g:if>
+
+						<g:if test="${profesorInstance?.gradoProfesional}">
+						<tr class="fieldcontain">
+							<td><span id="gradoProfesional-label" class="property-label"><g:message code="profesor.gradoProfesional.label" default="Grado Profesional" /></span></td>
+							<td><span class="property-value" aria-labelledby="gradoProfesional-label"><g:fieldValue bean="${profesorInstance}" field="gradoProfesional"/></span></td>
 						</tr>
 						</g:if>
 					
@@ -49,23 +62,10 @@
 						<g:if test="${profesorInstance?.fechaIngreso}">
 						<tr class="fieldcontain">
 							<td><span id="fechaIngreso-label" class="property-label"><g:message code="profesor.fechaIngreso.label" default="Fecha Ingreso" /></span></td>
-							<td><span class="property-value" aria-labelledby="fechaIngreso-label"><g:formatDate date="${profesorInstance?.fechaIngreso}" /></span></td>
+							<td><span class="property-value" aria-labelledby="fechaIngreso-label"><g:formatDate date="${profesorInstance?.fechaIngreso}" format="dd - MM - yyyy"/></span></td>
 						</tr>
 						</g:if>
-					
-						<g:if test="${profesorInstance?.gradoProfesional}">
-						<tr class="fieldcontain">
-							<td><span id="gradoProfesional-label" class="property-label"><g:message code="profesor.gradoProfesional.label" default="Grado Profesional" /></span></td>
-							<td><span class="property-value" aria-labelledby="gradoProfesional-label"><g:fieldValue bean="${profesorInstance}" field="gradoProfesional"/></span></td>
-						</tr>
-						</g:if>
-					
-						<g:if test="${profesorInstance?.usuario}">
-						<tr class="fieldcontain">
-							<td><span id="usuario-label" class="property-label"><g:message code="profesor.usuario.label" default="Usuario" /></span></td>
-							<td><span class="property-value" aria-labelledby="usuario-label"><g:link controller="user" action="show" id="${profesorInstance?.usuario?.id}">${profesorInstance?.usuario?.nombreCompleto()}</g:link></span></td>
-						</tr>
-						</g:if>
+				
 				 	</tbody>
 			    </table>
 			  </div>

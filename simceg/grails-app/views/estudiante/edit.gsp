@@ -29,9 +29,9 @@
 				<g:hiddenField name="version" value="${estudianteInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons text-right">
-					<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
+					<div class="text-right col-md-8">
+						<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
+					</div>
 				</fieldset>
 			</g:form>
 		</div>

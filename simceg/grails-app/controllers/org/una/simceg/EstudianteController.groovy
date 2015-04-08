@@ -40,7 +40,7 @@ class EstudianteController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'estudiante.label', default: 'Estudiante'), estudianteInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'estudiante.label', default: 'Estudiante'), estudianteInstance.toString()])
                 redirect estudianteInstance
             }
             '*' { respond estudianteInstance, [status: CREATED] }
@@ -67,7 +67,7 @@ class EstudianteController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Estudiante.label', default: 'Estudiante'), estudianteInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Estudiante.label', default: 'Estudiante'), estudianteInstance.nombre])
                 redirect estudianteInstance
             }
             '*'{ respond estudianteInstance, [status: OK] }

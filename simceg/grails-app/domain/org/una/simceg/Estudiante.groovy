@@ -5,7 +5,7 @@ class Estudiante {
 	User encargado
 
 	boolean activo = true, 
-			adecuacion,
+			adecuacion = false,
 			viveEncargado
 
 	String 	nombre,

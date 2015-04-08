@@ -8,9 +8,8 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="create" action="create">Nuevo Profesor</g:link></li>
 			</ul>
 		</div>
@@ -20,7 +19,7 @@
 			</g:if>
 				<div class="panel panel-default">
                    <div class="panel-heading">
-                       Lista de Profesores
+                       Profesores
                    </div>
                    <!-- /.panel-heading -->
                    <div class="panel-body">
@@ -51,11 +50,11 @@
 										</g:link>
 									</td>
 								
-									<td><g:formatBoolean boolean="${profesorInstance.activo}" /></td>
+									<td>${profesorInstance.activo ? 'Activo' : 'Inactivo'}</td>
 								
 									<td>${fieldValue(bean: profesorInstance, field: "descripcion")}</td>
 								
-									<td><g:formatDate date="${profesorInstance.fechaIngreso}" /></td>
+									<td><g:formatDate date="${profesorInstance.fechaIngreso}"  format="dd - MM - yyyy" /></td>
 								
 									<td>${fieldValue(bean: profesorInstance, field: "gradoProfesional")}</td>
 								
