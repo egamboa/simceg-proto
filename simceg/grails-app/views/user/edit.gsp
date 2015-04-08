@@ -7,9 +7,8 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="list" action="index">Lista de Usuarios</g:link></li>
 				<li><g:link class="create" action="create">Nuevo Usuario</g:link></li>
 			</ul>
@@ -30,9 +29,9 @@
 				<g:hiddenField name="version" value="${userInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons pull-right">
-					<g:actionSubmit class="save btn btn-primary" action="update" value="Actualizar" />
+					<div class="text-right col-md-8">
+						<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
+					</div>
 				</fieldset>
 			</g:form>
 		</div>

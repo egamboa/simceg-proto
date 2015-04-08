@@ -5,7 +5,7 @@
 		<title>P&aacute;gina Principal</title>
 	</head>
 	<body>
-		<div id="page-wrapper">
+		<div id="">
             <div class="row">
                 <div class="col-lg-12 text-left">
                     <h1 class="page-header">Hola, ${user.nombreCompleto()}.</h1>

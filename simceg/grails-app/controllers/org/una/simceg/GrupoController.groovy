@@ -67,7 +67,7 @@ class GrupoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Grupo.label', default: 'Grupo'), grupoInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Grupo.label', default: 'Grupo'), grupoInstance.descripcion])
                 redirect grupoInstance
             }
             '*'{ respond grupoInstance, [status: OK] }

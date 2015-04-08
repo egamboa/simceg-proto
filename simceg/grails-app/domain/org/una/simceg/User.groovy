@@ -40,8 +40,12 @@ class User {
 		encodePassword()
 	}
 	
-	def nombreCompleto(){
+	String nombreCompleto(){
 		nombre + ' ' + primerApellido + ' ' + segundoApellido
+	}
+
+	String toString(){
+		return this.nombreCompleto()
 	}
 
 	def beforeUpdate() {

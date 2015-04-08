@@ -11,7 +11,7 @@
                 <span class="sr-only">Toggle navigation</span>
                 <span class="glyphicon glyphicon-home" style="color:white;"></span>
             </button>
-            <g:link controller="home" action="index" class="navbar-brand" >SIMCEG Prototipo</g:link>
+            <g:link controller="home" action="index" class="navbar-brand" >SIMCEG</g:link>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

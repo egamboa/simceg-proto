@@ -8,9 +8,8 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="create" action="create">Nuevo Estudiante</g:link></li>
 			</ul>
 		</div>
@@ -21,7 +20,7 @@
 
 			<div class="panel panel-default">
                    <div class="panel-heading">
-                       Lista de Estudiantes
+                      Estudiantes
                    </div>
                    <!-- /.panel-heading -->
                    <div class="panel-body">
@@ -45,9 +44,9 @@
 											
 											<td>${fieldValue(bean: estudianteInstance, field: "segundoApellido")}</td>
 				
-											<td><g:formatBoolean boolean="${estudianteInstance.activo}" /></td>
+											<td>${estudianteInstance.activo ? 'Activo' : 'Inactivo' }</td>
 											
-											<td>${fieldValue(bean: estudianteInstance, field: "fechaNacimiento")}</td>
+											<td><g:formatDate date="${estudianteInstance.fechaNacimiento}" format="dd - MM - yyyy"/></td>
 										</tr>
 									</g:each>
                                </tbody>

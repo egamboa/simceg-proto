@@ -49,6 +49,7 @@
 										<td><g:formatDate date="${periodoLectivoInstance.tiempoInicio}" format="dd - MM - yyyy"/></td>
 
 										<td><g:formatDate date="${periodoLectivoInstance.tiempoFinal}" format="dd - MM - yyyy"/></td>
+										
 										<td><g:link action="editar" id="${periodoLectivoInstance.id}">Editar</g:link></td>
 									</tr>
 								</g:each>

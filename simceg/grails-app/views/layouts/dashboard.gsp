@@ -21,19 +21,12 @@
 	</head>
 	<body>
 		<g:render template="/includes/navigation" />
-		<!-- Carousel -->
-		<!-- Page Content -->
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<g:render template="/includes/sidebar" />
-				</div>
-				<div class="col-md-9 col-md-offset-3">
-					<g:layoutBody/>
-				</div>
+		<g:render template="/includes/sidebar" />
+		<div class="main-content">
+			<div id="page-wrapper">
+				<g:layoutBody/>
+				<g:render template="/includes/footer" />
 			</div>
-			<!-- FOOTER AREA -->
-			<g:render template="/includes/footer" />
 		</div>
 	    <asset:javascript src="moment.min.js"/>
 	    <asset:javascript src="fullcalendar.min.js"/>

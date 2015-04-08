@@ -42,7 +42,7 @@ $(function() {
         app.init();
     });
     $(window).bind("load resize", function() {
-        topOffset = 50;
+        topOffset = 100;
         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
         if (width < 768) {
             $('div.navbar-collapse').addClass('collapse')

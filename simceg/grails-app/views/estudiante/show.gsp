@@ -8,15 +8,14 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
+		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li> <g:link controller="dashboard">Principal</g:link> </li>
 				<li><g:link class="list" action="index">Lista Estudiantes</g:link></li>
 				<li><g:link class="create" action="create">Nuevo Estudiante</g:link></li>
 			</ul>
 		</div>
 		<div id="show-estudiante" class="content scaffold-show" role="main">
-			<h1>Ver Estudiante</h1>
+			<h1 class="main-title text-left">${estudianteInstance}</h1>
 			<g:if test="${flash.message}">
 				<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>
