@@ -17,6 +17,6 @@ class Profesor {
     }
 
     String toString(){
-    	return usuario.nombreCompleto()
+    	return usuario?.nombreCompleto()
     }
 }

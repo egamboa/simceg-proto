@@ -263,11 +263,12 @@ footer{
 }
 .main-content{
 	background: #e4e5e6;
-  	padding: 10px 30px 40px 434px;
+  	padding: 10px 30px 40px 0;
 }
 #page-wrapper{
-	width: 90%;
 	position: relative;
+	margin-left: 253px;
+	padding-bottom: 20px;
 }
 nav.navbar.navbar-inverse.navbar-fixed-top{
 	border-bottom: 1px solid #d1d4d7;
@@ -282,14 +283,13 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{
 	color: #555;
 }
-
-.nav li a:hover, .nav li a:focus, .sidebar .nav-second-level li.active{
+.sidebar .nav-second-level li a{
+	border: 3px solid transparent;
+}
+.nav li a:hover, .nav li a:focus, .sidebar .nav-second-level li.active a{
 	background: #353844;
 	color: #fff;
 	border-left: 3px solid #20a8d8;
-}
-.sidebar .nav-second-level li.active a:hover{
-	border-left: none;
 }
 .sidebar ul li{
 	border: none;
@@ -299,9 +299,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 	color: #fff;
 	position: fixed;
 	top: 0;
-	left: 175px;
 	height: 100%;
-	width: 250px;
+	width: 225px;
 	z-index: 10;
 	overflow: hidden;
 	padding-top: 50px;
@@ -324,11 +323,53 @@ span.property-value {
 }
 .btn, input, input.form-control, select, select.form-control{
 	border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+input, input.form-control, select, select.form-control{
+	border-top: none;
+	box-shadow: none;
+	border-left: none;
+	border-right: none;
+	border-color: black;
+}
+input[type="checkbox"]{
+	-webkit-appearance: checkbox;
+}
+select.form-control{
+   background: transparent;
+   padding: 5px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   -webkit-appearance: none;
+}
+.select-style{
+	position: relative;
+}
+.date .select-style{
+	display: inline;
+}
+.select-style::after, .select-style::before {
+  border: solid transparent;
+  border-width: .3em;
+  content: "";
+  position: absolute;
+  right: .8em;
+  top: 50%;
+  z-index: 1;
+}
+.select-style::before {
+  border-top-color: #a4abb1;
+  margin-top: 0.2em;
+}
+.select-style::after{
+	border-bottom-color: #a4abb1;
+	margin-top: -0.6em;
 }
 h1.main-title{
 	font-size: 18px;
 }
-.edit-form select{
+.edit-form .date select{
 	width: 25%;
 	display: inline-block;
 }
@@ -354,6 +395,7 @@ h1.main-title{
 		display: none;
 	}
 	#page-wrapper{
+		margin: 0;
 		width: auto;
 	}
 	.main-content{

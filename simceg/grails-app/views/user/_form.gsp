@@ -3,13 +3,12 @@
 
 <div class="row">
 
-	<div class="col-md-8">
+	<div class="col-md-7 col-md-offset-1 text-left">
 		<div class="fieldcontain  form-group">
-			<label for="rol"  class="col-sm-3 control-label">
+			<label for="rol"  class="control-label">
 				Rol
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
+			<div class="select-style">
 			  <g:select 
 			  	class="form-control custom-dd many-to-one" 
 			  	id="rol" 
@@ -17,112 +16,79 @@
 			  	from="${org.una.simceg.Role.list()}" 
 			  	optionKey="id"
 				value="${userInstance.id? org.una.simceg.UserRole.findByUser(userInstance).role.id : ''}"/>
-		    </div>
+			</div>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required form-group">
-			<label for="username"  class="col-sm-3 control-label">
+			<label for="username"  class="control-label">
 				<g:message code="user.username.label" default="Username" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-		      <g:textField class="form-control" name="username" required="" value="${userInstance?.username}"/>
-		    </div>
+		    <g:textField class="form-control" name="username" required="" value="${userInstance?.username}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required form-group">
-			<label for="username"  class="col-sm-3 control-label">
+			<label for="username"  class="control-label">
 				<g:message code="user.username.label" default="Password" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-		      <g:passwordField class="form-control" name="password" required="" value="${userInstance?.password}"/>
-		    </div>
+			<g:passwordField class="form-control" name="password" required="" value="${userInstance?.password}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'cedula', 'error')} required form-group">
-			<label for="cedula" class="col-sm-3 control-label">
+			<label for="cedula" class="control-label">
 				<g:message code="user.cedula.label" default="Cedula" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-		      <g:textField class="form-control" name="cedula" required="" value="${userInstance?.cedula}"/>
-		    </div>
+			<g:textField class="form-control" name="cedula" required="" value="${userInstance?.cedula}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'nombre', 'error')} required form-group">
-			<label for="nombre" class="col-sm-3 control-label">
+			<label for="nombre" class="control-label">
 				<g:message code="user.nombre.label" default="Nombre" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="nombre" required="" value="${userInstance?.nombre}"/>
-			</div>
+			<g:textField class="form-control" name="nombre" required="" value="${userInstance?.nombre}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'primerApellido', 'error')} required form-group">
-			<label for="primerApellido" class="col-sm-3 control-label">
+			<label for="primerApellido" class="control-label">
 				<g:message code="user.primerApellido.label" default="Primer Apellido" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="primerApellido" required="" value="${userInstance?.primerApellido}"/>
-			</div>
+			<g:textField class="form-control" name="primerApellido" required="" value="${userInstance?.primerApellido}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'segundoApellido', 'error')} required form-group">
-			<label for="segundoApellido" class="col-sm-3 control-label">
+			<label for="segundoApellido" class="control-label">
 				<g:message code="user.segundoApellido.label" default="Segundo Apellido" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="segundoApellido" required="" value="${userInstance?.segundoApellido}"/>
-			</div>
+			<g:textField class="form-control" name="segundoApellido" required="" value="${userInstance?.segundoApellido}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'direccion', 'error')} required form-group">
-			<label for="direccion" class="col-sm-3 control-label">
+			<label for="direccion" class="control-label">
 				<g:message code="user.direccion.label" default="Direccion" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="direccion" required="" value="${userInstance?.direccion}"/>
-			</div>
+			<g:textField class="form-control" name="direccion" required="" value="${userInstance?.direccion}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} required form-group">
-			<label for="email" class="col-sm-3 control-label">
+			<label for="email" class="control-label">
 				<g:message code="user.email.label" default="Email" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="email" required="" value="${userInstance?.email}"/>
-			</div>
+			<g:textField class="form-control" name="email" required="" value="${userInstance?.email}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'estadoCivil', 'error')} required form-group">
-			<label for="estadoCivil" class="col-sm-3 control-label">
+			<label for="estadoCivil" class="control-label">
 				<g:message code="user.estadoCivil.label" default="Estado Civil" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="estadoCivil" required="" value="${userInstance?.estadoCivil}"/>
-			</div>
+			<g:textField class="form-control" name="estadoCivil" required="" value="${userInstance?.estadoCivil}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'nacionalidad', 'error')} required form-group">
-			<label for="nacionalidad" class="col-sm-3 control-label">
+			<label for="nacionalidad" class="control-label">
 				<g:message code="user.nacionalidad.label" default="Nacionalidad" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="nacionalidad" required="" value="${userInstance?.nacionalidad}"/>
-			</div>
+			<g:textField class="form-control" name="nacionalidad" required="" value="${userInstance?.nacionalidad}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'telefono', 'error')} required form-group">
-			<label for="telefono" class="col-sm-3 control-label">
+			<label for="telefono" class="control-label">
 				<g:message code="user.telefono.label" default="Telefono" />
-				<span class="required-indicator">*</span>
 			</label>
-			<div class="col-sm-9">
-				<g:textField class="form-control" name="telefono" required="" value="${userInstance?.telefono}"/>
-			</div>
+			<g:textField class="form-control" name="telefono" required="" value="${userInstance?.telefono}"/>
 		</div>
 
 	</div>

@@ -22,14 +22,17 @@
 	<label for="tiempoInicio">
 		<g:message code="periodoLectivo.tiempoInicio.label" default="Inicio" />
 	</label>
-	<g:datePicker name="tiempoInicio" class="form-control"  precision="day"  value="${periodoLectivoInstance?.tiempoInicio}"  />
+	<div class="date">
+		<g:datePicker name="tiempoInicio" class="form-control"  precision="day"  value="${periodoLectivoInstance?.tiempoInicio}"  />
+	</div>
 </div>
 
 <div class="fieldcontain form-group ${hasErrors(bean: periodoLectivoInstance, field: 'tiempoFinal', 'error')} required">
 	<label for="tiempoFinal">
 		<g:message code="periodoLectivo.tiempoFinal.label" default="Final" />
 	</label>
-	<g:datePicker name="tiempoFinal" class="form-control" precision="day"  value="${periodoLectivoInstance?.tiempoFinal}"  />
-
+	<div class="date">	
+		<g:datePicker name="tiempoFinal" class="form-control" precision="day"  value="${periodoLectivoInstance?.tiempoFinal}"  />
+	</div>
 </div>
 

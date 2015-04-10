@@ -24,6 +24,7 @@ var app = {
     },
     fixSelects: function(){
         $('.edit-form select').addClass('form-control');
+        $('.edit-form .date select').wrap( "<div class='select-style'></div>" );
     },
     validaCiclos: function(){
         $('#ciclos').bind('change', function(event){

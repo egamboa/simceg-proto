@@ -3,7 +3,6 @@
 <div class="fieldcontain form-group ${hasErrors(bean: nivelInstance, field: 'ciclos', 'error')} required">
 	<label for="ciclos">
 		<g:message code="nivel.ciclos.label" default="Ciclos" />
-		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="ciclos" id="ciclos" type="number" value="${nivelInstance.ciclos}" required="" class="form-control" />
 
@@ -12,7 +11,6 @@
 <div class="fieldcontain form-group ${hasErrors(bean: nivelInstance, field: 'descripcion', 'error')} required">
 	<label for="descripcion">
 		<g:message code="nivel.descripcion.label" default="Descripcion" />
-		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="descripcion" required="" value="${nivelInstance?.descripcion}" class="form-control" />
 

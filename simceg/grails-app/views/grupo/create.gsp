@@ -23,7 +23,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:grupoInstance, action:'save']" class="text-left">
+			<g:form url="[resource:grupoInstance, action:'save']" class="text-left edit-form">
 				<fieldset class="form">
 					<div class="col-md-5">
 						<g:render template="form"/>

@@ -25,7 +25,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:grupoInstance, action:'update']" method="PUT" class="text-left">
+			<g:form url="[resource:grupoInstance, action:'update']" method="PUT" class="text-left edit-form">
 				<g:hiddenField name="version" value="${grupoInstance?.version}" />
 				<fieldset class="form">
 					<div class="col-md-5">

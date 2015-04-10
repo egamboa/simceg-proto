@@ -23,7 +23,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:nivelInstance, action:'save']" class="form-horizontal text-left">
+			<g:form url="[resource:nivelInstance, action:'save']" class="edit-form">
 
 				<fieldset class="form">
 					<div class="col-md-5 text-left">
