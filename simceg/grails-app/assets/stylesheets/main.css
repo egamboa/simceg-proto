@@ -315,6 +315,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 }
 .nav li a{
 	color: #fff;
+	border-left: 3px solid transparent;
 }
 .nav li a .fa, .nav li a .glyphicon{
 	float: left;

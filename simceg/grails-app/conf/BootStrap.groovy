@@ -36,7 +36,7 @@ class BootStrap {
 			
 			def testAdmin = new User(username: 'admin', 
 									password: 'admin',
-									cedula: '1111-1111',
+									cedula: '1111-1112',
 									direccion: 'Alguna dirección',
 									nombre: 'Juan',
 									primerApellido: 'Vargas',
@@ -51,7 +51,7 @@ class BootStrap {
 			
 			def testProfe = new User(username: 'profe', 
 									password: 'profe',
-									cedula: '1111-1111',
+									cedula: '1111-1113',
 									direccion: 'Alguna dirección',
 									nombre: 'Juana',
 									primerApellido: 'Vargas',
@@ -70,6 +70,7 @@ class BootStrap {
 				segundoApellido: 'Perez',
 				direccion: 'Algun lugar',
 				tipoSangre: 'o+',
+				cedula: '1111-1111',
 				nacionalidad: 'Costarricense',
 				fechaIngreso: new Date(114, 0, 1),
 				fechaNacimiento: new Date(105, 0, 1),
@@ -84,6 +85,7 @@ class BootStrap {
 				 segundoApellido: 'Perez',
 				 direccion: 'Algun lugar',
 				 tipoSangre: 'o+',
+				 cedula: '1111-1112',
 				 nacionalidad: 'Costarricense',
 				 fechaIngreso: new Date(114, 0, 1),
 				 fechaNacimiento: new Date(105, 0, 1),

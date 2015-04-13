@@ -28,6 +28,7 @@
                            <table class="table table-striped">
                                <thead>
                                    <tr class="text-center">
+                                   	   <g:sortableColumn property="cedula" title="Cédula" />
                                        <g:sortableColumn property="nombre" title="Nombre" />
                                        <g:sortableColumn property="primerApellido" title="1er Apellido" />
                                        <g:sortableColumn property="segundoApellido" title="2do Apellido" />
@@ -38,7 +39,8 @@
                                <tbody>
                                    <g:each in="${estudianteInstanceList}" status="i" var="estudianteInstance">
 										<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-											<td><g:link action="show" id="${estudianteInstance.id}">${fieldValue(bean: estudianteInstance, field: "nombre")}</g:link></td>
+											<td><g:link action="show" id="${estudianteInstance.id}">${fieldValue(bean: estudianteInstance, field: "cedula")}</g:link></td>
+											<td>${fieldValue(bean: estudianteInstance, field: "nombre")}</td>
 											
 											<td>${fieldValue(bean: estudianteInstance, field: "primerApellido")}</td>
 											

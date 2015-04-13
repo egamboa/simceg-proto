@@ -21,11 +21,11 @@
 			    <h3>Forgot Password</h3>
 			</div>
 			<div class="form-group">
-	            <g:textField class="form-control" name="username" size="25" placeholder="Nombre de Usuario" />
+	            <g:textField class="form-control" elementId='username' name="username" size="25" placeholder="Nombre de Usuario" />
 			</div>
 		</div>
 		<div class="text-right">
-			<s2ui:submitButton elementId='reset' form='forgotPasswordForm' class="btn btn-default" messageCode='Reiniciar Clave'/>
+			<s2ui:submitButton elementId='reset' form='forgotPasswordForm' class="btn btn-default" messageCode='Reiniciar Contraseña'/>
 		</div>
 		</g:else>
 

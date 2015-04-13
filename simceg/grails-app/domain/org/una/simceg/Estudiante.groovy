@@ -6,19 +6,21 @@ class Estudiante {
 
 	boolean activo = true, 
 			adecuacion = false,
-			viveEncargado
+			viveEncargado = true
 
 	String 	nombre,
 			primerApellido,
 			segundoApellido,
 			direccion,
 			tipoSangre,
-			nacionalidad
+			nacionalidad,
+			cedula
 
 	Date 	fechaIngreso,
 			fechaNacimiento
 
     static constraints = {
+    	cedula unique: true, blank: false
     }
 	
 	String nombreCompleto(){
