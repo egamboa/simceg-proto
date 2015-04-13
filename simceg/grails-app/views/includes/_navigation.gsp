@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="${controllerName == 'home' && actionName == 'about' ? 'active' : ''}">
-                	<g:link controller="home" action="about">Acerca de</g:link>
+                	<g:link controller="home" action="about">Nuestra Instituci&oacute;n</g:link>
                 </li>
                 <li class="${controllerName == 'home' && actionName == 'services' ? 'active' : ''}">
                     <g:link controller="home" action="services">Servicios</g:link>

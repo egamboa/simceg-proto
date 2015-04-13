@@ -8,13 +8,13 @@
 		<!-- Intro Content -->
         <div class="row text-left">
             <div class="col-lg-12">
-                <h1 class="page-header">Acerca De
-                    <small>Centro Educativo GANDHI</small>
+                <h1 class="page-header">Centro Educativo GANDHI
+                    <small>Nuestra Instituci&oacute;n</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Inicio</a>
                     </li>
-                    <li class="active">Acerca De</li>
+                    <li class="active">Nuestra Instituci&oacute;n</li>
                 </ol>
             </div>
             <div class="col-md-6">

@@ -83,7 +83,7 @@
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <div class="pull-right">
+                    <div class="pull-left">
                     	<button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                 </form>
