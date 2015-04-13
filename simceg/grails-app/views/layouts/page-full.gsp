@@ -29,10 +29,9 @@
 	        </div>
 	        <!-- /.row -->
     		<g:layoutBody/>
-    		<!-- FOOTER AREA -->
-	      	<g:render template="/includes/footer" />
     	  </div>
-    	
+    	  <!-- FOOTER AREA -->
+	      <g:render template="/includes/footer" />
 	    <asset:javascript src="application.js"/>
 	    <asset:javascript src="plugins.js"/>
 	    <asset:javascript src="bootstrap.min.js"/>

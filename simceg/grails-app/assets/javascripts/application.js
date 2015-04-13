@@ -18,6 +18,7 @@ var app = {
     init: function(){
         this.fixSelects();
         this.validaCiclos();
+        this.collapseMenus();
         $(function () {
           $('[data-toggle="popover"]').popover()
         })
@@ -32,6 +33,24 @@ var app = {
                 $(this).val(1);
             }
         });
+    },
+    collapseMenus: function(){
+        $('.navbar-collapse').on('show.bs.collapse', function (event) {
+            $(this).parent().toggleClass('open');
+            var actives = $('body').find('.navbar-collapse.in'),
+                hasData;
+            if (actives && actives.length) {
+                hasData = actives.data('collapse');
+                if (hasData && hasData.transitioning) return
+                if($(event.target).hasClass('navbar-collapse') ){
+                    actives.collapse('hide')
+                    hasData || actives.data('collapse', null)
+                }
+            }
+        });
+        $('.navbar-collapse').on('hide.bs.collapse', function (event) {
+            $(this).parent().toggleClass('open');
+        });
     }
 }
 
@@ -45,7 +64,7 @@ $(function() {
     $(window).bind("load resize", function() {
         topOffset = 100;
         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
-        if (width < 768) {
+        if (width < 991) {
             $('div.navbar-collapse').addClass('collapse')
             topOffset = 100; // 2-row-menu
         } else {

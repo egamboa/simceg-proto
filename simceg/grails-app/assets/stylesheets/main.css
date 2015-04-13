@@ -252,26 +252,39 @@ ul{
 }
 
 /*Aqui inicia el app*/
+.container{
+	margin-bottom: 40px;
+}
 footer{
-	bottom: -32px;
-	position: absolute;
-	width: 100%;
-	margin: 15px 0 0;
+	bottom: 0px;
+	position: fixed;
+	width: 75%;
+	margin: 0;
+	padding: 5px;
 	border-top: 1px solid #d1d4d7;
 	background-color: #fff;
 	left: 0;
+	margin-left: 253px;
 }
 .static-page footer{
 	position: relative;
 }
 .main-content{
-	background: #e4e5e6;
+	background: #fff;
   	padding: 10px 30px 40px 0;
+}
+.content{
+	margin-bottom: 40px;
 }
 #page-wrapper{
 	position: relative;
 	margin-left: 253px;
 	padding-bottom: 20px;
+	border: none;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+	box-shadow: 0px 0px 6px #777;
+	background-color: #fff;
 }
 nav.navbar.navbar-inverse.navbar-fixed-top{
 	border-bottom: 1px solid #d1d4d7;
@@ -316,10 +329,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 .nav li a{
 	color: #fff;
 	border-left: 3px solid transparent;
+	text-align: left;
 }
 .nav li a .fa, .nav li a .glyphicon{
-	float: left;
-	padding-left: 5px;
+	margin-right: 5px;
 }
 .table.table-striped td{
 	vertical-align: middle;
@@ -400,17 +413,79 @@ h1.main-title{
 .s2ui_hidden_button{
 	display: none;
 }
+/* Listas estilo */
+.objeto-listado .panel-heading{
+	font-size: 25px;
+	font-weight: bold;
+}
+.timeline > li > .timeline-badge{
+	z-index: 1;
+}
+@media (min-width: 992px) {
+	nav.navbar.navbar-inverse.navbar-fixed-top{
+		padding: 0px 20px 0 5px;
+	}
+}
 @media (max-width: 991px) {
 	.navbar-default.sidebar{
 		height: auto;
-		display: none;
+		width: 100%;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.navbar-default.sidebar.open{
+		height: 100%;
 	}
 	#page-wrapper{
 		margin: 0;
 		width: auto;
 	}
+	footer{
+		margin-left: 0;
+		width: 100%
+	}
 	.main-content{
 	  	padding: 0px 0px 40px 0px;
 	}
+
+	.navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        padding: 0 0 0px 5px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -5px;
+    }
+    .navbar-nav>li {
+        float: none;
+        padding-left: 5px;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+    	z-index: 1000;
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+
 }
 

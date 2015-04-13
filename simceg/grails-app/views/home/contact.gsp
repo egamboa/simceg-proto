@@ -55,7 +55,7 @@
 
         <!-- Contact Form -->
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-        <div class="row">
+        <div class="row text-left">
             <div class="col-md-8">
                 <h3>Formulario de Contacto</h3>
                 <form name="sentMessage" class="text-left" id="contactForm" novalidate>

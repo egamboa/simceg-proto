@@ -14,51 +14,31 @@
 			</ul>
 		</div>
 		<div id="list-periodoLectivo" class="content scaffold-list" role="main">
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<div class="panel panel-default">
-                   <div class="panel-heading">
-                       Periodos Lectivos
-                   </div>
-                   <!-- /.panel-heading -->
-                   <div class="panel-body">
-                       <div class="table-responsive">
-                         	<table class="table table-striped">
-							<thead>
-									<tr>
-									
-										<g:sortableColumn property="anio" title="${message(code: 'periodoLectivo.anio.label', default: 'Año')}" />
-									
-										<g:sortableColumn property="descripcion" title="${message(code: 'periodoLectivo.descripcion.label', default: 'Descripción')}" />
-
-										<g:sortableColumn property="tiempoInicio" title="${message(code: 'periodoLectivo.tiempoInicio.label', default: 'Tiempo Inicio')}" />
-									
-										<g:sortableColumn property="tiempoFinal" title="${message(code: 'periodoLectivo.tiempoFinal.label', default: 'Tiempo Final')}" />
-									
-									</tr>
-								</thead>
-								<tbody>
-								<g:each in="${periodoLectivoInstanceList}" status="i" var="periodoLectivoInstance">
-									<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-									
-										<td>${periodoLectivoInstance.anio}</td>
-									
-										<td>${fieldValue(bean: periodoLectivoInstance, field: "descripcion")}</td>
-
-										<td><g:formatDate date="${periodoLectivoInstance.tiempoInicio}" format="dd - MM - yyyy"/></td>
-
-										<td><g:formatDate date="${periodoLectivoInstance.tiempoFinal}" format="dd - MM - yyyy"/></td>
-										
-										<td><g:link action="editar" id="${periodoLectivoInstance.id}">Editar</g:link></td>
-									</tr>
-								</g:each>
-								</tbody>
-							</table>
-                       </div>
-                       <!-- /.table-responsive -->
-                   </div>
-                   <!-- /.panel-body -->
+            <div class="text-left">
+            	<h1 class="main-title">Periodos Lectivos</h1>
+            	<div class="row">
+            	<g:each in="${periodoLectivoInstanceList}" status="i" var="periodoLectivoInstance">
+	            	<div class="objeto-listado periodo-lectivo col-md-4 col-sm-6 ${(i % 2) == 0 ? 'odd' : 'even'}">
+		                <div class="panel panel-default">
+		                    <div class="panel-heading text-center">
+		                        ${periodoLectivoInstance.anio}
+		                    </div>
+		                    <div class="panel-body">
+		                        <h4>${fieldValue(bean: periodoLectivoInstance, field: "descripcion")}</h4>
+		                        <ul>
+		                        	<li>
+		                        		<p>Inicia: <g:formatDate date="${periodoLectivoInstance.tiempoInicio}" format="dd - MM - yyyy"/></p>
+		                        	</li>
+		                        	<li> 
+		                        		<p>Termina: <g:formatDate date="${periodoLectivoInstance.tiempoFinal}" format="dd - MM - yyyy"/></p> 
+		                        	</li>
+		                        	<li class="text-right"><g:link class="btn btn-default" action="editar" id="${periodoLectivoInstance.id}">Editar</g:link></li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </g:each>
+		        </div>
             </div>
 			<div class="pagination">
 				<g:paginate total="${periodoLectivoInstanceCount ?: 0}" />

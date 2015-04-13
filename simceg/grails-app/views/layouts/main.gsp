@@ -26,10 +26,9 @@
     	  <!-- Page Content -->
     	  <div class="container">
     		<g:layoutBody/>
+    	  </div>
     		<!-- FOOTER AREA -->
 	      	<g:render template="/includes/footer" />
-    	  </div>
-    
 	    <asset:javascript src="plugins.js"/>
 	    <asset:javascript src="bootstrap.min.js"/>
 	</body>

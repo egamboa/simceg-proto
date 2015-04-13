@@ -7,6 +7,7 @@ class PeriodoLectivo {
 	Integer anio
 	
     static constraints = {
+    	anio unique: true
     }
     
     String toString(){

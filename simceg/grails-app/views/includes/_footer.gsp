@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer>
-    <div class="text-center">
-    	<p>Copyright &copy; SIMCEG 2014.</p>
+    <div class="col-lg-12">
+    	<p class="pull-left">Copyright &copy; SIMCEG</p><p class="pull-right">2015</p>
     </div>
 </footer>

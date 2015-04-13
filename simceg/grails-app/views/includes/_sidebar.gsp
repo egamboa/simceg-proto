@@ -1,5 +1,5 @@
 <div class="navbar-default sidebar" role="navigation">
-     <div class="sidebar-nav navbar-collapse" id="sidebar-toggle">
+     <div class="sidebar-nav navbar-collapse collapse" id="sidebar-toggle">
          <ul class="nav" id="side-menu">
              <li>
              	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
