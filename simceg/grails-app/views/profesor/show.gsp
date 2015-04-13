@@ -7,14 +7,14 @@
 		<g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
-	<body>
+	<body class="text-left">
 		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li><g:link class="list" action="index">Lista de Profesores</g:link></li>
 				<li><g:link class="create" action="create">Nuevo Profesor</g:link></li>
 			</ul>
 		</div>
-		<div id="show-profesor" class="content scaffold-show" role="main">
+		<div id="show-profesor" class="text-left content scaffold-show" role="main">
 			<h1 class="main-title text-left">${profesorInstance?.usuario?.nombreCompleto()}</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
@@ -71,8 +71,8 @@
 			  </div>
 			</div>
 			<div class="row">
-            	<div class="col-md-2 col-md-offset-10">
-            		<g:link class="edit btn btn-primary" action="edit" resource="${profesorInstance}">Editar</g:link>
+            	<div class="col-md-12">
+            		<g:link class="pull-right edit btn btn-primary" action="edit" resource="${profesorInstance}">Editar</g:link>
             	</div>
             </div>
             <!-- 

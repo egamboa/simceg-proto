@@ -16,21 +16,19 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
+                <li class="${controllerName == 'home' && actionName == 'about' ? 'active' : ''}">
                 	<g:link controller="home" action="about">Acerca de</g:link>
                 </li>
-                <li>
+                <li class="${controllerName == 'home' && actionName == 'services' ? 'active' : ''}">
                     <g:link controller="home" action="services">Servicios</g:link>
                 </li>
-                <li>
+                <li class="${controllerName == 'home' && actionName == 'contact' ? 'active' : ''}">
                     <g:link controller="home" action="contact">Contacto</g:link>
                 </li>
-			    <li>
-			    	<g:if test="${controllerName != 'dashboard'}">
-				    	<sec:ifLoggedIn>
-							<g:link controller="dashboard" action="index">Cuenta</g:link>
-						</sec:ifLoggedIn>
-			    	</g:if>
+			    <li class="${controllerName != 'home' ? 'active' : ''}">
+			    	<sec:ifLoggedIn>
+                        <g:link controller="dashboard" action="index">Cuenta</g:link>
+                    </sec:ifLoggedIn>
                 </li>
                 <li>
                 	<sec:ifNotLoggedIn>

@@ -20,24 +20,20 @@
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'gradoProfesional', 'error')} required form-group">
-			<label for="gradoProfesional" class="control-label">
-				<g:message code="profesor.gradoProfesional.label" default="Grado Profesional" />
-			</label>
-			<g:textField class="form-control" name="gradoProfesional" required="" value="${profesorInstance?.gradoProfesional}"/>
+			<g:textField placeholder="Grado Profesional" class="form-control" name="gradoProfesional" required="" value="${profesorInstance?.gradoProfesional}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'descripcion', 'error')} required form-group">
-			<label for="descripcion" class="control-label">
-				<g:message code="profesor.descripcion.label" default="Descripcion" />
-			</label>
-			<g:textField class="form-control" name="descripcion" required="" value="${profesorInstance?.descripcion}"/>
+			<g:textField placeholder="Descripción" class="form-control" name="descripcion" required="" value="${profesorInstance?.descripcion}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'fechaIngreso', 'error')} required form-group">
 			<label for="fechaIngreso" class="control-label">
 				<g:message code="profesor.fechaIngreso.label" default="Fecha Ingreso" />
 			</label>
-			<g:datePicker class="form-control" name="fechaIngreso" precision="day"  value="${profesorInstance?.fechaIngreso}"  />
+			<div class="date">
+				<g:datePicker class="form-control" name="fechaIngreso" precision="day"  value="${profesorInstance?.fechaIngreso}"  />
+			</div>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'fechaSalida', 'error')} form-group">
@@ -45,7 +41,9 @@
 				<g:message code="profesor.fechaSalida.label" default="Fecha Salida" />
 				
 			</label>
-			<g:datePicker class="form-control" name="fechaSalida" precision="day"  value="${profesorInstance?.fechaSalida}" default="none" noSelection="['': '']" />
+			<div class="date">
+				<g:datePicker class="form-control" name="fechaSalida" precision="day"  value="${profesorInstance?.fechaSalida}" />
+			</div>
 		</div>
 
 	</div>

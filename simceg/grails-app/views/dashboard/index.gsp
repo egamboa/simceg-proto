@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">50</div>
-                                    <div>Nuevos Mensajes!</div>
+                                    <div>Nuevos<br> Mensajes!</div>
                                 </div>
                             </div>
                         </div>

@@ -19,76 +19,43 @@
 			</div>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required form-group">
-			<label for="username"  class="control-label">
-				<g:message code="user.username.label" default="Username" />
-			</label>
-		    <g:textField class="form-control" name="username" required="" value="${userInstance?.username}"/>
+		    <g:textField placeholder="Nombre De Usuario" class="form-control" name="username" required="" value="${userInstance?.username}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required form-group">
-			<label for="username"  class="control-label">
-				<g:message code="user.username.label" default="Password" />
-			</label>
-			<g:passwordField class="form-control" name="password" required="" value="${userInstance?.password}"/>
+			<g:passwordField placeholder="Password" class="form-control" name="password" required="" value="${userInstance?.password}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'cedula', 'error')} required form-group">
-			<label for="cedula" class="control-label">
-				<g:message code="user.cedula.label" default="Cedula" />
-			</label>
-			<g:textField class="form-control" name="cedula" required="" value="${userInstance?.cedula}"/>
+			<g:textField placeholder="Cédula" class="form-control" name="cedula" required="" value="${userInstance?.cedula}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'nombre', 'error')} required form-group">
-			<label for="nombre" class="control-label">
-				<g:message code="user.nombre.label" default="Nombre" />
-			</label>
-			<g:textField class="form-control" name="nombre" required="" value="${userInstance?.nombre}"/>
+			<g:textField placeholder="Nombre" class="form-control" name="nombre" required="" value="${userInstance?.nombre}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'primerApellido', 'error')} required form-group">
-			<label for="primerApellido" class="control-label">
-				<g:message code="user.primerApellido.label" default="Primer Apellido" />
-			</label>
-			<g:textField class="form-control" name="primerApellido" required="" value="${userInstance?.primerApellido}"/>
+			<g:textField placeholder="Primer Apellido" class="form-control" name="primerApellido" required="" value="${userInstance?.primerApellido}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'segundoApellido', 'error')} required form-group">
-			<label for="segundoApellido" class="control-label">
-				<g:message code="user.segundoApellido.label" default="Segundo Apellido" />
-			</label>
-			<g:textField class="form-control" name="segundoApellido" required="" value="${userInstance?.segundoApellido}"/>
+			<g:textField placeholder="Segundo Apellido" class="form-control" name="segundoApellido" required="" value="${userInstance?.segundoApellido}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'direccion', 'error')} required form-group">
-			<label for="direccion" class="control-label">
-				<g:message code="user.direccion.label" default="Direccion" />
-			</label>
-			<g:textField class="form-control" name="direccion" required="" value="${userInstance?.direccion}"/>
+			<g:textField placeholder="Dirección" class="form-control" name="direccion" required="" value="${userInstance?.direccion}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} required form-group">
-			<label for="email" class="control-label">
-				<g:message code="user.email.label" default="Email" />
-			</label>
-			<g:textField class="form-control" name="email" required="" value="${userInstance?.email}"/>
+			<g:textField placeholder="Correo Elecctrónico" class="form-control" name="email" required="" value="${userInstance?.email}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'estadoCivil', 'error')} required form-group">
-			<label for="estadoCivil" class="control-label">
-				<g:message code="user.estadoCivil.label" default="Estado Civil" />
-			</label>
-			<g:textField class="form-control" name="estadoCivil" required="" value="${userInstance?.estadoCivil}"/>
+			<g:textField placeholder="Estado Civil" class="form-control" name="estadoCivil" required="" value="${userInstance?.estadoCivil}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'nacionalidad', 'error')} required form-group">
-			<label for="nacionalidad" class="control-label">
-				<g:message code="user.nacionalidad.label" default="Nacionalidad" />
-			</label>
-			<g:textField class="form-control" name="nacionalidad" required="" value="${userInstance?.nacionalidad}"/>
+			<g:textField placeholder="Nacionalidad" class="form-control" name="nacionalidad" required="" value="${userInstance?.nacionalidad}"/>
 		</div>
-		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'telefono', 'error')} required form-group">
-			<label for="telefono" class="control-label">
-				<g:message code="user.telefono.label" default="Telefono" />
-			</label>
-			<g:textField class="form-control" name="telefono" required="" value="${userInstance?.telefono}"/>
+		<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'telefono', 'error')} required form-group">	
+			<g:textField placeholder="Teléfono" class="form-control" name="telefono" required="" value="${userInstance?.telefono}"/>
 		</div>
 
 	</div>

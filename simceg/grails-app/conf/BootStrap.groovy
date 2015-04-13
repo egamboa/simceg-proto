@@ -4,7 +4,6 @@ import org.una.simceg.Role
 import org.una.simceg.User
 import org.una.simceg.UserRole
 import org.una.simceg.Estudiante
-import org.una.simceg.CatalogoMateria
 import org.una.simceg.PeriodoLectivo
 import org.una.simceg.Nivel
 import org.una.simceg.Grupo
@@ -28,7 +27,7 @@ class BootStrap {
 									primerApellido: 'Yada',
 									segundoApellido: 'Sanchez',
 									telefono: '8888-8888',
-									email: 'algun@email.com',
+									email: 'estebangam1@gmail.com',
 									nacionalidad: 'Costarricense',
 									estadoCivil: 'soltero'
 									)
@@ -43,7 +42,7 @@ class BootStrap {
 									primerApellido: 'Vargas',
 									segundoApellido: 'Sanchez',
 									telefono: '8888-8888',
-									email: 'algun@email.com',
+									email: 'estebangam1@gmail.com',
 									nacionalidad: 'Costarricense',
 									estadoCivil: 'soltero'
 									)
@@ -58,7 +57,7 @@ class BootStrap {
 									primerApellido: 'Vargas',
 									segundoApellido: 'Sanchez',
 									telefono: '8888-8888',
-									email: 'algun@email.com',
+									email: 'estebangam1@gmail.com',
 									nacionalidad: 'Costarricense',
 									estadoCivil: 'soltero'
 									)
@@ -107,7 +106,7 @@ class BootStrap {
 			assert Materia.count() == 6
 		}
 		
-		if( PeriodoLectivo.count() == 0 && Nivel.count() == 0 && Grupo.count() == 0 && Materia.count() == 0 && Profesor.count() == 0 ){
+		if( PeriodoLectivo.count() == 0 && Nivel.count() == 0 && Grupo.count() == 0 && Profesor.count() == 0 ){
 			
 			def periodo = new PeriodoLectivo(descripcion:'Perido 2014', tiempoInicio: new Date(114, 0, 1), tiempoFinal: new Date(114, 11, 31), anio: 2014 )
 			periodo.save flush: true

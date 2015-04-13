@@ -15,9 +15,10 @@
   		<asset:stylesheet src="plugins.css"/>
   		<asset:stylesheet src="plantillas.css"/>
   		<asset:stylesheet src="main.css"/>
+  		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
 	</head>
-	<body>
+	<body class="full-page static-page">
 	
           <g:render template="/includes/navigation" />
     	  <!-- Page Content -->

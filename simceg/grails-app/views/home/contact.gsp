@@ -6,7 +6,7 @@
 	</head>
 	<body>	
 		<!-- Content Row -->
-        <div class="row">
+        <div class="row text-left">
             <div class="col-lg-12">
                 <h1 class="page-header">CONTACTO
                     <small>Cont&aacute;ctenos</small>
@@ -61,21 +61,18 @@
                 <form name="sentMessage" class="text-left" id="contactForm" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label class="col-md-3">Nombre Completo:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <input type="text" placeholder="Nombre Completo" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label class="col-md-3">Número de Teléfono:</label>
-                            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <input type="tel" placeholder="Número de Teléfono" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label class="col-md-3">Correo Electronico:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                            <input type="email" placeholder="Correo Electrónico" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
                         </div>
                     </div>
                     <div class="control-group form-group">

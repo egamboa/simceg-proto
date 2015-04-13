@@ -9,10 +9,7 @@
 </div>
 
 <div class="fieldcontain form-group ${hasErrors(bean: nivelInstance, field: 'descripcion', 'error')} required">
-	<label for="descripcion">
-		<g:message code="nivel.descripcion.label" default="Descripcion" />
-	</label>
-	<g:textField name="descripcion" required="" value="${nivelInstance?.descripcion}" class="form-control" />
+	<g:textField name="descripcion" placeholder="Descripción" required="" value="${nivelInstance?.descripcion}" class="form-control" />
 
 </div>
 

@@ -3,44 +3,26 @@
 <div class="row">
 	<div class="col-md-7 col-md-offset-1 ">
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'nombre', 'error')} required form-group">
-			<label for="nombre" class="control-label">
-				<g:message code="estudiante.nombre.label" default="Nombre" />
-			</label>
-				<g:textField name="nombre" class="form-control" required="" value="${estudianteInstance?.nombre}"/>
+			<g:textField placeholder="Nombre" name="nombre" class="form-control" required="" value="${estudianteInstance?.nombre}"/>
 		</div>
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'primerApellido', 'error')} required form-group">
-			<label for="primerApellido" class="control-label">
-				<g:message code="estudiante.primerApellido.label" default="Primer Apellido" />
-			</label>
-				<g:textField class="form-control" name="primerApellido" required="" value="${estudianteInstance?.primerApellido}"/>
+			<g:textField placeholder="Primer Apellido" class="form-control" name="primerApellido" required="" value="${estudianteInstance?.primerApellido}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'segundoApellido', 'error')} required form-group">
-			<label for="segundoApellido" class="control-label">
-				<g:message code="estudiante.segundoApellido.label" default="Segundo Apellido" />
-			</label>
-				<g:textField name="segundoApellido" class="form-control" required="" value="${estudianteInstance?.segundoApellido}"/>
+			<g:textField placeholder="Segundo Apellido" name="segundoApellido" class="form-control" required="" value="${estudianteInstance?.segundoApellido}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'direccion', 'error')} required form-group">
-			<label for="direccion" class="control-label">
-				<g:message code="estudiante.direccion.label" default="Direccion" />
-			</label>
-			<g:textField name="direccion" class="form-control" required="" value="${estudianteInstance?.direccion}"/>
+			<g:textField placeholder="Dirección" name="direccion" class="form-control" required="" value="${estudianteInstance?.direccion}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'nacionalidad', 'error')} required form-group">
-			<label for="nacionalidad" class="control-label">
-				<g:message code="estudiante.nacionalidad.label" default="Nacionalidad" />
-			</label>
-			<g:textField name="nacionalidad" class="form-control" required="" value="${estudianteInstance?.nacionalidad}"/>
+			<g:textField placeholder="Nacionalidad" name="nacionalidad" class="form-control" required="" value="${estudianteInstance?.nacionalidad}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'tipoSangre', 'error')} required form-group">
-			<label for="tipoSangre" class="control-label">
-				<g:message code="estudiante.tipoSangre.label" default="Tipo Sangre" />
-			</label>
-			<g:textField name="tipoSangre" class="form-control" required="" value="${estudianteInstance?.tipoSangre}"/>
+			<g:textField placeholder="Tipo Sangre" name="tipoSangre" class="form-control" required="" value="${estudianteInstance?.tipoSangre}"/>
 		</div>
 
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'encargado', 'error')} required form-group">

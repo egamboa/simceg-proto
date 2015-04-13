@@ -261,6 +261,9 @@ footer{
 	background-color: #fff;
 	left: 0;
 }
+.static-page footer{
+	position: relative;
+}
 .main-content{
 	background: #e4e5e6;
   	padding: 10px 30px 40px 0;
@@ -289,6 +292,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 .nav li a:hover, .nav li a:focus, .sidebar .nav-second-level li.active a{
 	background: #353844;
 	color: #fff;
+	border-left: 3px solid #20a8d8;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
+	background: transparent;
+	color: #555;
 	border-left: 3px solid #20a8d8;
 }
 .sidebar ul li{
@@ -326,11 +334,8 @@ span.property-value {
 	-webkit-border-radius: 0px;
 }
 input, input.form-control, select, select.form-control{
-	border-top: none;
 	box-shadow: none;
-	border-left: none;
-	border-right: none;
-	border-color: black;
+	border-color: #ddd;
 }
 input[type="checkbox"]{
 	-webkit-appearance: checkbox;
@@ -339,7 +344,7 @@ select.form-control{
    background: transparent;
    padding: 5px;
    line-height: 1;
-   border: 0;
+   border-color:#ddd;
    border-radius: 0;
    -webkit-appearance: none;
 }
@@ -388,7 +393,12 @@ h1.main-title{
 .nav-inner .nav-pills > li > a:hover, .nav-inner .nav-pills > li > a:focus{
 	color: #fff;
 }
-
+.submit-form input{
+	border: 1px solid #ddd;
+}
+.s2ui_hidden_button{
+	display: none;
+}
 @media (max-width: 991px) {
 	.navbar-default.sidebar{
 		height: auto;

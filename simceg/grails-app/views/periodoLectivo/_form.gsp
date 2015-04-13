@@ -3,18 +3,12 @@
 
 
 <div class="fieldcontain form-group ${hasErrors(bean: periodoLectivoInstance, field: 'anio', 'error')} required">
-	<label for="anio">
-		<g:message code="periodoLectivo.anio.label" default="Año" />
-	</label>
-	<g:field name="anio" class="form-control" type="number" value="${periodoLectivoInstance.anio}" required=""/>
+	<g:field name="anio" class="form-control" type="number" value="${periodoLectivoInstance.anio}" placeholder="Año" required=""/>
 
 </div>
 
 <div class="fieldcontain form-group ${hasErrors(bean: periodoLectivoInstance, field: 'descripcion', 'error')} required">
-	<label for="descripcion">
-		<g:message code="periodoLectivo.descripcion.label" default="Descripcion" />
-	</label>
-	<g:textField name="descripcion" class="form-control" required="" value="${periodoLectivoInstance?.descripcion}"/>
+	<g:textField name="descripcion" placeholder="Descripción" class="form-control" required="" value="${periodoLectivoInstance?.descripcion}"/>
 
 </div>
 

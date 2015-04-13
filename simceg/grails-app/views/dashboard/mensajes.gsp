@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="col-md-1"></div>
-<div class="mensajes col-md-10">
+<div class="mensajes col-md-10 text-left">
 
 	<div class="row">
 		<h2 style="font-size:20px">Mensajes</h2>

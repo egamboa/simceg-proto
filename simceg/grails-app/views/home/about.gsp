@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<!-- Intro Content -->
-        <div class="row">
+        <div class="row text-left">
             <div class="col-lg-12">
                 <h1 class="page-header">Acerca De
                     <small>Centro Educativo GANDHI</small>
@@ -20,7 +20,7 @@
             <div class="col-md-6">
                 <img class="img-responsive" src="${asset.assetPath(src: 'school_board_about.jpg')}" alt="Imagen Pizarra">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 text-left">
                 <h2>Acerca del Centro Educativo Gandhi</h2></br>
                 <p>Fundado en el a&ntilde;o 2005 por un grupo de mujeres emprendedoras, muchas jefas de hogar, nos mantenemos con la consigna de crecer y mejorar para brindar la mejor educaci&oacute;n y formar ni&ntilde;os de bien que ser&aacute;n jovenes &iacute;ntegros que representaran los valores de GANDHI.</p></br>
                 <p>El Centro Educativo GANDHI nace a partir de la necesidad de brindar una opci&oacute;n en educaci&oacute;n privada a la comunidad de Los Lagos de Heredia y alrededores.</p></br>
@@ -32,9 +32,9 @@
         <!-- Team Members -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Nuestro Equipo</h2>
+                <h2 class="page-header text-left">Nuestro Equipo</h2>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-left">
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <div class="caption">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-left">
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <div class="caption">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-left">
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <div class="caption">
@@ -91,5 +91,6 @@
                     </div>
                 </div>
             </div>
+        </div>
 	</body>
 </html>
