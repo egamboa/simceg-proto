@@ -259,12 +259,11 @@ footer{
 	bottom: 0px;
 	position: fixed;
 	width: 75%;
-	margin: 0;
+	margin: 0 auto;
 	padding: 5px;
 	border-top: 1px solid #d1d4d7;
 	background-color: #fff;
 	left: 0;
-	margin-left: 253px;
 }
 .static-page footer{
 	position: relative;
