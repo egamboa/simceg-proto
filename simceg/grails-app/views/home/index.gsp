@@ -15,7 +15,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3> Mision</h3>
+                        <h3> Misi&oacute;n</h3>
                     </div>
                     <div class="panel-body text-left">
                         <p>Promover el establecimiento de la autoestima en cada estudiante, aprendiendo con la vivencia diaria, de manera real y positiva, fomentando los valores de amor, respeto y solidaridad.</p>
@@ -25,10 +25,10 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3> Vision</h3>
+                        <h3> Visi&oacute;n</h3>
                     </div>
                     <div class="panel-body text-left">
-                        <p>Desarrollar en cada estudiante una sensación de orgullo y realizaci&oacute;n personal, trabajar con compa&ntilde;erismo y solidaridad, involucrando a la madre, padre o encargado, la comunidad y la escuela.</p>
+                        <p>Desarrollar en cada estudiante una sensación de orgullo y realizaci&oacute;n personal, trabajar con compa&ntilde;erismo y solidaridad, involucrando al encargado, la comunidad y la escuela.</p>
                     </div>
                 </div>
             </div>

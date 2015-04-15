@@ -15,7 +15,7 @@
           	<form role="form" class="form-signin text-left" action='${postUrl}' method='POST' id="loginForm" name="loginForm" autocomplete='off'>
                 <div class="submit-form">
                     <div class="login-label text-center">
-                        <h3>Ingresa</h3>
+                        <h3>SIMCEG</h3>
                     </div>
                     <div class="form-group">
                         <input name="j_username" id="username" type="text" placeholder="Usuario" class="form-control">

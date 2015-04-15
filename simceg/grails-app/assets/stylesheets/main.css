@@ -420,6 +420,7 @@ h1.main-title{
 .timeline > li > .timeline-badge{
 	z-index: 1;
 }
+
 @media (min-width: 992px) {
 	nav.navbar.navbar-inverse.navbar-fixed-top{
 		padding: 0px 20px 0 5px;
