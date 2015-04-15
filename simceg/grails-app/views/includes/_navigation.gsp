@@ -2,10 +2,17 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
+        <g:if test="${controllerName != 'home' && controllerName != 'login'}" >
+            <button type="button" class="navbar-toggle toggle-dashboard" data-toggle="collapse" data-target="#sidebar-toggle">
+                <span class="sr-only">Toggle Dashboard</span>
+                <span class="glyphicon glyphicon-cog"></span>
+            </button>
+        </g:if>
         <button type="button" class="navbar-toggle toggle-nav" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle Navigation</span>
             <span class="glyphicon glyphicon-home"></span>
         </button>
+<<<<<<< Updated upstream
              <g:if test="${controllerName != 'home' && controllerName != 'login'}" >
                 <button type="button" class="navbar-toggle toggle-dashboard" data-toggle="collapse" data-target="#sidebar-toggle">
                     <span class="sr-only">Toggle Dashboard</span>
@@ -13,6 +20,9 @@
                 </button>
             </g:if>
             <g:link controller="home" action="index" class="navbar-brand" >GANDHI</g:link>
+=======
+        <g:link controller="home" action="index" class="navbar-brand" >SIMCEG</g:link>
+>>>>>>> Stashed changes
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

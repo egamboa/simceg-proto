@@ -2,8 +2,8 @@ package org.una.simceg
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-
 import grails.plugin.springsecurity.annotation.Secured
+
 @Transactional(readOnly = true)
 @Secured(['ROLE_ADMIN'])
 class NivelController {
@@ -29,13 +29,12 @@ class NivelController {
             notFound()
             return
         }
-
         if (nivelInstance.hasErrors()) {
             respond nivelInstance.errors, view:'create'
             return
         }
 
-        nivelInstance.save flush:true
+        nivelInstance.save failOnError:true
 
         request.withFormat {
             form multipartForm {
@@ -46,7 +45,7 @@ class NivelController {
         }
     }
 
-    def editar(Nivel nivelInstance) {
+    def edit(Nivel nivelInstance) {
         respond nivelInstance
     }
 

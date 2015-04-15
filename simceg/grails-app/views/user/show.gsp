@@ -27,7 +27,7 @@
                     <tbody>
 					  <tr class="fieldcontain">
                         <td><span id="rol-label" class="property-label">Rol</span>:</td>
-                        <td><span class="property-value" aria-labelledby="rol-label">${org.una.simceg.UserRole.findByUser(userInstance).role}</span></td>
+                        <td><span class="property-value" aria-labelledby="rol-label">${org.una.simceg.UserRole.findByUser(userInstance)?.role}</span></td>
                       </tr>
                       <g:if test="${userInstance?.username}">
                       <tr class="fieldcontain">

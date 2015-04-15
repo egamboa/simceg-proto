@@ -29,6 +29,7 @@
 							<thead>
 								<tr>
 									<th><g:message code="materia.materia.label" default="Materia" /></th>
+									<th>Acciones</th>
 								</tr>
 							</thead>
 								<tbody>

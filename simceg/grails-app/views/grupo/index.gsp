@@ -17,50 +17,35 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			
-				<div class="panel panel-default">
-                   <div class="panel-heading">
-                       Grupos
-                   </div>
-                   <!-- /.panel-heading -->
-                   <div class="panel-body">
-                       <div class="table-responsive">
-                           <table class="table table-striped">
-								<thead>
-									<tr>
-									
-										<g:sortableColumn property="descripcion" title="${message(code: 'grupo.descripcion.label', default: 'Descripcion')}" />
-									
-										<th><g:message code="grupo.nivel.label" default="Nivel" /></th>
-									
-										<th><g:message code="grupo.periodo.label" default="Periodo" /></th>
-
-										<th><g:message code="grupo.profesor.label" default="Profesor" /></th>
-									
-									</tr>
-								</thead>
-								<tbody>
-								<g:each in="${grupoInstanceList}" status="i" var="grupoInstance">
-									<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-									
-										<td><g:link action="show" id="${grupoInstance.id}">${fieldValue(bean: grupoInstance, field: "descripcion")}</g:link></td>
-									
-										<td>${grupoInstance.nivel.descripcion}</td>
-									
-										<td>${grupoInstance.periodo.descripcion}</td>
-
-										<td>${grupoInstance.profesor}</td>
-										
-										<td><g:link action="editar" id="${grupoInstance.id}">Editar</g:link></td>
-
-									</tr>
-								</g:each>
-								</tbody>
-							</table>
-                       </div>
-                       <!-- /.table-responsive -->
-                   </div>
-                   <!-- /.panel-body -->
+            <div class="text-left">
+            	<h1 class="main-title">Grupos</h1>
+            	<div class="row">
+            	<g:each in="${grupoInstanceList}" status="i" var="grupoInstance">
+	            	<div class="objeto-listado grupo col-md-4 col-sm-6 ${(i % 2) == 0 ? 'odd' : 'even'}">
+		                <div class="panel panel-default">
+		                    <div class="panel-heading text-center">
+		                       <g:link action="show" id="${grupoInstance.id}">
+		                       	${grupoInstance.descripcion}
+		                       </g:link>
+		                    </div>
+		                    <div class="panel-body">
+		                        <ul>
+		                        	<li>
+		                        		Profesor: ${grupoInstance.profesor}
+		                        	</li>
+		                        	<li>
+		                        		Nivel: ${grupoInstance.nivel.descripcion}
+		                        	</li>
+		                        	<li>
+		                        		Periodo: ${grupoInstance.periodo.descripcion}
+		                        	</li>
+		                        	<li class="text-right"><g:link class="btn btn-default" action="editar" id="${grupoInstance.id}">Editar</g:link></li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </g:each>
+		        </div>
             </div>
 			<div class="pagination">
 				<g:paginate total="${grupoInstanceCount ?: 0}" />

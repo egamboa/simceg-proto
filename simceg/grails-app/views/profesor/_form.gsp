@@ -5,12 +5,11 @@
 		<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'usuario', 'error')} required form-group">
 			<label for="usuario" class="control-label">
 				<g:message code="profesor.usuario.label" default="Usuario" />
-				<span class="required-indicator">*</span>
 			</label>
 			<%
 				def profes = []
 				org.una.simceg.User.list().each{ user ->
-					if(org.una.simceg.UserRole.findByUser(user).role.authority == 'ROLE_TEACHER')
+					if(org.una.simceg.UserRole.findByUser(user)?.role?.authority == 'ROLE_TEACHER')
 						profes.add(user)
 				}
 			 %>

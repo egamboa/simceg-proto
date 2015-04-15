@@ -28,6 +28,7 @@ class UserController {
 
     @Transactional
     def save(User userInstance) {
+        def roleInstance = Role.findById(params.Rol.id)
         if (userInstance == null) {
             notFound()
             return
@@ -39,7 +40,7 @@ class UserController {
         }
 
         userInstance.save flush:true
-		
+		UserRole.create userInstance, roleInstance, true
 
         request.withFormat {
             form multipartForm {

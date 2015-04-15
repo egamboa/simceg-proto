@@ -27,6 +27,7 @@ class User {
 		username blank: false, unique: true
 		password blank: false
 		cedula unique: true, blank: false
+		email email: true, blank: false
 	}
 
 	static mapping = {

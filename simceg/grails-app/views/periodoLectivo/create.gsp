@@ -17,11 +17,13 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<g:hasErrors bean="${periodoLectivoInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${periodoLectivoInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
+			<div class="row">
+				<ul class="errors alert alert-danger col-lg-5" role="alert">
+					<g:eachError bean="${periodoLectivoInstance}" var="error">
+					<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+					</g:eachError>
+				</ul>
+			</div>
 			</g:hasErrors>
 			<g:form url="[resource:periodoLectivoInstance, action:'save']" class="edit-form">
 				<fieldset class="form">

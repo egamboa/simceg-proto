@@ -1,11 +1,9 @@
 package org.una.simceg
 
-
-
-import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-
+import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+
 @Transactional(readOnly = true)
 @Secured(['ROLE_ADMIN'])
 class MateriaController {
@@ -48,7 +46,7 @@ class MateriaController {
         }
     }
 
-    def editar(Materia materiaInstance) {
+    def edit(Materia materiaInstance) {
         respond materiaInstance
     }
 

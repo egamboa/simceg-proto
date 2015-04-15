@@ -28,7 +28,7 @@
 					<div class="col-md-5">
 						<g:render template="form"/>
 						<div class="text-right">
-							<g:actionSubmit name="create" class="save btn btn-primary" action="update" value="Crear" />
+							<g:submitButton name="create" class="save btn btn-default" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 						</div>
 					</div>
 				</fieldset>

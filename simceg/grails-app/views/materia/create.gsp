@@ -23,12 +23,12 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:materiaInstance, action:'save']" class="edit-form">
+			<g:form url="[resource:materiaInstance, action:'save']" method="POST" class="edit-form">
 				<fieldset class="form">
 					<div class="col-md-5 text-left">
 						<g:render template="form"/>
 						<div class="text-right">
-							<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
+							<g:submitButton name="create" class="save btn btn-default" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 						</div>
 					</div>
 				</fieldset>

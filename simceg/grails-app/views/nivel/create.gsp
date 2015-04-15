@@ -14,23 +14,24 @@
 		<div id="create-nivel" class="content scaffold-create" role="main">
 			<h1 class="text-left main-title">Crear Nivel</h1>
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<g:hasErrors bean="${nivelInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${nivelInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
+				<ul class="errors" role="alert">
+					<g:eachError bean="${nivelInstance}" var="error">
+						<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+					</g:eachError>
+				</ul>
 			</g:hasErrors>
-			<g:form url="[resource:nivelInstance, action:'save']" class="edit-form">
-
+			<g:form url="[resource:nivelInstance, action:'save']" >
 				<fieldset class="form">
 					<div class="col-md-5 text-left">
 						<g:render template="form"/>
-						<div class="text-right">
-							<g:actionSubmit name="create" class="save btn btn-primary" value="Crear Nivel" />
-						</div>
+					</div>
+				</fieldset>
+				<fieldset class="buttons">
+					<div class="col-md-5 text-right">
+						<g:submitButton name="create" class="save btn btn-default" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 					</div>
 				</fieldset>
 			</g:form>

@@ -24,7 +24,7 @@
 			<div class="row">
 			  <div class=" col-md-12"> 
 			  	<div class="col-md-5">
-				    <table class="table table-bordered table-grupo-information">
+				    <table class="table table-bordered table-grupo-information text-left">
 				      <tbody>
 				      	<g:if test="${grupoInstance?.descripcion}">
 						<tr class="fieldcontain">
@@ -58,6 +58,12 @@
 							</td>
 						</tr>
 						</g:if>
+						<tr>
+							<td></td>
+							<td>
+								<g:link class="edit btn btn-primary" action="editar" resource="${grupoInstance}">Editar</g:link>
+							</td>
+						</tr>
 				      </tbody>
 				    </table>
 				</div>
@@ -88,11 +94,6 @@
 				  </div>
 			  </div>
 			</div>
-			<div class="row">
-            	<div class="col-md-2 col-md-offset-10">
-            		<g:link class="edit btn btn-primary" action="editar" resource="${grupoInstance}">Editar</g:link>
-            	</div>
-            </div>
 		</div>
 	</body>
 </html>

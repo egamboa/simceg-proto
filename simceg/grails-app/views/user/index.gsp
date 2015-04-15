@@ -51,7 +51,7 @@
 													<%
 														def role = org.una.simceg.UserRole.findByUser(userInstance)
 													%>
-													${role.role.authority}
+													${role?.role?.toString()}
 												</td>
 												
 											</tr>

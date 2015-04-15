@@ -5,7 +5,12 @@ class Nivel {
 	String descripcion
 	int ciclos
 	
+    static mapping = {
+       ciclos defaultValue: 1
+    }
+
     static constraints = {
+        descripcion unique: true
     }
     static hasMany = [materias: Materia]
 

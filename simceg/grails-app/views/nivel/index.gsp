@@ -19,7 +19,7 @@
 			</g:if>
 			
 			<div class="panel panel-default">
-                   <div class="panel-heading">
+                   <div class="panel-heading text-left">
                        Niveles
                    </div>
                    <!-- /.panel-heading -->
@@ -27,25 +27,28 @@
                        <div class="table-responsive">
                            <table class="table table-striped">
 								<thead>
-										<tr>
+										<tr class="text-left">
 											<g:sortableColumn property="descripcion" title="${message(code: 'nivel.descripcion.label', default: 'Descripcion')}" />
+											<th>Ciclos</th>
 											<th>Materias</th>
+											<th>Acciones</th>
 										</tr>
 									</thead>
 									<tbody>
-									<g:each in="${nivelInstanceList}" status="i" var="nivelInstance">
-										<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-											<td>${fieldValue(bean: nivelInstance, field: "descripcion")}</td>
-											<td>
-												<g:if test="${nivelInstance.materias.size() > 0}">
-													<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="${nivelInstance.listaMaterias()}">
-													  ver
-													</button>
-												</g:if>
-											</td>
-											<td><g:link action="editar" id="${nivelInstance.id}">Editar</g:link></td>
-										</tr>
-									</g:each>
+										<g:each in="${nivelInstanceList}" status="i" var="nivelInstance">
+											<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
+												<td>${fieldValue(bean: nivelInstance, field: "descripcion")}</td>
+												<td>${fieldValue(bean: nivelInstance, field: "ciclos")}</td>
+												<td>
+													<g:if test="${nivelInstance.materias.size() > 0}">
+														<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="${nivelInstance.listaMaterias()}">
+														  ver
+														</button>
+													</g:if>
+												</td>
+												<td><g:link action="edit" id="${nivelInstance.id}">Editar</g:link></td>
+											</tr>
+										</g:each>
 									</tbody>
 								</table>
                        </div>

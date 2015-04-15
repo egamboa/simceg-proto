@@ -2,6 +2,9 @@
 
 <div class="row">
 	<div class="col-md-7 col-md-offset-1 ">
+		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'cedula', 'error')} required form-group">
+			<g:textField placeholder="Cédula" class="form-control" name="cedula" required="" value="${estudianteInstance?.cedula}"/>
+		</div>
 		<div class="fieldcontain ${hasErrors(bean: estudianteInstance, field: 'nombre', 'error')} required form-group">
 			<g:textField placeholder="Nombre" name="nombre" class="form-control" required="" value="${estudianteInstance?.nombre}"/>
 		</div>
@@ -32,7 +35,7 @@
 			<%
 				def padres = []
 				org.una.simceg.User.list().each{ user ->
-					if(org.una.simceg.UserRole.findByUser(user).role.authority == 'ROLE_USER')
+					if(org.una.simceg.UserRole.findByUser(user)?.role?.authority == 'ROLE_USER')
 						padres.add(user)
 				}
 			 %>
