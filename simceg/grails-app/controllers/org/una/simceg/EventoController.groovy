@@ -1,20 +1,19 @@
 package org.una.simceg
 
-
-
-import static org.springframework.http.HttpStatus.*
+import grails.converters.*
 import grails.transaction.Transactional
-
+import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+
 @Transactional(readOnly = true)
 @Secured(['ROLE_ADMIN'])
 class EventoController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Evento.list(params), model:[eventoInstanceCount: Evento.count()]
+    def index() {
+        ArrayList eventos = Evento.list()
+        respond eventos, model:[eventoInstanceCount: Evento.count(), eventos: eventos as JSON]
     }
 
     def show(Evento eventoInstance) {

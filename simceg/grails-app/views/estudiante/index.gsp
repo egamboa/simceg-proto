@@ -1,4 +1,3 @@
-
 <%@ page import="org.una.simceg.Estudiante" %>
 <!DOCTYPE html>
 <html>
@@ -17,46 +16,40 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-
-			<div class="panel panel-default">
-                   <div class="panel-heading">
-                      Estudiantes
-                   </div>
-                   <!-- /.panel-heading -->
-                   <div class="panel-body">
-                       <div class="table-responsive">
-                           <table class="table table-striped">
-                               <thead>
-                                   <tr class="text-center">
-                                   	   <g:sortableColumn property="cedula" title="Cédula" />
-                                       <g:sortableColumn property="nombre" title="Nombre" />
-                                       <g:sortableColumn property="primerApellido" title="1er Apellido" />
-                                       <g:sortableColumn property="segundoApellido" title="2do Apellido" />
-                                       <g:sortableColumn property="activo" title="Activo" />
-                                       <g:sortableColumn property="fechaNacimiento" title="Fecha Nacimiento" />
-                                   </tr>
-                               </thead>
-                               <tbody>
-                                   <g:each in="${estudianteInstanceList}" status="i" var="estudianteInstance">
-										<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-											<td><g:link action="show" id="${estudianteInstance.id}">${fieldValue(bean: estudianteInstance, field: "cedula")}</g:link></td>
-											<td>${fieldValue(bean: estudianteInstance, field: "nombre")}</td>
-											
-											<td>${fieldValue(bean: estudianteInstance, field: "primerApellido")}</td>
-											
-											<td>${fieldValue(bean: estudianteInstance, field: "segundoApellido")}</td>
-				
-											<td>${estudianteInstance.activo ? 'Activo' : 'Inactivo' }</td>
-											
-											<td><g:formatDate date="${estudianteInstance.fechaNacimiento}" format="dd - MM - yyyy"/></td>
-										</tr>
-									</g:each>
-                               </tbody>
-                           </table>
-                       </div>
-                       <!-- /.table-responsive -->
-                   </div>
-                   <!-- /.panel-body -->
+            <div class="text-left">
+            	<h1 class="main-title">Estudiantes</h1>
+            	<div class="row">
+            	<g:each in="${estudianteInstanceList}" status="i" var="estudianteInstance">
+	            	<div class="objeto-listado estudiante col-md-4 col-sm-6 ${(i % 2) == 0 ? 'odd' : 'even'}">
+		                <div class="panel panel-default">
+		                    <div class="panel-heading text-center">
+		                        <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle">
+		                        <div>
+		                        	<g:link action="show" id="${estudianteInstance.id}">${estudianteInstance}</g:link>
+		                        </div>
+		                    </div>
+		                    <div class="panel-body">
+		                        <ul>
+		                        	<li>Cédula: ${estudianteInstance?.cedula}</li>
+		                        	<li>
+		                        		Estado: 
+		                        			${!estudianteInstance?.activo ? 'Inactivo' : 'Activo'}
+		                        	</li>
+		                        	<li>	
+		                        		Edad: ${estudianteInstance?.getAge()}
+		                        	</li>
+		                        	<li>Fecha de Nacimiento: 
+		                        		<g:formatDate date="${estudianteInstance.fechaNacimiento}" format="dd - MM - yyyy"/>
+		                        	</li>
+		                        	<li class="text-right">
+		                        		<g:link class="btn btn-default" action="editar" id="${estudianteInstance.id}">Editar</g:link>
+		                        	</li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </g:each>
+		        </div>
             </div>
 			<div class="pagination">
 				<g:paginate total="${estudianteInstanceCount ?: 0}" />

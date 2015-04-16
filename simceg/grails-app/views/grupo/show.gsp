@@ -19,8 +19,6 @@
 			<g:if test="${flash.message}">
 				<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>
-			
-			
 			<div class="row">
 			  <div class=" col-md-12"> 
 			  	<div class="col-md-5">
@@ -29,7 +27,7 @@
 				      	<g:if test="${grupoInstance?.descripcion}">
 						<tr class="fieldcontain">
 							<td>
-								<span id="descripcion-label" class="property-label"><g:message code="grupo.descripcion.label" default="Descripcion" /></span>
+								<span id="descripcion-label" class="property-label"><g:message code="grupo.descripcion.label" default="Descripción" /></span>
 							</td>
 							<td>
 								<span class="property-value" aria-labelledby="descripcion-label"><g:fieldValue bean="${grupoInstance}" field="descripcion"/></span>

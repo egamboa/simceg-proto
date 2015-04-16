@@ -13,7 +13,7 @@ class DashboardController {
 	}
 	
 	def eventos(){
-		render(view:'eventos')
+		//render(view:'eventos')
 	}
 
 	def mensajes(){
@@ -28,20 +28,20 @@ class DashboardController {
 		render(view: 'nuevoEvento')
 	}
 
-	def notas(){
-		def user = springSecurityService.currentUser
-		render(view:'notas', model:[user: user])
-	}
-
 	def calificar(){
 		render(view:'calificar')
 	}
 	
 	def calendario(){
-		render(view: 'calendar')
+		//render(view: 'calendar')
 	}
 	
 	def estudiantes(){
 		render(view: 'estudiantes')
+	}
+
+	def notas(){
+		def user = springSecurityService.currentUser
+		render(view:'notas', model:[user: user])
 	}
 }

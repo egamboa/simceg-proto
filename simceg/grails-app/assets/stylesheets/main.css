@@ -252,20 +252,14 @@ ul{
 }
 
 /*Aqui inicia el app*/
+#calendar {
+	max-width: 900px;
+	margin: 0 auto 10px;
+}
 .container{
 	margin-bottom: 40px;
 }
 footer{
-<<<<<<< Updated upstream
-	bottom: 0px;
-	position: fixed;
-	width: 75%;
-	margin: 0 auto;
-	padding: 5px;
-	border-top: 1px solid #d1d4d7;
-	background-color: #fff;
-	left: 0;
-=======
 	width: 94%;
 	padding: 5px;
 	border-top: 1px solid #d1d4d7;
@@ -273,7 +267,9 @@ footer{
 	bottom: -20px;
 	position: absolute;
 	margin: 0;
->>>>>>> Stashed changes
+}
+.full-page footer{
+	width: 100%;	
 }
 .static-page footer{
 	position: relative;
@@ -305,7 +301,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
 	color: #555;
 }
-.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{
+body .navbar-inverse .navbar-nav>li>a:hover, body .navbar-inverse .navbar-nav>li>a:focus{
 	color: #555;
 }
 .sidebar .nav-second-level li a{
@@ -316,7 +312,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 	color: #fff;
 	border-left: 3px solid #20a8d8;
 }
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
+body .navbar-inverse .navbar-nav>.active>a, body .navbar-inverse .navbar-nav>.active>a:hover, body .navbar-inverse .navbar-nav>.active>a:focus{
 	background: transparent;
 	color: #555;
 	border-left: 3px solid #20a8d8;

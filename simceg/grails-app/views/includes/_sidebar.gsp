@@ -48,8 +48,8 @@
              <li class="active">
                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
-                 	<li class="${controllerName == 'dashboard' && actionName == 'eventos' ? 'active':''}">
-                 		<g:link controller="dashboard" action="eventos">Eventos</g:link>
+                 	<li class="${controllerName == 'evento' ? 'active':''}">
+                 		<g:link controller="evento" action="index">Eventos</g:link>
                  	</li>
 			        <li class="${controllerName == 'profesor' ? 'active':''}">
 			        	<g:link controller='profesor'>Profesores</g:link>

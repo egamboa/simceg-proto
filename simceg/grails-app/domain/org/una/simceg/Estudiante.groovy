@@ -22,6 +22,11 @@ class Estudiante {
     static constraints = {
     	cedula unique: true, blank: false
     }
+
+    def getAge(){
+    	Date.metaClass.getAge = { new Date().year - fechaNacimiento.year } 
+		return new Date(79, 11, 17).age 
+    }
 	
 	String nombreCompleto(){
 		nombre + ' ' + primerApellido + ' ' + segundoApellido

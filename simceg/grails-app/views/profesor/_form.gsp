@@ -38,7 +38,6 @@
 		<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'fechaSalida', 'error')} form-group">
 			<label for="fechaSalida" class="control-label">
 				<g:message code="profesor.fechaSalida.label" default="Fecha Salida" />
-				
 			</label>
 			<div class="date">
 				<g:datePicker class="form-control" name="fechaSalida" precision="day"  value="${profesorInstance?.fechaSalida}" />

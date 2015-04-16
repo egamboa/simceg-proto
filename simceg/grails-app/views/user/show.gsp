@@ -15,13 +15,15 @@
 			</ul>
 		</div>
 		<div id="show-user" class="text-left content scaffold-show" role="main">
-			<h1 class="main-title text-left">${userInstance}</h1>
 			<g:if test="${flash.message}">
 				<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>
-			
+			<br>
 			<div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
+                <div class="col-md-3 col-lg-3 " align="center">
+                  <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle">
+                  <h1 class="main-title text-center">${userInstance}</h1>
+                </div>
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>

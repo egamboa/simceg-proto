@@ -17,56 +17,43 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-				<div class="panel panel-default">
-                   <div class="panel-heading">
-                       Profesores
-                   </div>
-                   <!-- /.panel-heading -->
-                   <div class="panel-body">
-                       <div class="table-responsive">	
-						<table class="table table-striped">
-						<thead>
-								<tr>
-
-									<th><g:message code="profesor.usuario.label" default="Usuario" /></th>
-								
-									<g:sortableColumn property="activo" title="${message(code: 'profesor.activo.label', default: 'Activo')}" />
-								
-									<g:sortableColumn property="descripcion" title="${message(code: 'profesor.descripcion.label', default: 'Descripción')}" />
-								
-									<g:sortableColumn property="fechaIngreso" title="${message(code: 'profesor.fechaIngreso.label', default: 'Fecha Ingreso')}" />
-								
-									<g:sortableColumn property="gradoProfesional" title="${message(code: 'profesor.gradoProfesional.label', default: 'Grado Profesional')}" />
-								
-								</tr>
-							</thead>
-							<tbody>
-							<g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
-								<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-
-									<td>
-										<g:link action="show" id="${profesorInstance.id}">
-											${profesorInstance.usuario.nombreCompleto()}
-										</g:link>
-									</td>
-								
-									<td>${profesorInstance.activo ? 'Activo' : 'Inactivo'}</td>
-								
-									<td>${fieldValue(bean: profesorInstance, field: "descripcion")}</td>
-								
-									<td><g:formatDate date="${profesorInstance.fechaIngreso}"  format="dd - MM - yyyy" /></td>
-								
-									<td>${fieldValue(bean: profesorInstance, field: "gradoProfesional")}</td>
-								
-								</tr>
-							</g:each>
-							</tbody>
-						</table>
-					</div>
-                       <!-- /.table-responsive -->
-                   </div>
-                   <!-- /.panel-body -->
-            	</div>
+            <div class="text-left">
+            	<h1 class="main-title">Profesores</h1>
+            	<div class="row">
+            	<g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
+	            	<div class="objeto-listado profesor col-md-4 col-sm-6 ${(i % 2) == 0 ? 'odd' : 'even'}">
+		                <div class="panel panel-default">
+		                    <div class="panel-heading text-center">
+		                        <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle">
+		                        <div>
+		                        	<g:link action="show" id="${profesorInstance.id}">
+		                        		${profesorInstance?.usuario?.nombreCompleto()}
+		                        	</g:link>
+		                        	
+		                        </div>
+		                    </div>
+		                    <div class="panel-body">
+		                    	<h4>${fieldValue(bean: profesorInstance, field: "descripcion")}</h4>
+		                        <ul>
+		                        	<li>
+		                        		Grado profesional: ${fieldValue(bean: profesorInstance, field: "gradoProfesional")}
+		                        	</li>
+		                        	<li>
+		                        		Estado:${profesorInstance.activo ? 'Activo' : 'Inactivo'}
+		                        	</li>
+		                        	<li>
+		                        		Fecha de ingreso: <g:formatDate date="${profesorInstance.fechaIngreso}"  format="dd - MM - yyyy" />
+		                        	</li>
+		                        	<li class="text-right">
+		                        		<g:link class="btn btn-default" action="editar" id="${profesorInstance.id}">Editar</g:link>
+		                        	</li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </g:each>
+		        </div>
+            </div>
 			<div class="pagination">
 				<g:paginate total="${profesorInstanceCount ?: 0}" />
 			</div>

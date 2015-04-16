@@ -17,53 +17,46 @@
 			<g:if test="${flash.message}">
 				<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>
-			
-			<div class="panel panel-default">
-                        <div class="panel-heading">
-                            Usuarios
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="text-center">
-                                        	<g:sortableColumn property="username" title="Usuario" />
-                                            <g:sortableColumn property="cedula" title="Cedula" />
-                                            <g:sortableColumn property="accountLocked" title="Bloqueado" />
-                                            <g:sortableColumn property="email" title="Email" />
-                                            <th class="sortable"><a href="#">Rol</a></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <g:each in="${userInstanceList}" status="i" var="userInstance">
-											<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
-												
-												<td><g:link action="show" id="${userInstance.id}"><i class="glyphicon glyphicon-user"></i> ${fieldValue(bean: userInstance, field: "username")}</g:link></td>
-												
-												<td>${fieldValue(bean: userInstance, field: "cedula")}</td>
-												
-												<td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
-												
-												<td>${fieldValue(bean: userInstance, field: "email")}</td>
-												
-												<td>
-													<%
-														def role = org.una.simceg.UserRole.findByUser(userInstance)
-													%>
-													${role?.role?.toString()}
-												</td>
-												
-											</tr>
-										</g:each>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-		
+            <div class="text-left">
+            	<h1 class="main-title">Usuarios</h1>
+            	<div class="row">
+            	<g:each in="${userInstanceList}" status="i" var="userInstance">
+	            	<div class="objeto-listado usuario col-md-4 col-sm-6 ${(i % 2) == 0 ? 'odd' : 'even'}">
+		                <div class="panel panel-default">
+		                    <div class="panel-heading text-center">
+		                        <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle">
+		                        <div>
+		                        	<g:link action="show" id="${userInstance.id}">
+		                        		${fieldValue(bean: userInstance, field: "username")}
+		                        	</g:link>
+		                        	
+		                        </div>
+		                    </div>
+		                    <div class="panel-body">
+		                        <ul>
+		                        	<li>Cédula: ${userInstance?.cedula}</li>
+		                        	<li>Email: ${userInstance?.email}</li>
+		                        	<li>
+		                        		Rol:
+		                        		<%
+											def role = org.una.simceg.UserRole.findByUser(userInstance)
+										%>
+										${role?.role?.toString()}
+		                        	</li>
+		                        	<li>
+		                        		Estado: 
+		                        			${userInstance?.accountLocked ? 'Inactivo' : 'Activo'}
+		                        	</li>
+		                        	<li class="text-right">
+		                        		<g:link class="btn btn-default" action="editar" id="${userInstance.id}">Editar</g:link>
+		                        	</li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </g:each>
+		        </div>
+            </div>
 			<div class="pagination">
 				<g:paginate total="${userInstanceCount ?: 0}" />
 			</div>
