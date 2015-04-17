@@ -25,6 +25,9 @@
 		<div class="main-content">
 			<div id="page-wrapper">
 				<g:layoutBody/>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3">
 				<g:render template="/includes/footer" />
 			</div>
 		</div>

@@ -6,6 +6,8 @@ class Evento {
 	
 	Date tiempoInicio, tiempoFinal
 
+	boolean allDay = false
+
     static constraints = {
     }
 	

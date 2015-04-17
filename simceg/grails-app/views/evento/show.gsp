@@ -10,8 +10,13 @@
 	<body>
 		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li><g:link class="list" action="index">Calendario</g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<sec:ifAnyGranted  roles="ROLE_TEACHER,ROLE_USER">
+					<li><g:link class="list" controller="dashboard" action="calendario">Calendario</g:link></li>
+				</sec:ifAnyGranted >
+				<sec:access expression="hasRole('ROLE_ADMIN')">
+					<li><g:link class="list" action="index">Calendario</g:link></li>
+					<li><g:link class="create" action="create">	<g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				</sec:access>
 			</ul>
 		</div>
 		<div id="show-evento" class="content scaffold-show" role="main">
@@ -55,28 +60,39 @@
 							</td>
 						</tr>
 						</g:if>
-
-						<g:if test="${eventoInstance?.tiempoFinal}">
+						<g:if test="${eventoInstance?.allDay}">
 						<tr class="fieldcontain">
 							<td>
-								<span id="tiempoFinal-label" class="property-label"><g:message code="evento.tiempoFinal.label" default="Tiempo Final" /></span>
+								<span id="locacion-label" class="property-label"><g:message code="evento.addDay.label" default="Todo el día?" /></span>
 							</td>
 							<td>
-								<span class="property-value" aria-labelledby="tiempoFinal-label"><g:formatDate format="dd - MM - yyyy" date="${eventoInstance?.tiempoFinal}" /></span>
+								<span class="property-value" aria-labelledby="locacion-label">${eventoInstance.allDay ? 'Sí' : 'No' }</span>
 							</td>
 						</tr>
 						</g:if>
-
-						<g:if test="${eventoInstance?.tiempoInicio}">
-						<tr class="fieldcontain">
-							<td>
-								<span id="tiempoInicio-label" class="property-label"><g:message code="evento.tiempoInicio.label" default="Tiempo Inicio" /></span>
-							</td>
-							<td>
-								<span class="property-value" aria-labelledby="tiempoInicio-label"><g:formatDate date="${eventoInstance?.tiempoInicio}" format="dd - MM - yyyy" /></span>
-							</td>
-						</tr>
-						</g:if>
+						<g:else>
+							<g:if test="${eventoInstance?.tiempoInicio}">
+							<tr class="fieldcontain">
+								<td>
+									<span id="tiempoInicio-label" class="property-label"><g:message code="evento.tiempoInicio.label" default="Tiempo Inicio" /></span>
+								</td>
+								<td>
+									<span class="property-value" aria-labelledby="tiempoInicio-label"><g:formatDate date="${eventoInstance?.tiempoInicio}" format="dd - MM - yyyy | hh:mm a" /></span>
+								</td>
+							</tr>
+							</g:if>
+							<g:if test="${eventoInstance?.tiempoFinal}">
+							<tr class="fieldcontain">
+								<td>
+									<span id="tiempoFinal-label" class="property-label"><g:message code="evento.tiempoFinal.label" default="Tiempo Final" /></span>
+								</td>
+								<td>
+									<span class="property-value" aria-labelledby="tiempoFinal-label"><g:formatDate format="dd - MM - yyyy | hh:mm a" date="${eventoInstance?.tiempoFinal}" /></span>
+								</td>
+							</tr>
+							</g:if>
+						</g:else>
+						<sec:access expression="hasRole('ROLE_ADMIN')">
 						<tr>
 							<td></td>
 							<td>
@@ -90,6 +106,7 @@
 								</g:form>
 							</td>
 						</tr>
+						</sec:access>
 			  		</tbody>
 			  	</table>
 			  </div>

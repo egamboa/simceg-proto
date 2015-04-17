@@ -20,7 +20,7 @@
           from="${Materia.list()}"
           value="id"
           optionKey="id"
-          optionValue="${{it.materia.descripcion}}" />
+          optionValue="${{it.descripcion}}" />
           <g:select name="estudiantes"
           from="${Estudiante.list()}"
           value="id"

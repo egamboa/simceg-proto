@@ -15,9 +15,8 @@
 		</div>
 		<div id="list-nivel" class="content scaffold-list" role="main">
 			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
+				<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>
-			
 			<div class="panel panel-default">
                    <div class="panel-heading text-left">
                        Niveles

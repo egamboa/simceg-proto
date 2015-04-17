@@ -14,6 +14,9 @@
 			</ul>
 		</div>
 		<div id="list-periodoLectivo" class="content scaffold-list" role="main">
+			<g:if test="${flash.message}">
+				<div class="message alert alert-info" role="status">${flash.message}</div>
+			</g:if>
             <div class="text-left">
             	<h1 class="main-title">Periodos Lectivos</h1>
             	<div class="row">

@@ -51,6 +51,35 @@ var app = {
         $('.navbar-collapse').on('hide.bs.collapse', function (event) {
             $(this).parent().toggleClass('open');
         });
+    },
+    initCalendar: function(){
+        var eventDataParsed, refactorEventdata;
+        if(typeof eventData != "undefined" && eventData){
+            eventDataParsed = JSON.parse(eventData.replace(/&quot;/g,'"'));
+            refactorEventdata = $.map(eventDataParsed, function(value, index){
+                return {
+                    title: value.titulo,
+                    start: value.tiempoInicio,
+                    end: value.tiempoFinal,
+                    id: value.id,
+                    url: '/simceg/evento/show/'+value.id,
+                    allDay: value.allDay
+                };
+            });
+        }
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            lang: 'es',
+            timezone: 'America/Costa_Rica',
+            buttonIcons: true, // show the prev/next text
+            editable: false,
+            eventLimit: true, // allow "more" link when too many events
+            events: refactorEventdata
+        });
     }
 }
 

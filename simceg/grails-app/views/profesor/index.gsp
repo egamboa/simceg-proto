@@ -15,7 +15,7 @@
 		</div>
 		<div id="list-profesor" class="content scaffold-list" role="main">
 			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
+				<div class="message alert alert-info" role="status">${flash.message}</div>
 			</g:if>
             <div class="text-left">
             	<h1 class="main-title">Profesores</h1>

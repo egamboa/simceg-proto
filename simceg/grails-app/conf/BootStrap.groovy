@@ -9,10 +9,15 @@ import org.una.simceg.Nivel
 import org.una.simceg.Grupo
 import org.una.simceg.Materia
 import org.una.simceg.Profesor
+import grails.converters.JSON
 
 class BootStrap {
 
     def init = { servletContext ->
+    	TimeZone.setDefault(TimeZone.getTimeZone("GMT-6")) 
+		JSON.registerObjectMarshaller(Date) {
+			return it?.format("yyyy-MM-dd'T'HH:mm:ssZ")
+		}
 		
 		if(Role.count() == 0 && User.count() == 0 && Estudiante.count() == 0){
 			def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)

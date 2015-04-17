@@ -4,21 +4,23 @@
              <li>
              	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
              </li>
+             <sec:ifAnyGranted  roles="ROLE_TEACHER,ROLE_USER">
              <li>
-             	<g:link controller="dashboard" action="nuevoMensaje"><i class="fa fa-envelope"></i> Nuevo Mensaje</g:link>
-             </li>
-             <li>
-                 <a href="#"><i class="glyphicon glyphicon-user"></i> <span class="fa arrow"></span>Personal</a>
+                 <a href="#"><i class="glyphicon glyphicon-user"></i> <span class="fa arrow"></span>Estudiantes</a>
                  <ul class="nav nav-second-level">
 			        <li>
-                        <g:link controller="dashboard" action="mensajes"><i class="fa fa-envelope"></i> Mensajes</g:link>
+                        <a href="#"><i class="glyphicon glyphicon-user"></i></span>Juan Carlos</a>
                     </li>
-			        <li>
-			        	<g:link controller="dashboard" action="calendario"><i class="fa fa-calendar"></i> Calendario</g:link>
-			        </li>
                  </ul>
-                 <!-- /.nav-second-level -->
              </li>
+             </sec:ifAnyGranted>
+                 <li class="${controllerName == 'dashboard' && actionName == 'mensajes' ? 'active':''}">
+                    <g:link controller="dashboard" action="mensajes"><i class="fa fa-envelope"></i> Mensajes</g:link>
+                </li>
+                <li class="${controllerName == 'dashboard' && actionName == 'calendario' ? 'active':''}">
+                    <g:link controller="dashboard" action="calendario"><i class="fa fa-calendar"></i> Calendario</g:link>
+                </li>
+                 <!-- /.nav-second-level -->
              
              <sec:ifAnyGranted  roles="ROLE_TEACHER,ROLE_USER">
              <li>
@@ -45,7 +47,7 @@
              </sec:ifAnyGranted >
              
              <sec:access expression="hasRole('ROLE_ADMIN')">
-             <li class="active">
+             <li class="${controllerName != 'dashboard' ? 'active':''}">
                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
                  	<li class="${controllerName == 'evento' ? 'active':''}">

@@ -1,5 +1,7 @@
 package org.una.simceg
 
+import grails.converters.*
+import org.una.simceg.Evento
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
@@ -33,7 +35,8 @@ class DashboardController {
 	}
 	
 	def calendario(){
-		//render(view: 'calendar')
+		ArrayList eventos = Evento.list()
+		render(view: 'calendar', model:[eventos: eventos as JSON])
 	}
 	
 	def estudiantes(){

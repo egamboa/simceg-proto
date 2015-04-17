@@ -16,6 +16,7 @@ class EventoController {
         respond eventos, model:[eventoInstanceCount: Evento.count(), eventos: eventos as JSON]
     }
 
+    @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
     def show(Evento eventoInstance) {
         respond eventoInstance
     }
