@@ -1,4 +1,3 @@
-
 <%@ page import="org.una.simceg.Materia" %>
 <!DOCTYPE html>
 <html>

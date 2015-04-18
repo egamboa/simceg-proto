@@ -31,6 +31,8 @@
 				<g:render template="/includes/footer" />
 			</div>
 		</div>
+		<asset:javascript src="mustache.min.js"/>
+		<asset:javascript src="underscore-min.js"/>
 	    <asset:javascript src="moment.min.js"/>
 	    <asset:javascript src="fullcalendar.min.js"/>
 	    <asset:javascript src="plugins.js"/>

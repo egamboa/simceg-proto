@@ -14,8 +14,8 @@
                  </ul>
              </li>
              </sec:ifAnyGranted>
-                 <li class="${controllerName == 'dashboard' && actionName == 'mensajes' ? 'active':''}">
-                    <g:link controller="dashboard" action="mensajes"><i class="fa fa-envelope"></i> Mensajes</g:link>
+                 <li class="${controllerName == 'mensaje' ? 'active':''}">
+                    <g:link controller="mensaje" action="index"><i class="fa fa-envelope"></i> Mensajes</g:link>
                 </li>
                 <li class="${controllerName == 'dashboard' && actionName == 'calendario' ? 'active':''}">
                     <g:link controller="dashboard" action="calendario"><i class="fa fa-calendar"></i> Calendario</g:link>
@@ -47,7 +47,7 @@
              </sec:ifAnyGranted >
              
              <sec:access expression="hasRole('ROLE_ADMIN')">
-             <li class="${controllerName != 'dashboard' ? 'active':''}">
+             <li class="${controllerName != 'dashboard' && controllerName != 'mensaje' ? 'active':''}">
                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Administración<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
                  	<li class="${controllerName == 'evento' ? 'active':''}">

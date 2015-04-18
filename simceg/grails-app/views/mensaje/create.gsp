@@ -9,7 +9,7 @@
 		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills">
 				<li>
-					<g:link class="list" controller="dashboard" action="mensajes">
+					<g:link class="list" controller="mensaje" action="index">
 						Mensajes
 					</g:link>
 				</li>

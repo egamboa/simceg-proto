@@ -4,6 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.una.simceg.User
+import grails.converters.JSON
 
 @Transactional(readOnly = true)
 class MensajeController {
@@ -12,9 +13,11 @@ class MensajeController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Mensaje.list(params), model:[mensajeInstanceCount: Mensaje.count()]
+        def user = springSecurityService.currentUser
+        ArrayList mensajes = Mensaje.findAllByEmisorOrReceptor(user, user)
+        render view: 'index', model:[mensajes: mensajes as JSON, mensajeInstanceCount: mensajes.size(), currentUser: user]
     }
 
     def show(Mensaje mensajeInstance) {
@@ -31,6 +34,22 @@ class MensajeController {
 
     def checkStatus(){
         render ":D"
+    }
+
+    @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
+    def getChats(){
+        def chats = JSON.parse(params.chats)
+        ArrayList fullChats = []
+        User user
+        chats.each{it->
+            user = User.get(it)
+            fullChats.add([
+                    id:user.id,
+                    nombre:user.nombreCompleto(), 
+                    rol: user.getAuthorities()[0].toString()
+                    ])
+        }
+        render fullChats as JSON
     }
 
     @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
@@ -54,7 +73,7 @@ class MensajeController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'mensaje.label', default: 'Mensaje'), mensajeInstance.id])
-                redirect mensajeInstance
+                redirect action:'index'
             }
             '*' { respond mensajeInstance, [status: CREATED] }
         }

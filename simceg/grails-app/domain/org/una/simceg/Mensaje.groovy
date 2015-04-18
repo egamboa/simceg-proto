@@ -10,6 +10,7 @@ class Mensaje {
     static mapping = {
         mensaje type: 'text'
         visto defaultValue: false
+        sort fechaEnvio: "asc"
     }
     static constraints = {
     	mensaje 	maxSize: 500

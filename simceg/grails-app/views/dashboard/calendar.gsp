@@ -15,10 +15,6 @@
 			<div class="col-md-12 notas">
 				<script>
 					var eventData = "${eventos}";
-					$(document).ready(function() {
-						app.initCalendar();
-					});
-				
 				</script>
 				<div id='calendar'>	
 					

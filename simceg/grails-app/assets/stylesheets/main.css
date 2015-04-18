@@ -431,6 +431,37 @@ h1.main-title{
 .timeline > li > .timeline-badge{
 	z-index: 1;
 }
+#mensajes-on .chats-holder .panel-body{
+	padding: 0;
+}
+.chat-list.media-list{
+	margin: 0;
+}
+.chat-list .chat{
+	padding: 10px;
+	cursor: pointer;
+}
+.chat-list .chat .media-body{
+	margin-top: 2px;
+}
+.chat-list .chat h5{
+	margin: 0 0 5px;
+}
+#mensajes-on .mensajes-list{
+	max-height: 300px;
+	min-height: 300px;
+	overflow-y:scroll;
+}
+#mensajes-on .mensajes-list .mensaje .media-body{
+	margin-bottom: 5px;
+}
+#mensajes-on .panel-footer{
+	background-color: #fff;
+	margin: 0;
+}
+#mensajes-on .panel-footer button{
+	margin-top: 10px
+}
 
 @media (min-width: 992px) {
 	nav.navbar.navbar-inverse.navbar-fixed-top{
@@ -438,6 +469,10 @@ h1.main-title{
 	}
 }
 @media (max-width: 991px) {
+	#mensajes-on .mensajes-list{
+		max-height: none;
+		min-height: none;
+	}
 	.navbar-default.sidebar{
 		height: auto;
 		width: 100%;
@@ -497,3 +532,47 @@ h1.main-title{
 
 }
 
+/* CSS3 EFFECTS */
+
+/* Sweep To Right */
+.hvr-sweep-to-right {
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098d1;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right.active, .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right.active:before, .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
