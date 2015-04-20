@@ -128,9 +128,15 @@ var app = {
     },
     initNotifications: function(chats){
         var notifications = [];
-        console.log(_.filter(mensajes, function(mensaje){
-            return mensaje.visto == false;
-        }));
+        _.each(chats, function(chat){
+            notifications.push({
+                'chat': chat.id,
+                'mensajes': _.filter(mensajesParsed, function(mensaje){
+                    return mensaje.visto == false 
+                        && (mensaje.emisor.id == chat.id || mensaje.receptor.id == chat.id);
+                })
+            });
+        });
     },
     chatsEvents: function(){
         var self = this;
