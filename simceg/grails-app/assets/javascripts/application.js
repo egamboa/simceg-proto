@@ -118,12 +118,19 @@ var app = {
             self.triggerTemplate('#templateChat', data, '.chat-list');
             $('.chat-list .chat').first().addClass('active');
             self.chatsEvents();
+            self.initNotifications(data);
             self.initCurrentChat($('.chat-list .chat').first().data('id'));
         }).fail(function(data) {
             console.log( data.responseText );
         }).always(function() {
             $('.chats-holder li.spinner').hide();
         });
+    },
+    initNotifications: function(chats){
+        var notifications = [];
+        console.log(_.filter(mensajes, function(mensaje){
+            return mensaje.visto == false;
+        }));
     },
     chatsEvents: function(){
         var self = this;
@@ -135,23 +142,30 @@ var app = {
     },
     initCurrentChat: function(chat){
         $('#mensajes-on .panel-footer').removeClass('hidden');
-        var mensajes = _.compact(_.map(mensajesParsed, function(mensaje){
-            if(mensaje.emisor.id == chat){
-                mensaje.side = false
-                mensaje.color = "alert-info"
-                mensaje.nombre = $('.chat-list .chat.active h5').text();
-                return mensaje;
-            }else if(mensaje.receptor.id == chat){
-                mensaje.side = true;
-                mensaje.color = "alert-success"
-                mensaje.nombre = 'Yo';
-                return mensaje;
+        var mensajes = mensajesParsed;
+        mensajes = _.compact(_.map(mensajes, function(msg){
+            if(msg.emisor.id == chat){
+                msg.side = false
+                msg.color = "alert-info"
+                msg.nombre = $('.chat-list .chat.active h5').text();
+                return msg;
+            }else if(msg.receptor.id == chat){
+                msg.side = true;
+                msg.color = "alert-success"
+                msg.nombre = 'Yo';
+                return msg;
             }
         }));
+        this.checkSeenMessage(mensajes);
         this.triggerTemplate('#templateMensaje', mensajes, '.mensajes-list');
         $('.mensajes-list').scrollTop($('.mensajes-list')[0].scrollHeight);
         $('#send-message').find('select').find('option').removeAttr('selected');
         $('#send-message').find('select').find('option[value="' + chat + '"]').attr('selected', 'selected');
+    },
+    checkSeenMessage: function(mensajes){
+        console.log(_.filter(mensajes, function(mensaje){
+            return mensaje.visto == false;
+        }));
     },
     triggerTemplate: function(id, data, classTo){
         var template = $(id).html();
