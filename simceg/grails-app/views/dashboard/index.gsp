@@ -6,12 +6,6 @@
 	</head>
 	<body>
 		<div id="">
-            <div class="row">
-                <div class="col-lg-12 text-left">
-                    <h1 class="page-header">Hola, ${user.nombreCompleto()}.</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4">

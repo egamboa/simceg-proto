@@ -25,7 +25,7 @@
     	  <!-- Carousel -->
     	  <g:render template="/includes/home-carousel" />
     	  <!-- Page Content -->
-    	  <div class="container">
+    	  <div class="container">s
     		<g:layoutBody/>
     	  </div>
     	  <!-- FOOTER AREA -->

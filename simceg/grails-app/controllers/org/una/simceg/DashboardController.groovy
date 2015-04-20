@@ -10,8 +10,7 @@ class DashboardController {
 	def springSecurityService
 	
     def index() {
-		def user = springSecurityService.currentUser
-		render(view: "index", model:[user: user])
+		render(view: "index")
 	}
 
 	def calificar(){

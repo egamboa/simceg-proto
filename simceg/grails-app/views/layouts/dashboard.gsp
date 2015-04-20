@@ -1,3 +1,4 @@
+<%@ page import="org.una.simceg.User" %>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -24,6 +25,7 @@
 		<g:render template="/includes/sidebar" />
 		<div class="main-content">
 			<div id="page-wrapper">
+				<p class="text-right user-top-info">Bienvenido, ${User.findByUsername(sec.loggedInUserInfo(field:'username'))}</p>
 				<g:layoutBody/>
 			</div>
 			<div class="clearfix"></div>

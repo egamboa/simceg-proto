@@ -300,7 +300,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 .navbar-inverse .navbar-nav>li>a{
 	border-left: 3px solid #fff;
 }
-.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
+body .navbar-inverse .navbar-brand:hover, body .navbar-inverse .navbar-brand:focus{
 	color: #555;
 }
 body .navbar-inverse .navbar-nav>li>a:hover, body .navbar-inverse .navbar-nav>li>a:focus{

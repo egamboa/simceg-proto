@@ -23,12 +23,12 @@
                     <div class="form-group">
                           <input name="j_password" id="password" type="password" placeholder="Contrase&ntilde;a" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                     	<p id="remember_me_holder">
 							             <input type="checkbox" class="chk" name="_spring_security_remember_me" id="remember_me">
 							             <label for="remember_me">Recordarme</label>
 						          </p>
-                    </div>
+                    </div>-->
                </div>   
                <hr>
                <div class="row">
