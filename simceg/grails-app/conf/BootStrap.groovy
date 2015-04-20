@@ -7,6 +7,7 @@ import org.una.simceg.Estudiante
 import org.una.simceg.PeriodoLectivo
 import org.una.simceg.Nivel
 import org.una.simceg.Grupo
+import org.una.simceg.Mensaje
 import org.una.simceg.Materia
 import org.una.simceg.Profesor
 import grails.converters.JSON
@@ -15,8 +16,18 @@ class BootStrap {
 
     def init = { servletContext ->
     	TimeZone.setDefault(TimeZone.getTimeZone("GMT-6")) 
-		JSON.registerObjectMarshaller(Date) {
+    	JSON.registerObjectMarshaller(Date) {
 			return it?.format("yyyy-MM-dd'T'HH:mm:ssZ")
+		}
+    	JSON.registerObjectMarshaller( Mensaje ) { Mensaje mensaje ->
+		    return [
+		            id : mensaje.id,
+		            emisor: mensaje.emisor,
+		            receptor: mensaje.receptor,
+		            fechaEnvio: mensaje.fechaEnvio.format("d-M-y | K:m a"),
+		            visto: mensaje.visto,
+		            mensaje: mensaje.mensaje
+		    ]
 		}
 		
 		if(Role.count() == 0 && User.count() == 0 && Estudiante.count() == 0){

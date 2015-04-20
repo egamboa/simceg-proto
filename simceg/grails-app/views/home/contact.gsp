@@ -92,7 +92,7 @@
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <div class="text-center">
+                    <div class="text-right">
                     	<button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
                     </div>
                 </form>

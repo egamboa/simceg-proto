@@ -116,10 +116,15 @@ var app = {
                 }
         }).done(function( data ){
             self.triggerTemplate('#templateChat', data, '.chat-list');
-            $('.chat-list .chat').first().addClass('active');
             self.chatsEvents();
             self.initNotifications(data);
-            self.initCurrentChat($('.chat-list .chat').first().data('id'));
+            if(currentChat > 0){
+                $('.chat-list .chat[data-id="' + currentChat + '"]').addClass('active');
+                self.initCurrentChat($('.chat-list .chat[data-id="' + currentChat + '"]').data('id'));
+            }else{
+                $('.chat-list .chat').first().addClass('active');
+                self.initCurrentChat($('.chat-list .chat').first().data('id'));
+            }
         }).fail(function(data) {
             console.log( data.responseText );
         }).always(function() {
@@ -127,23 +132,30 @@ var app = {
         });
     },
     initNotifications: function(chats){
-        var notifications = [];
+        var notifications = [], self = this;
         _.each(chats, function(chat){
             notifications.push({
                 'chat': chat.id,
                 'mensajes': _.filter(mensajesParsed, function(mensaje){
-                    return mensaje.visto == false 
-                        && (mensaje.emisor.id == chat.id || mensaje.receptor.id == chat.id);
+                    return mensaje.visto == false && mensaje.emisor.id == chat.id;
                 })
             });
+        });
+        _.each(notifications, function(chat){
+            if(chat.mensajes.length > 0){
+                self.triggerTemplate('#templateNotificacion', chat.mensajes.length, '.chat-list [data-id="' + chat.chat + '"] .notify-holder');
+            }
         });
     },
     chatsEvents: function(){
         var self = this;
         $('.chat-list .chat').bind('click', function(){
-            $('.chat-list .chat').removeClass('active');
-            $(this).addClass('active');
-            self.initCurrentChat($(this).data('id'));
+            if(!$(this).hasClass('active')){
+                $('.chat-list .chat').removeClass('active');
+                $(this).addClass('active');
+                self.initCurrentChat($(this).data('id'));
+            }
+            return false;
         });
     },
     initCurrentChat: function(chat){
@@ -162,16 +174,30 @@ var app = {
                 return msg;
             }
         }));
-        this.checkSeenMessage(mensajes);
+        this.checkSeenMessage(mensajes, chat);
         this.triggerTemplate('#templateMensaje', mensajes, '.mensajes-list');
         $('.mensajes-list').scrollTop($('.mensajes-list')[0].scrollHeight);
+        $('.nombre-chat-activo').html($('.chat-list .chat.active h5').text());
         $('#send-message').find('select').find('option').removeAttr('selected');
         $('#send-message').find('select').find('option[value="' + chat + '"]').attr('selected', 'selected');
     },
-    checkSeenMessage: function(mensajes){
-        console.log(_.filter(mensajes, function(mensaje){
-            return mensaje.visto == false;
-        }));
+    checkSeenMessage: function(mensajes, chat){
+        var seen = _.map(_.filter(mensajes, function(mensaje){
+            return mensaje.visto == false && mensaje.emisor.id == chat;
+        }), function(mensaje){
+            return mensaje.id;
+        });
+        $.ajax({
+          url: $('#seenMessages').attr('href'),
+          data: {
+                  mensajes: JSON.stringify(seen)
+                }
+        }).done(function( data ){
+            $('.chat-list [data-id="' + chat + '"] .notify-holder .notification').fadeOut();
+        }).fail(function(data) {
+            console.log( data.responseText );
+        }).always(function() {
+        });
     },
     triggerTemplate: function(id, data, classTo){
         var template = $(id).html();

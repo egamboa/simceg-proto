@@ -20,14 +20,14 @@ class MensajeController {
         def user = springSecurityService.currentUser
         ArrayList users = User.where{ id != user.id }.list()
         ArrayList mensajes = Mensaje.findAllByEmisorOrReceptor(user, user)
-
         def mensajesJson = mensajes as JSON
         mensajesJson =  util.escapeJavaScript(mensajesJson.toString())
         render view: 'index', model:[
                                     mensajes: mensajesJson, 
                                     mensajeInstanceCount: mensajes.size(), 
                                     currentUser: user,
-                                    users: users
+                                    users: users,
+                                    activeChat: params.activeChat ? params.activeChat : null
                                     ]
     }
 
@@ -41,10 +41,20 @@ class MensajeController {
         def user = springSecurityService.currentUser
         users.remove(user)
         respond new Mensaje(params), model: [users: users]
-    }
+    }  
 
-    def checkStatus(){
-        render ":D"
+    @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
+    @Transactional
+    def changeStatus(){
+        def mensajes = JSON.parse(params.mensajes)
+        Mensaje elMensaje
+        mensajes.each{id ->
+            elMensaje = Mensaje.get(id)
+            elMensaje.visto = true
+            elMensaje.save(failOnError: true)
+        }
+        response.status = 200
+        render 'success'  
     }
 
     @Secured(['ROLE_ANONYMOUS','ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
@@ -84,7 +94,7 @@ class MensajeController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'mensaje.label', default: 'Mensaje'), mensajeInstance.id])
-                redirect action:'index'
+                redirect action:'index', params: [activeChat:mensajeInstance.receptor.id]
             }
             '*' { respond mensajeInstance, [status: CREATED] }
         }
