@@ -59,22 +59,28 @@
         <div class="row text-left">
             <div class="col-md-8">
                 <h3>Formulario de Contacto</h3>
-                <form data-toggle="validator" role="form">
+                <form data-toggle="validator" role="form" id="formContacto">
                     <div class="form-group">
                         <label for="inputName" class="control-label">Nombre Completo</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Mahatma Gandhi" required>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" id="inputName" placeholder="Mahatma Gandhi" required>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="inputTel" class="control-label">N&uacute;mero Tel&eacute;fono</label>
                         <div class="input-group">
-                          <span class="input-group-addon">#</span>
+                          <span class="input-group-addon"><i class="fa fa-phone"></i></span>
                           <input type="text" pattern="^[0-9]{8}$" maxlength="8" class="form-control" id="inputTel" placeholder="12345678" data-error="Por Favor ingrese un n&uacute;mero v&aacute;lido" required>
                         </div>
                         <span class="help-block with-errors">Escriba solo 8 digitos del n&uacute;mero de tel&eacute;fono</span>
                     </div>
                     <div class="form-group">
                         <label for="inputEmail" class="control-label">Correo Electr&oacute;nico</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="ejemplo@ejemplo.com" data-error="Por Favor ingrese un correo electr&oacute;nico v&aacute;lido" required>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="ejemplo@ejemplo.com" data-error="Por Favor ingrese un correo electr&oacute;nico v&aacute;lido" required>
+                        </div>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="control-group form-group">
@@ -87,7 +93,7 @@
                     <div id="success"></div>
                     <!-- For success/fail messages -->
                     <div class="text-center">
-                    	<button type="submit" class="btn btn-primary">Enviar</button>
+                    	<button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
                     </div>
                 </form>
             </div>
