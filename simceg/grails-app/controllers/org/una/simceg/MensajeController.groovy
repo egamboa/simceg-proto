@@ -5,6 +5,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.una.simceg.User
 import grails.converters.JSON
+import groovy.json.StringEscapeUtils
 
 @Transactional(readOnly = true)
 class MensajeController {
@@ -15,9 +16,19 @@ class MensajeController {
 
     @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
     def index(Integer max) {
+        def util = new StringEscapeUtils()
         def user = springSecurityService.currentUser
+        ArrayList users = User.where{ id != user.id }.list()
         ArrayList mensajes = Mensaje.findAllByEmisorOrReceptor(user, user)
-        render view: 'index', model:[mensajes: mensajes as JSON, mensajeInstanceCount: mensajes.size(), currentUser: user]
+
+        def mensajesJson = mensajes as JSON
+        mensajesJson =  util.escapeJavaScript(mensajesJson.toString())
+        render view: 'index', model:[
+                                    mensajes: mensajesJson, 
+                                    mensajeInstanceCount: mensajes.size(), 
+                                    currentUser: user,
+                                    users: users
+                                    ]
     }
 
     def show(Mensaje mensajeInstance) {

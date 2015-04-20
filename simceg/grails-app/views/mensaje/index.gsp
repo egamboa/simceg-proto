@@ -8,7 +8,11 @@
 	<body>
 		<script type="text/javascript">
 			var mensajes = '${mensajes}';
-			var mensajesParsed = JSON.parse(mensajes.replace(/&quot;/g,'"'));
+			var mensajesParsed = JSON.parse(
+									mensajes
+									.replace(/&quot;/g,'"')
+									.replace(/\\r\\n/g, "<br/>")
+									);
 			var currentUserId = ${currentUser.id};
 		</script>
 		<script id="templateChat" type="x-tmpl-mustache">
@@ -36,7 +40,7 @@
                 <div class="media-body row">
                     <div class="media col-lg-7 col-md-7 {{#side}}col-lg-offset-5 col-md-offset-5  text-right{{/side}}">
                     	<div class="media-body  alert {{color}}">
-                    		<span>{{mensaje}}</span>
+                    		<span>{{{mensaje}}}</span>
                             <br />
                             <small class="text-muted">
                             	<span>{{nombre}}</span> | 23rd June at 5:00pm</small>
@@ -46,13 +50,21 @@
             </li>
             {{/.}}
         </script>
+        <script id="emptyChats" type="x-tmpl-mustache">
+        	{{#.}}
+            <li class="media">
+                <div class="media-body row">
+                    <div class="media col-lg-12 alert text-center">
+                    	<div class="media-body">
+                    		<span>{{mensaje}}</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/.}}
+        </script>
 		<g:link class="hidden" elementId="getChats" controller="mensaje" action="getChats" />
 		<div id="mensajes-on" class="mensajes text-left">
-			<div class="nav nav-inner" role="navigation">
-				<ul class="nav nav-pills" role="tablist">
-					<li><g:link class="create" controller="mensaje" action="create">Nuevo Mensaje</g:link></li>
-				</ul>
-			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="main-title text-left">Mensajes</h1>
@@ -70,6 +82,12 @@
 	                        </ul>
 	                    </div>
 	                </div>
+
+	                <div class="row">
+						<div class="col-lg-12 btn-group btn-group-xs">
+							<g:link class="create btn btn-primary" controller="mensaje" action="create">Nuevo Chat</g:link>
+						</div>
+					</div>
 	            </div>
 
 				<div class="col-md-8">
@@ -85,12 +103,16 @@
 	                        </ul>
 	                    </div>
 	                    <div class="panel-footer row hidden">
-	                        <div class="col-lg-12">
-	                            <textarea type="text" class="form-control" rows="2" placeholder="Enter Message" style="resize: none;"></textarea>
-	                        </div>
-	                        <div class="text-right col-lg-12">
-	                                <button class="btn btn-primary" type="button">SEND</button>
-	                        </div>
+	                        <g:form id="send-message" url="[resource:mensajeInstance, action:'save']" >
+								<fieldset class="form row">
+									<div class="col-lg-12 text-left">
+										<g:render template="form"/>
+										<div class="text-right">
+											<g:submitButton name="create" class="save btn btn-primary" value="Enviar" />
+										</div>
+									</div>
+								</fieldset>
+							</g:form>
 	                    </div>
 	                </div>
 	            </div>

@@ -1,7 +1,7 @@
 <div class="navbar-default sidebar" role="navigation">
      <div class="sidebar-nav navbar-collapse collapse" id="sidebar-toggle">
          <ul class="nav" id="side-menu">
-             <li>
+             <li class="${controllerName == 'dashboard' && actionName == "index" ? 'active':''}">
              	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
              </li>
              <sec:ifAnyGranted  roles="ROLE_TEACHER,ROLE_USER">

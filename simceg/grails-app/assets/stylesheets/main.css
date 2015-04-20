@@ -350,7 +350,7 @@ span.property-value {
 .panel{
 	border-radius: 0;
 }
-.btn, input, input.form-control, select, select.form-control{
+.panel-heading, .btn-xs, .btn-group-xs>.btn, .btn, input, input.form-control, select, select.form-control{
 	border-radius: 0px;
 	-webkit-border-radius: 0px;
 }
@@ -461,6 +461,9 @@ h1.main-title{
 }
 #mensajes-on .panel-footer button{
 	margin-top: 10px
+}
+#mensajes-on .panel-footer .receptor-holder{
+	display: none;
 }
 
 @media (min-width: 992px) {

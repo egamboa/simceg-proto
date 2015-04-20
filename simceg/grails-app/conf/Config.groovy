@@ -148,3 +148,6 @@ grails {
               "mail.smtp.socketFactory.fallback":"false"]
    }
 }
+
+grails.gorm.failOnError = true
+

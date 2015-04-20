@@ -88,6 +88,10 @@ var app = {
         }
     },
     initMensajes: function(){
+        if(mensajesParsed.length == 0){
+            this.initEmptyChats();
+            return;
+        }
         var emisores = _.map(mensajesParsed, function(mensaje){
             return mensaje.emisor.id
         });
@@ -97,6 +101,10 @@ var app = {
         var conversaciones = _.union(emisores, receptores);
         conversaciones = _.reject(conversaciones, function(chat){ return chat == currentUserId });
         this.initChats(conversaciones);
+    },
+    initEmptyChats: function(){
+        this.triggerTemplate('#emptyChats', {mensaje: 'No hay chats.'}, '.chat-list');
+        this.triggerTemplate('#emptyChats', {mensaje: 'No hay mensajes.'}, '.mensajes-list');
     },
     initChats: function(chats){
         var chatsReady, self = this;
@@ -120,7 +128,7 @@ var app = {
         var self = this;
         $('.chat-list .chat').bind('click', function(){
             $('.chat-list .chat').removeClass('active');
-            $(this).addClass('active')
+            $(this).addClass('active');
             self.initCurrentChat($(this).data('id'));
         });
     },
@@ -140,6 +148,9 @@ var app = {
             }
         }));
         this.triggerTemplate('#templateMensaje', mensajes, '.mensajes-list');
+        $('.mensajes-list').scrollTop($('.mensajes-list')[0].scrollHeight);
+        $('#send-message').find('select').find('option').removeAttr('selected');
+        $('#send-message').find('select').find('option[value="' + chat + '"]').attr('selected', 'selected');
     },
     triggerTemplate: function(id, data, classTo){
         var template = $(id).html();
