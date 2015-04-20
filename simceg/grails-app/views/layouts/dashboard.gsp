@@ -31,6 +31,7 @@
 				<g:render template="/includes/footer" />
 			</div>
 		</div>
+		<asset:javascript src="jquery.autogrow-textarea.js"/>
 		<asset:javascript src="mustache.min.js"/>
 		<asset:javascript src="underscore-min.js"/>
 	    <asset:javascript src="moment.min.js"/>
