@@ -92,8 +92,13 @@
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
+<<<<<<< HEAD
                     <div class="text-center">
                     	<button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
+=======
+                    <div class="text-right">
+                    	<button type="submit" class="btn btn-primary">Enviar</button>
+>>>>>>> e4e9198f872679d529d0d4142bb7252193b34489
                     </div>
                 </form>
             </div>

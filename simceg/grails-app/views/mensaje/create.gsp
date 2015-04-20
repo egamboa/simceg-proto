@@ -16,7 +16,7 @@
 			</ul>
 		</div>
 		<div id="create-mensaje" class="content scaffold-create" role="main">
-			<h1 class="main-title text-left"><g:message code="default.create.label" args="[entityName]" /></h1>
+			<h1 class="main-title text-left">Crear Chat</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
