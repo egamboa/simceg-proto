@@ -92,13 +92,8 @@
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-<<<<<<< Updated upstream
-                    <div class="text-right">
-                    	<button type="submit" class="btn btn-primary">Enviar</button>
-=======
                     <div class="text-center">
                     	<button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
->>>>>>> Stashed changes
                     </div>
                 </form>
             </div>
