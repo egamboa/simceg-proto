@@ -106,9 +106,11 @@
 	                        <g:form id="send-message" url="[resource:mensajeInstance, action:'save']" >
 								<fieldset class="form row">
 									<div class="col-lg-12 text-left">
-										<g:render template="form"/>
-										<div class="text-right">
-											<g:submitButton name="create" class="save btn btn-primary" value="Enviar" />
+										<div class="row">
+											<g:render template="form-chat"/>
+											<div class="text-right col-lg-2">
+												<g:submitButton name="create" class="save btn btn-primary" value="Enviar" />
+											</div>
 										</div>
 									</div>
 								</fieldset>

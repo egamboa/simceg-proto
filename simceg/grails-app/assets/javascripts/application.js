@@ -101,6 +101,7 @@ var app = {
         var conversaciones = _.union(emisores, receptores);
         conversaciones = _.reject(conversaciones, function(chat){ return chat == currentUserId });
         this.initChats(conversaciones);
+        $('#mensaje').css('overflow', 'hidden').autogrow();
     },
     initEmptyChats: function(){
         this.triggerTemplate('#emptyChats', {mensaje: 'No hay chats.'}, '.chat-list');
