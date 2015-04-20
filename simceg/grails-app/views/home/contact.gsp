@@ -3,6 +3,7 @@
 	<head>
 		<title>Contacto</title>
 		<meta name="layout" content="page-full">
+        <asset:javascript src="validator.js"/>
 	</head>
 	<body>	
 		<!-- Content Row -->
@@ -58,37 +59,38 @@
         <div class="row text-left">
             <div class="col-md-8">
                 <h3>Formulario de Contacto</h3>
-                <form name="sentMessage" class="text-left" id="contactForm" novalidate>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <input type="text" placeholder="Nombre Completo" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block"></p>
+                <form data-toggle="validator" role="form">
+                    <div class="form-group">
+                        <label for="inputName" class="control-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Mahatma Gandhi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTel" class="control-label">N&uacute;mero Tel&eacute;fono</label>
+                        <div class="input-group">
+                          <span class="input-group-addon">#</span>
+                          <input type="text" pattern="^[0-9]{8}$" maxlength="8" class="form-control" id="inputTel" placeholder="12345678" data-error="Por Favor ingrese un n&uacute;mero v&aacute;lido" required>
                         </div>
+                        <span class="help-block with-errors">Escriba solo 8 digitos del n&uacute;mero de tel&eacute;fono</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="control-label">Correo Electr&oacute;nico</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="ejemplo@ejemplo.com" data-error="Por Favor ingrese un correo electr&oacute;nico v&aacute;lido" required>
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <input type="tel" placeholder="Número de Teléfono" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <input type="email" placeholder="Correo Electrónico" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label class="col-md-3">Mensaje:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <label for="inputMensaje" class="control-label">Mensaje</label>
+                            <textarea rows="10" cols="100" class="form-control" id="inputMensaje" data-error="Debe ingresar un mensaje" required maxlength="999" style="resize:none"></textarea>
+                            <div class="help-block with-errors"></div>
                         </div>
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <div class="pull-left">
+                    <div class="text-center">
                     	<button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                 </form>
             </div>
-
         </div>
         <!-- /.row -->
 	</body>

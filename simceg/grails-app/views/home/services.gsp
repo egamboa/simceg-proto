@@ -39,7 +39,7 @@
                     </div>
                     <div class="panel-body">
                         <h4>Preescolar</h4>
-                        <p>Nos enfocamos en el desarrollo de las tres &aacute;reas: cognitivo, motriz y socio-afectivo. Se da un informe semanal del avance del alumno(a).</p>
+                        <p>Nos enfocamos en el desarrollo de las tres &aacute;reas: cognitivo, motriz y socio-afectivo. Se entrega un informe semanal del avance del alumno(a).</p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="panel-body">
                         <h4>Primaria</h4>
-                        <p>Grupos peque&ntilde;os de m&aacute;ximo 15 alumnos por grupo, donde la atenci&oacute;n que se le da a cada alumno(a) es individual.</p>
+                        <p>Contamos con grupos peque&ntilde;os de m&aacute;ximo 15 estudiantes por grupo, donde la atenci&oacute;n que se le da a cada alumno(a) es individualizada.</p>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="panel-body">
                         <h4>Actividades</h4>
-                        <p>Todos los a&ntilde;os se realiza una feria cient&iacute;fica, un festival art&iacute;stico, desfile de faroles y desfile del 15 de Septiembre.</p>
+                        <p>Anualmente contamos con multiples actividades como lo son: una feria cient&iacute;fica, un festival art&iacute;stico, desfile de faroles y desfile del 15 de Septiembre.</p>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         </span>
                     </div>
                     <div class="panel-body">
-                        <h4>Recreacion</h4>
+                        <h4>Recreaci&oacute;n</h4>
                         <p>Contamos con programas de deportes al aire libre y recreaci&oacute;n. Anualmente celebramos un domingo familiar y campeonato interno deportivo.</p>
                     </div>
                 </div>

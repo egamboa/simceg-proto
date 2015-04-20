@@ -13,8 +13,8 @@
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
   		<asset:stylesheet src="plantillas.css"/>
-  		<asset:stylesheet src="plugins.css"/>
   		<asset:stylesheet src="main.css"/>
+  		<asset:stylesheet src="plugins.css"/>
   		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
 	</head>

@@ -37,8 +37,8 @@
                     <div class="panel-heading">
                         <h3> Lema</h3>
                     </div>
-                    <div class="panel-body text-left">
-                        <p>"Nuestra recompensa se encuentra en el esfuerzo y no en el resultado, un esfuerzo total es una victoria completa." </br>-Gandhi-</p>
+                    <div class="panel-body">
+                        <p class="text-left">"Nuestra recompensa se encuentra en el esfuerzo y no en el resultado, un esfuerzo total es una victoria completa."</p><small class="text-right">-Gandhi-</small>
                     </div>
                 </div>
             </div>
