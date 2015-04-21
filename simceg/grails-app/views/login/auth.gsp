@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>Ingresar</title>
+<title>SIMCEG</title>
 <meta name='layout' content='main'/>
 </head>
 

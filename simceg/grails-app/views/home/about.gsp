@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Acerca de</title>
+		<title>Nuestra Instituci&oacute;n</title>
 		<meta name="layout" content="page-full">
 	</head>
 	<body>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-4 text-left">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="${asset.assetPath(src: 'LinaCorderoArias.png')}" alt="Lina Cordero Arias">
                     <div class="caption">
                         <h3>Lina Cordero Arias<br>
                             <small>Directora</small>
@@ -74,7 +74,7 @@
             </div>
             <div class="col-md-4 text-left">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="${asset.assetPath(src: 'SoniaRiveraSolano.png')}" alt="Sonia Rivera Solano">
                     <div class="caption">
                         <h3>Sonia Rivera Solano<br>
                             <small>Presidenta del Consejo de Administraci&oacute;n</small>

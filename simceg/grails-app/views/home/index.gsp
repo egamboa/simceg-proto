@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="home"/>
-		<title>Bienvenido a Simceg</title>
+		<title>Centro Educativo GANDHI</title>
 	</head>
 	<body>
         <!-- Marketing Icons Section -->
