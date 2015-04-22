@@ -19,13 +19,19 @@
                 </ol>
             </div>
             <!-- Map Column -->
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <!-- Embedded Google Map -->
-                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&ie=UTF8&ll=9.973584,-84.120377&spn=56.506174,79.013672&t=m&z=18&output=embed"></iframe>
+                <iframe id="mapaGandhi" width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&ie=UTF8&ll=9.973584,-84.120377&spn=56.506174,79.013672&t=m&z=18&output=embed"></iframe>
             </div>
             <!-- Contact Details Column -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Contact Form -->
+        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+        <div class="row text-left">
             <div class="col-md-4">
-                <h3>Informaci&oacute;n de Contacto</h3>
+                <h3 class="page-header">Informaci&oacute;n de Contacto</h3>
                 <p>
                     Estamos ubicados en Los Lagos #2 de Heredia, de la Iglesia Fuente de Luz 200 metros nor-oeste, 25 metros oeste, Portón negro, final de la calle mano derecha.</br></br>
                 </p>
@@ -51,14 +57,8 @@
                     </li>
                 </ul>
             </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Contact Form -->
-        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-        <div class="row text-left">
             <div class="col-md-8">
-                <h3>Formulario de Contacto</h3>
+                <h3 class="page-header">Formulario de Contacto</h3>
                 <form data-toggle="validator" role="form" id="formContacto">
                     <div class="form-group">
                         <label for="inputName" class="control-label">Nombre Completo</label>
