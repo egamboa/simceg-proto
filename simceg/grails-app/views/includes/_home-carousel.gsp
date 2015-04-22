@@ -10,17 +10,17 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('${asset.assetPath(src: 'banner_kids.jpg')}');"></div>
+                <div class="fill" style="background-image:url('${asset.assetPath(src: 'EstudiantesGandhi.jpg')}');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('${asset.assetPath(src: 'banner_dog.jpg')}');"></div>
+                <div class="fill" style="background-image:url('${asset.assetPath(src: 'ConejosGandhi.jpg')}');"></div>
                 <div class="carousel-caption"> 
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('${asset.assetPath(src: 'banner_bus.jpg')}');"></div>
+                <div class="fill" style="background-image:url('${asset.assetPath(src: 'PaseoGandhi.jpg')}');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>

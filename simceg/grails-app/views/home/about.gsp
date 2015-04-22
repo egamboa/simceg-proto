@@ -18,7 +18,7 @@
                 </ol>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="${asset.assetPath(src: 'school_board_about.jpg')}" alt="Imagen Pizarra">
+                <img id="imagenEducadores" class="img-responsive" src="${asset.assetPath(src: 'EducadoresGandhi.png')}" alt="Educadores Gandhi">
             </div>
             <div class="col-md-6 text-left">
                 <h2>Acerca del Centro Educativo Gandhi</h2></br>
@@ -55,7 +55,7 @@
             </div>
             <div class="col-md-4 text-left">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="${asset.assetPath(src: 'RuthSanchezCampos.png')}" alt="Ruth Sanchez Campos">
                     <div class="caption">
                         <h3>Ruth Sanchez Campos<br>
                             <small>Administradora</small>

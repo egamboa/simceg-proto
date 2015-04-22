@@ -63,7 +63,7 @@
                 <p>Centro Educativo Gandhi. Una opci&oacute;n diferente!.</p>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="${asset.assetPath(src: 'kids_index.jpg')}" alt="Kids Hugging">
+                <img class="img-responsive" src="${asset.assetPath(src: 'LeccionesGandhi.jpg')}" alt="Lecciones Gandhi">
             </div>
         </div>
         <!-- /.row -->
