@@ -18,7 +18,7 @@
                 </ol>
             </div>
             <div class="col-lg-12">
-                <img class="img-responsive" src="${asset.assetPath(src: 'banner_classroom.jpg')}" alt="Banner Classroom">
+                <img class="img-responsive" src="${asset.assetPath(src: 'PaseoGandhi.jpg')}" alt="Paseo Gandhi">
             </div>
         </div>
         <!-- /.row -->
