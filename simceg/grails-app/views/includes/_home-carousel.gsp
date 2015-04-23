@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('${asset.assetPath(src: 'MatriculaGandhi.jpg')}');"></div>
+                <div class="fill" style="background-image:url('${asset.assetPath(src: 'MatriculaGandhi.png')}');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
