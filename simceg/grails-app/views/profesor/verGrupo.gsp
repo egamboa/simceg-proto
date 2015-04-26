@@ -1,3 +1,4 @@
+
 <%@ page import="org.una.simceg.Grupo" %>
 <!DOCTYPE html>
 <html>
@@ -7,12 +8,6 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="nav nav-inner" role="navigation">
-			<ul class="nav nav-pills" role="tablist">
-				<li><g:link class="list" action="index">Lista de Grupos</g:link></li>
-				<li><g:link class="create" action="create">Nuevo Grupo</g:link></li>
-			</ul>
-		</div>
 		<div id="show-grupo" class="content scaffold-show" role="main">
 			<h1 class="main-title text-left"><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
@@ -40,7 +35,7 @@
 								<span id="nivel-label" class="property-label"><g:message code="grupo.nivel.label" default="Nivel" /></span>
 							</td>
 							<td>
-								<span class="property-value" aria-labelledby="nivel-label"><g:link controller="nivel" action="show" id="${grupoInstance?.nivel?.id}">${grupoInstance?.nivel?.descripcion}</g:link></span>
+								<span class="property-value" aria-labelledby="nivel-label">${grupoInstance?.nivel?.descripcion}</span>
 							</td>
 						</tr>
 						</g:if>
@@ -51,38 +46,58 @@
 								<span id="periodo-label" class="property-label"><g:message code="grupo.periodo.label" default="Periodo" /></span>
 							</td>
 							<td>
-								<span class="property-value" aria-labelledby="periodo-label"><g:link controller="periodoLectivo" action="show" id="${grupoInstance?.periodo?.id}">${grupoInstance?.periodo?.descripcion}</g:link></span>
+								<span class="property-value" aria-labelledby="periodo-label">${grupoInstance?.periodo?.descripcion}</span>
 							</td>
 						</tr>
 						</g:if>
-						<tr>
-							<td></td>
-							<td>
-								<g:link class="edit btn btn-primary" action="editar" resource="${grupoInstance}">Editar</g:link>
-							</td>
-						</tr>
 				      </tbody>
 				    </table>
 				</div>
 			    <div class="bs-example col-md-12">
 			    	<h2 class="text-left">Estudiantes</h2>
 			    	<g:if test="${grupoInstance?.estudiantes}">
-					    <table class="table table-hover text-left">
+					    <table class="table table-hover text-left grupos-table">
 					      <thead>
 					        <tr>
 					          <th>#</th>
 					          <th>Nombre</th>
 					          <th>Primer Apellido</th>
 					          <th>Segundo Apellido</th>
+					          <th>Acciones</th>
 					        </tr>
 					      </thead>
 					      <tbody>
 					      	<g:each in="${grupoInstance.estudiantes.sort{it.primerApellido}}" status="index" var="e">
 						        <tr>
 						          <th scope="row">${index+1}</th>
-						          <td><g:link controller="estudiante" action="show" id="${e.id}">${e?.nombre}</g:link></td>
+						          <td>${e?.nombre}</td>
 						          <td>${e?.primerApellido}</td>
 						          <td>${e?.segundoApellido}</td>
+						          <td>
+						          	<div class="dropdown">
+									  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+									    Acción
+									    <span class="caret"></span>
+									  </button>
+									  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+									    <li role="presentation">
+									    	<g:link controller="profesor" action="verEstudiante" params="[grupo: grupoInstance.id]" id="${e.id}">
+									    		Ver Perfil
+									    	</g:link>
+									    </li>
+									    <li role="presentation">
+									    	<g:link controller="mensaje" action="create" params="[receptor: "${e.encargado.id}"]">
+									    		Enviar Mensaje
+									    	</g:link>
+									    </li>
+									    <li role="presentation">
+									    	<g:link controller="profesor" action="calificar" id="${e.id}">
+									    		Calificar
+									    	</g:link>
+									    </li>
+									  </ul>
+									</div>
+								  </td>
 						        </tr>
 					        </g:each>
 					      </tbody>

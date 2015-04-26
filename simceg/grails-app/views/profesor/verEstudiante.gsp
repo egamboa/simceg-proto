@@ -10,8 +10,7 @@
 	<body>
 		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
-				<li><g:link class="list" action="index">Lista Estudiantes</g:link></li>
-				<li><g:link class="create" action="create">Nuevo Estudiante</g:link></li>
+				<li><g:link class="list" action="verGrupo" id="${params.grupo}">Grupo</g:link></li>
 			</ul>
 		</div>
 		<div id="show-estudiante" class="content scaffold-show text-left" role="main">
@@ -113,7 +112,7 @@
 			              <span id="fechaIngreso-label" class="property-label"><g:message code="estudiante.fechaIngreso.label" default="Fecha Ingreso" /></span>
 			            </td>
 			            <td>
-			              <span class="property-value" aria-labelledby="fechaIngreso-label"><g:formatDate date="${estudianteInstance?.fechaIngreso}" /></span>
+			              <span class="property-value" aria-labelledby="fechaIngreso-label"><g:formatDate date="${estudianteInstance?.fechaIngreso}" format="dd-MM-yy" /></span>
 			            </td>
 			          </tr>
 			        </g:if>
@@ -124,7 +123,7 @@
 			              <span id="fechaNacimiento-label" class="property-label"><g:message code="estudiante.fechaNacimiento.label" default="Fecha Nacimiento" /></span>
 			            </td>
 			            <td>
-			              <span class="property-value" aria-labelledby="fechaNacimiento-label"><g:formatDate date="${estudianteInstance?.fechaNacimiento}" /></span>
+			              <span class="property-value" aria-labelledby="fechaNacimiento-label"><g:formatDate format="dd-MM-yy" date="${estudianteInstance?.fechaNacimiento}" /></span>
 			            </td>
 			          </tr>
 			        </g:if>
@@ -167,19 +166,12 @@
 			    </table>
 			  </div>
 			</div>
-			<div class="row">
-            	<div class="col-md-12">
-            		<g:link class="pull-right edit btn btn-primary" action="edit" resource="${estudianteInstance}">Editar</g:link>
-            	</div>
-            </div>
-            <!-- 
-			<g:form url="[resource:estudianteInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${estudianteInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
-			 -->
+			<div id="historial" class="row">
+				<div class="col-lg-12">
+					<h1 class="main-title">Historial</h1>
+
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

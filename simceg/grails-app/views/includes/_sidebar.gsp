@@ -4,7 +4,7 @@
              <li class="${controllerName == 'dashboard' && actionName == "index" ? 'active':''}">
              	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
              </li>
-             <sec:ifAnyGranted  roles="ROLE_TEACHER,ROLE_USER">
+             <sec:ifAnyGranted  roles="ROLE_USER">
              <li>
                  <a href="#"><i class="glyphicon glyphicon-user"></i> <span class="fa arrow"></span>Estudiantes</a>
                  <ul class="nav nav-second-level">
@@ -22,25 +22,17 @@
                 </li>
                  <!-- /.nav-second-level -->
              
-             <sec:ifAnyGranted  roles="ROLE_TEACHER,ROLE_USER">
-             <li>
-                 <a href="#"><i class="fa fa-university"></i> Escuela<span class="fa arrow"></span></a>
+             <sec:ifAnyGranted  roles="ROLE_TEACHER">
+             <li class="${controllerName == 'profesor' ? 'active':''}">
+                 <a href="#"><i class="fa fa-university"></i> Grupos<span class="fa arrow"></span></a>
+                 %{--Use BlogService--}%
+                <g:set var="profesores" bean="profesorService"/>
                  <ul class="nav nav-second-level">
-                 	<sec:access expression="hasRole('ROLE_USER')">
-                 	 <li>
-                        <li>
-						 	<g:link controller="dashboard" action="notas"><i class="fa fa-check-circle"></i> Notas</g:link>
-	                     </li>
-                 	 </li>
-                 	 </sec:access>
-                 	 <sec:access expression="hasRole('ROLE_TEACHER')">
-						 <li>
-						 	<g:link controller="dashboard" action="estudiantes"><i class="fa fa-users"></i> Estudiantes</g:link>
-	                     </li>
-                         <li>
-                            <g:link controller="dashboard" action="calificar"><i class="fa fa-check-square"></i> Calificar Estudiante</g:link>
-                         </li>
-                     </sec:access>
+                    <li>
+                        <g:each in="${profesores.gruposProfesor()}" var="grupo">
+                            <g:link controller="profesor" action="verGrupo" id="${grupo.id}"><i class="fa fa-users"></i>${grupo.descripcion}</g:link>
+                        </g:each>
+                    </li>
                  </ul>
                  <!-- /.nav-second-level -->
              </li>

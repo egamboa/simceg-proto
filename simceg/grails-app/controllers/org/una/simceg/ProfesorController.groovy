@@ -1,13 +1,13 @@
 package org.una.simceg
 
-
-
-import static org.springframework.http.HttpStatus.*
+import org.una.simceg.Grupo
+import org.una.simceg.Estudiante
 import grails.transaction.Transactional
-
+import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+
 @Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN'])
+@Secured(['ROLE_ADMIN', 'ROLE_TEACHER'])
 class ProfesorController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -102,5 +102,15 @@ class ProfesorController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+
+    @Secured(['ROLE_TEACHER'])
+    def verGrupo(Grupo grupoInstance){
+        respond grupoInstance
+    }
+
+    @Secured(['ROLE_TEACHER'])
+    def verEstudiante(Estudiante estudianteInstance){
+        respond estudianteInstance, model : [grupo: params.grupo]
     }
 }

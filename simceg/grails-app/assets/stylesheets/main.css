@@ -24,7 +24,6 @@ html, body {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/estebang\/Sites\/simceg-proto\/app\/_scss\/main\.scss}line{font-family:\0000315}}
 body {
   background-color: #FFF;
-  font-size: small;
   text-align: center;
 }
 
@@ -268,7 +267,8 @@ footer{
 	border-top: 1px solid #d1d4d7;
 	background-color: #fff;
 	position: relative;
-	margin: 0;
+	margin: -10px 0 0;
+	overflow: hidden;
 }
 .full-page footer{
 	width: 100%;	
@@ -637,4 +637,7 @@ h1.main-title{
 
 #imagenEducadores{
 	margin-top: 20px;
+}
+.grupos-table td{
+	vertical-align: middle !important;
 }
