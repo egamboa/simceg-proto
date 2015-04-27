@@ -7,6 +7,10 @@ class Materia {
     static constraints = {
     }
 
+    static mapping = {
+        sort "descripcion"
+    }
+
     String toString(){
     	return descripcion
     }
