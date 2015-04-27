@@ -22,6 +22,26 @@
 			  <div class="col-md-3 col-lg-3 " align="center"> 
 			  	<img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> 
 			  	<h1 class="main-title text-center">${estudianteInstance}</h1>
+			  	<hr>
+			  	<div class="row">
+			  		<div class="col-lg-12 text-left">
+			  			<h4>Contacto</h4>
+			  			<ul>
+			  				<li>Encargado: ${estudianteInstance?.encargado}</li>
+			  				<li>
+			  					Correo: <a href="mailto:${estudianteInstance?.encargado?.email}">${estudianteInstance?.encargado?.email}</a>
+			  				</li>
+			  				<li>
+			  					Teléfono: ${estudianteInstance?.encargado?.telefono}
+			  				</li>
+			  				<li>
+			  					<g:link controller="mensaje" action="create" params="[receptor: "${estudianteInstance?.encargado?.id}"]">
+						    		Enviar Mensaje
+						    	</g:link>
+			  				</li>
+			  			</ul>
+			  		</div>
+			  	</div>
 			  </div>
 			  <div class=" col-md-9 col-lg-9 "> 
 			    <table class="table table-user-information">
@@ -87,7 +107,7 @@
 			        <g:if test="${estudianteInstance?.direccion}">
 			          <tr class="fieldcontain">
 			            <td>
-			              <span id="direccion-label" class="property-label"><g:message code="estudiante.direccion.label" default="Direccion" /></span>
+			              <span id="direccion-label" class="property-label"><g:message code="estudiante.direccion.label" default="Dirección" /></span>
 			            </td>
 			            <td>
 			              <span class="property-value" aria-labelledby="direccion-label"><g:fieldValue bean="${estudianteInstance}" field="direccion"/></span>
@@ -101,7 +121,7 @@
 			              <span id="encargado-label" class="property-label"><g:message code="estudiante.encargado.label" default="Encargado" /></span>
 			            </td>
 			            <td>
-			               <span class="property-value" aria-labelledby="encargado-label"><g:link controller="user" action="show" id="${estudianteInstance?.encargado?.id}">${estudianteInstance?.encargado?.nombreCompleto()}</g:link></span>
+			               <span class="property-value" aria-labelledby="encargado-label">${estudianteInstance?.encargado?.nombreCompleto()}</span>
 			            </td>
 			          </tr>
 			        </g:if>

@@ -88,7 +88,7 @@
 			        <g:if test="${estudianteInstance?.direccion}">
 			          <tr class="fieldcontain">
 			            <td>
-			              <span id="direccion-label" class="property-label"><g:message code="estudiante.direccion.label" default="Direccion" /></span>
+			              <span id="direccion-label" class="property-label"><g:message code="estudiante.direccion.label" default="Dirección" /></span>
 			            </td>
 			            <td>
 			              <span class="property-value" aria-labelledby="direccion-label"><g:fieldValue bean="${estudianteInstance}" field="direccion"/></span>

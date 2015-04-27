@@ -20,6 +20,7 @@ var app = {
         this.validaCiclos();
         this.collapseMenus();
         this.initCalendar();
+        $("select[multiple]").bsmSelect();
         $(function () {
           $('[data-toggle="popover"]').popover()
         });

@@ -1,10 +1,12 @@
 package org.una.simceg
 
-
-
-import static org.springframework.http.HttpStatus.*
+import org.una.simceg.Grupo
+import org.una.simceg.Nivel
+import org.una.simceg.PeriodoLectivo
 import grails.transaction.Transactional
+import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+
 @Transactional(readOnly = true)
 @Secured(['ROLE_ADMIN'])
 class EstudianteController {
@@ -101,5 +103,13 @@ class EstudianteController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+
+    @Transactional
+    @Secured(['ROLE_TEACHER', 'ROLE_ADMIN'])
+    def calificar(Estudiante estudianteInstance) {
+        Grupo grupo = Grupo.get(params.grupo)
+        ArrayList materias = grupo?.nivel?.materias
+        respond estudianteInstance, model : [grupo: grupo, materias: materias]
     }
 }

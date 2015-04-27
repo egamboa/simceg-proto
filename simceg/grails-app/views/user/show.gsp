@@ -23,6 +23,26 @@
                 <div class="col-md-3 col-lg-3 " align="center">
                   <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle">
                   <h1 class="main-title text-center">${userInstance}</h1>
+                  <hr>
+                  <div class="row">
+                    <div class="col-lg-12 text-left">
+                      <h4>Contacto</h4>
+                      <ul>
+                        <li>Encargado: ${estudianteInstance?.encargado}</li>
+                        <li>
+                          Correo: <a href="mailto:${estudianteInstance?.encargado?.email}">${estudianteInstance?.encargado?.email}</a>
+                        </li>
+                        <li>
+                          Teléfono: ${estudianteInstance?.encargado?.telefono}
+                        </li>
+                        <li>
+                          <g:link controller="mensaje" action="create" params="[receptor: "${estudianteInstance?.encargado?.id}"]">
+                            Enviar Mensaje
+                          </g:link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">

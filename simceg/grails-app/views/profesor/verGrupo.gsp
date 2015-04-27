@@ -86,12 +86,12 @@
 									    	</g:link>
 									    </li>
 									    <li role="presentation">
-									    	<g:link controller="mensaje" action="create" params="[receptor: "${e.encargado.id}"]">
+									    	<g:link controller="mensaje" action="create" params="[receptor: "${e?.encargado?.id}"]">
 									    		Enviar Mensaje
 									    	</g:link>
 									    </li>
 									    <li role="presentation">
-									    	<g:link controller="profesor" action="calificar" id="${e.id}">
+									    	<g:link controller="estudiante" action="calificar" id="${e.id}" params="[grupo: grupoInstance.id]">
 									    		Calificar
 									    	</g:link>
 									    </li>
