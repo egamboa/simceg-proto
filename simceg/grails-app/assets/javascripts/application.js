@@ -21,7 +21,9 @@ var app = {
         this.validaNotas();
         this.collapseMenus();
         this.initCalendar();
-        this.initNotas();
+        if($('#califica-estudiante').size() > 0){
+            this.initNotas();
+        }
         $("select[multiple]").bsmSelect();
         $(function () {
           $('[data-toggle="popover"]').popover()
@@ -44,7 +46,7 @@ var app = {
     validaNotas: function(){
         $('#tabla-calificacion .input-holder input').keydown(function (e) {
             // Allow: backspace, delete, tab, escape, enter and .
-            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190, 91]) !== -1 ||
                  // Allow: Ctrl+A
                 (e.keyCode == 65 && e.ctrlKey === true) || 
                  // Allow: home, end, left, right, down, up
@@ -230,6 +232,13 @@ var app = {
     },
     initNotas: function(){
         var self = this;
+        _.each(notasParsed, function(nota, key){
+            $('#califica-estudiante .nota')
+                        .filter("[data-materia='" + nota.materia.id + "']")
+                        .filter("[data-ciclo='" + nota.ciclo + "']")
+                        .attr("data-id",nota.id)
+                        .val(nota.nota);
+        });
         $('#califica-estudiante .nota').each(function(index, nota){
             self.notasEventos(nota);
         });
@@ -242,29 +251,71 @@ var app = {
         // Get all distinct key up events from the input and only fire if long enough and distinct
         var keyup = Rx.Observable.fromEvent(nota, 'keyup')
         .map(function (e) {
-            return e.target.value; // Project the text from the input
+            return e.target; // Project the text from the input
         })
-        .debounce(2000 /* Pause for 750ms */ )
-        .distinctUntilChanged(); // Only if the value has changed
+        .debounce(2000).distinctUntilChanged(function (x) { return x.value; });
         var searcher = keyup.flatMapLatest(self.salvaNota).subscribe(
-            function( data ){ console.log(data); });
+          function (data) {
+            console.log(data);
+            setTimeout(function(){
+                $(nota).removeAttr('disabled');
+            }, 1000);
+          },
+          function (err) {
+            console.log('Error: %s', err);
+          }
+        );
     },
     comentariosEventos: function(comentario){
         var self = this;
+        // Get all distinct key up events from the input and only fire if long enough and distinct
+        var keyup = Rx.Observable.fromEvent(comentario, 'keyup')
+        .map(function (e) {
+            return e.target; // Project the text from the input
+        })
+        .debounce(2000).distinctUntilChanged(function (x) { return x.value; });
+        var searcher = keyup.flatMapLatest(self.salvaComentario).subscribe(
+          function (data) {
+            console.log(data);
+          },
+          function (err) {
+            console.log('Error: %s', err);
+          }
+        );
     },
     salvaNota: function(nota) {
-        return $.ajax({
-          url: 'http://en.wikipedia.org/w/api.php',
-          dataType: 'jsonp',
-          data: {
-            action: 'opensearch',
-            format: 'json',
-            search: encodeURI(nota)
-          }
-        }).promise();
+        if($(nota).val() <= 100 && $(nota).val() > 0){
+            return $.ajax({
+                url: $('#salvarNota').attr('href'),
+                method: "POST",
+                data: {
+                    id: $(nota).data('id'),
+                    ciclo: $(nota).data('ciclo'),
+                    materia: $(nota).data('materia'),
+                    nota: $(nota).val(),
+                    grupo: parseInt($('#grupoId').val()),
+                    estudiante: parseInt($('#estudianteId').val())
+                },
+                beforeSend: function(xhr) {
+                    $(nota).prop("disabled", true);
+                }
+            }).promise();
+        }else{
+            return $.Deferred().promise();
+        }
     },
-    salvaComentario: function() {
-
+    salvaComentario: function(comentario) {
+        if($(comentario).val() != ""){
+            return $.ajax({
+                url: $('#salvaComentario').attr('href'),
+                method: "POST",
+                data: {
+                    hola: "Hola"
+                }
+            }).promise();
+        }else{
+            return $.Deferred().promise();
+        }
     }
 
 }

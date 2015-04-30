@@ -6,9 +6,13 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<input type="hidden" value="${estudianteInstance.id}" name="estudianteId" name="estudianteId">
-		<input type="hidden" value="${grupo.id}" name="grupoId" name="grupoId">
-		
+		<script type="text/javascript">
+		var notas = '${notas}';
+		var notasParsed = JSON.parse(notas.replace(/&quot;/g,'"'));
+		</script>
+		<input type="hidden" value="${estudianteInstance.id}" name="estudianteId" id="estudianteId">
+		<input type="hidden" value="${grupo.id}" name="grupoId" id="grupoId">
+
 		<g:link 
 			class="hidden" 
 			elementId="salvarNota" 
@@ -16,18 +20,14 @@
 			action="salvarNota" />
 		<g:link 
 			class="hidden" 
-			elementId="salvarComentario" 
+			elementId="salvaComentario" 
 			controller="estudiante" 
-			action="salvarComentario" />
+			action="salvaComentario" />
 
 		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li><g:link class="list" controller="profesor" action="verGrupo" id="${grupo.id}">Volver</g:link></li>
 			</ul>
-		</div>
-		<div class="alert alert-info">
-			Notas: ${notas}<br>
-			Comentarios: ${comentarios}
 		</div>
 		<div id="califica-estudiante" class="content text-left scaffold-create row" role="main">
 			<div class="col-lg-12">
@@ -45,12 +45,13 @@
 			      </thead>
 			      <tbody>
 			      	<g:each in="${materias}" var="materia">
-			        <tr data-materia="${materia.id}">
+			        <tr>
 			          <th scope="row">${materia}</th>
 			          <g:each in="${ (0..<grupo?.nivel?.ciclos) }" var="it" status="i">
 				          <td>
 				          	<div class="input-holder">
 				          		<input  data-ciclo="${i+1}"
+				          				data-materia="${materia.id}"
 				          				type="number" 
 					          			class="form-control nota" 
 					          			max="100" 

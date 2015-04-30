@@ -13,6 +13,18 @@ class DashboardController {
 		render(view: "index")
 	}
 
+	def padre(){
+
+	}
+
+	def profesor(){
+		
+	}
+
+	def admin(){
+		
+	}
+
 	def calificar(){
 		render(view:'calificar')
 	}

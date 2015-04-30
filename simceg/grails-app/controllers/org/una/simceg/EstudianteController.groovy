@@ -15,7 +15,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class EstudianteController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", salvaComentario: "POST", salvarNota: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -123,9 +123,31 @@ class EstudianteController {
 
         respond estudianteInstance, model : [
                                             grupo: grupo, 
-                                            materias: materias, 
+                                            materias: materias.sort { it.descripcion }, 
                                             notas: notas as JSON, 
                                             comentarios: comentariosJson
                                             ]
+    }
+
+    @Transactional
+    @Secured(['ROLE_TEACHER', 'ROLE_ADMIN'])
+    def salvarNota() {
+        Nota nuevaNota = Nota.get(params.id)
+        if(nuevaNota){
+            nuevaNota.properties = params
+        }else{
+            nuevaNota = new Nota(params)
+        }
+        nuevaNota.save flush:true
+        response.status = 200
+        render 'success' 
+    }
+
+    @Transactional
+    @Secured(['ROLE_TEACHER', 'ROLE_ADMIN'])
+    def salvaComentario() {
+        print params.hola
+        response.status = 200
+        render 'success' 
     }
 }
