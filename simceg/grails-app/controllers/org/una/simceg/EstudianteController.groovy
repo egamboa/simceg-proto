@@ -2,7 +2,11 @@ package org.una.simceg
 
 import org.una.simceg.Grupo
 import org.una.simceg.Nivel
+import org.una.simceg.Nota
+import org.una.simceg.Comentario
 import org.una.simceg.PeriodoLectivo
+import grails.converters.JSON
+import groovy.json.StringEscapeUtils
 import grails.transaction.Transactional
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
@@ -108,8 +112,20 @@ class EstudianteController {
     @Transactional
     @Secured(['ROLE_TEACHER', 'ROLE_ADMIN'])
     def calificar(Estudiante estudianteInstance) {
+        def util = new StringEscapeUtils()
         Grupo grupo = Grupo.get(params.grupo)
         ArrayList materias = grupo?.nivel?.materias
-        respond estudianteInstance, model : [grupo: grupo, materias: materias]
+        ArrayList comentarios = Comentario.findAllByEstudianteAndGrupo(estudianteInstance, grupo)
+        ArrayList notas = Nota.findAllByEstudianteAndGrupo(estudianteInstance, grupo)
+
+        def comentariosJson = comentarios as JSON
+        comentariosJson =  util.escapeJavaScript(comentariosJson.toString())
+
+        respond estudianteInstance, model : [
+                                            grupo: grupo, 
+                                            materias: materias, 
+                                            notas: notas as JSON, 
+                                            comentarios: comentariosJson
+                                            ]
     }
 }

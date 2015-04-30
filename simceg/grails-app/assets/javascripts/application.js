@@ -21,6 +21,7 @@ var app = {
         this.validaNotas();
         this.collapseMenus();
         this.initCalendar();
+        this.initNotas();
         $("select[multiple]").bsmSelect();
         $(function () {
           $('[data-toggle="popover"]').popover()
@@ -219,7 +220,6 @@ var app = {
             $('.chat-list [data-id="' + chat + '"] .notify-holder .notification').fadeOut();
         }).fail(function(data) {
             console.log( data.responseText );
-        }).always(function() {
         });
     },
     triggerTemplate: function(id, data, classTo){
@@ -227,7 +227,46 @@ var app = {
         Mustache.parse(template);   // optional, speeds up future uses
         var rendered = Mustache.render(template, data);
         $(classTo).html(rendered);        
+    },
+    initNotas: function(){
+        var self = this;
+        $('#califica-estudiante .nota').each(function(index, nota){
+            self.notasEventos(nota);
+        });
+        $('#califica-estudiante .ciclo-comentario').each(function(index, comentario){
+            self.comentariosEventos(comentario);
+        });
+    },
+    notasEventos: function(nota){
+        var self = this;
+        // Get all distinct key up events from the input and only fire if long enough and distinct
+        var keyup = Rx.Observable.fromEvent(nota, 'keyup')
+        .map(function (e) {
+            return e.target.value; // Project the text from the input
+        })
+        .debounce(2000 /* Pause for 750ms */ )
+        .distinctUntilChanged(); // Only if the value has changed
+        var searcher = keyup.flatMapLatest(self.salvaNota).subscribe(
+            function( data ){ console.log(data); });
+    },
+    comentariosEventos: function(comentario){
+        var self = this;
+    },
+    salvaNota: function(nota) {
+        return $.ajax({
+          url: 'http://en.wikipedia.org/w/api.php',
+          dataType: 'jsonp',
+          data: {
+            action: 'opensearch',
+            format: 'json',
+            search: encodeURI(nota)
+          }
+        }).promise();
+    },
+    salvaComentario: function() {
+
     }
+
 }
 
 //Loads the correct sidebar on window load,

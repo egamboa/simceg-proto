@@ -474,7 +474,12 @@ h1.main-title{
 	box-shadow: none;
 }
 
-.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+#tabla-calificacion.table>thead>tr>th, 
+#tabla-calificacion.table>tbody>tr>th, 
+#tabla-calificacion.table>tfoot>tr>th, 
+#tabla-calificacion.table>thead>tr>td, 
+#tabla-calificacion.table>tbody>tr>td, 
+#tabla-calificacion.table>tfoot>tr>td{
 	border: none;
 }
 
