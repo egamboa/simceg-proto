@@ -24,7 +24,7 @@
 	            	<div class="objeto-listado profesor col-md-4 col-sm-6 ${(i % 2) == 0 ? 'odd' : 'even'}">
 		                <div class="panel panel-default">
 		                    <div class="panel-heading text-center">
-		                        <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle">
+		                        <g:img uri="/simceg/assets/Icon-user.png" width="100" height="100"/>
 		                        <div>
 		                        	<g:link action="show" id="${profesorInstance.id}">
 		                        		${profesorInstance?.usuario?.nombreCompleto()}

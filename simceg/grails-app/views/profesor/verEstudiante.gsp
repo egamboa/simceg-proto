@@ -8,6 +8,12 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
+		<script type="text/javascript">
+		var notas = '${notas}';
+		var notasParsed = JSON.parse(notas.replace(/&quot;/g,'"'));
+		var comentarios = '${comentarios}';
+		var comentariosParsed = JSON.parse(comentarios.replace(/&quot;/g,'"'));
+		</script>
 		<div class="nav nav-inner" role="navigation">
 			<ul class="nav nav-pills" role="tablist">
 				<li><g:link class="list" action="verGrupo" id="${params.grupo}">Grupo</g:link></li>
@@ -20,7 +26,7 @@
 			<div class="row">
 				<br>
 			  <div class="col-md-3 col-lg-3 " align="center"> 
-			  	<img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> 
+			  	<g:img uri="/simceg/assets/Icon-user.png" width="100" height="100"/> 
 			  	<h1 class="main-title text-center">${estudianteInstance}</h1>
 			  	<hr>
 			  	<div class="row">
@@ -189,7 +195,60 @@
 			<div id="historial" class="row">
 				<div class="col-lg-12">
 					<h1 class="main-title">Historial</h1>
-
+					<g:each in="${grupos}" var="grupoH">
+					<div class="row well">
+						<div class="col-lg-12">
+							<h2 class="second-title">Periodo Lectivo: ${grupoH?.periodo?.anio}, Nivel: ${grupoH?.nivel}, Grupo: ${grupoH?.descripcion} </h2>
+							<hr>
+							<table class="table table-hover" id="tabla-calificacion">
+						      <thead>
+						        <tr>
+						          <th></th>
+						          <g:each in="${ (0..<grupoH?.nivel?.ciclos) }" var="it" status="i">
+							          <th><div class="cycle-arrow"><g:message code="org.una.simceg.ciclo.${i+1}" /><span class="arrow"></span></div></th>
+							      </g:each>
+						        </tr>
+						      </thead>
+						      <tbody>
+						      	<g:each in="${ grupoH?.nivel?.materias.sort { it.descripcion } }" var="materia">
+						        <tr>
+						          <th scope="row">${materia}</th>
+						          <g:each in="${ (0..<grupoH?.nivel?.ciclos) }" var="it" status="i">
+							          <td>
+							          	<div class="input-holder">
+							          		<input  data-ciclo="${i+1}"
+							          				data-materia="${materia.id}"
+							          				data-grupo="${grupoH.id}"
+							          				type="number" 
+								          			class="form-control nota" 
+								          			max="100" 
+								          			min="0" 
+								          			size="3"
+								          			disabled
+								          			maxlength="3">
+							          	</div>
+							          </td>
+							      </g:each>
+						        </tr>
+						    	</g:each>
+						      </tbody>
+						    </table>
+						</div>
+						<div class="col-lg-12 ciclo-comentarios">
+							<h2 class="second-title">Comentarios</h2>
+							<hr>
+							<g:each in="${ (0..<grupoH?.nivel?.ciclos) }" var="it" status="i">
+								<span class="muted"><g:message code="org.una.simceg.ciclo.texto.${i+1}" /> Ciclo</span>
+								<textarea 	class="form-control ciclo-comentario" 
+											data-ciclo="${i+1}"
+											data-grupo="${grupoH.id}"
+											disabled
+											rows="3">
+								</textarea>
+							</g:each>
+						</div>
+					</div>
+					</g:each>
 				</div>
 			</div>
 		</div>

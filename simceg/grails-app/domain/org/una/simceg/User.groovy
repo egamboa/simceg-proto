@@ -21,6 +21,9 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
+	byte[] avatar
+  	String avatarType
+
 	static transients = ['springSecurityService']
 
 	static constraints = {
@@ -28,6 +31,8 @@ class User {
 		password blank: false
 		cedula unique: true, blank: false
 		email email: true, blank: false
+		avatar(nullable:true, maxSize: 16384 /* 16K */)
+    	avatarType(nullable:true)
 	}
 
 	static mapping = {

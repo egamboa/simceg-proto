@@ -21,6 +21,9 @@ var app = {
         this.validaNotas();
         this.collapseMenus();
         this.initCalendar();
+        if($('#historial').size() > 0){
+            this.initHistorial();
+        }
         if($('#califica-estudiante').size() > 0){
             this.initNotas();
         }
@@ -230,14 +233,40 @@ var app = {
         var rendered = Mustache.render(template, data);
         $(classTo).html(rendered);        
     },
+    initHistorial: function(){
+        var self = this;
+        $('#historial .ciclo-comentario').val('');
+        _.each(notasParsed, function(nota, key){
+            $('#historial .nota')
+                        .filter("[data-grupo='" + nota.grupo.id + "']")
+                        .filter("[data-materia='" + nota.materia.id + "']")
+                        .filter("[data-ciclo='" + nota.ciclo + "']")
+                        .attr("data-id",nota.id)
+                        .val(nota.nota);
+        });
+        _.each(comentariosParsed, function(comentario, key){
+            $('#historial .ciclo-comentario')
+                        .filter("[data-grupo='" + comentario.grupo.id + "']")
+                        .filter("[data-ciclo='" + comentario.ciclo + "']")
+                        .attr("data-id",comentario.id)
+                        .val(comentario.comentario);
+        });
+    },
     initNotas: function(){
         var self = this;
+        $('#califica-estudiante .ciclo-comentario').val('');
         _.each(notasParsed, function(nota, key){
             $('#califica-estudiante .nota')
                         .filter("[data-materia='" + nota.materia.id + "']")
                         .filter("[data-ciclo='" + nota.ciclo + "']")
                         .attr("data-id",nota.id)
                         .val(nota.nota);
+        });
+        _.each(comentariosParsed, function(comentario, key){
+            $('#califica-estudiante .ciclo-comentario')
+                        .filter("[data-ciclo='" + comentario.ciclo + "']")
+                        .attr("data-id",comentario.id)
+                        .val(comentario.comentario);
         });
         $('#califica-estudiante .nota').each(function(index, nota){
             self.notasEventos(nota);
@@ -277,6 +306,9 @@ var app = {
         var searcher = keyup.flatMapLatest(self.salvaComentario).subscribe(
           function (data) {
             console.log(data);
+            setTimeout(function(){
+                $(comentario).removeAttr('disabled');
+            }, 1000);
           },
           function (err) {
             console.log('Error: %s', err);
@@ -310,7 +342,14 @@ var app = {
                 url: $('#salvaComentario').attr('href'),
                 method: "POST",
                 data: {
-                    hola: "Hola"
+                    id: $(comentario).data('id'),
+                    ciclo: $(comentario).data('ciclo'),
+                    comentario: $(comentario).val(),
+                    grupo: parseInt($('#grupoId').val()),
+                    estudiante: parseInt($('#estudianteId').val())
+                },
+                beforeSend: function(xhr) {
+                    $(comentario).prop("disabled", true);
                 }
             }).promise();
         }else{

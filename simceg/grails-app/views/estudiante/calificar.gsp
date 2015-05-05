@@ -9,6 +9,8 @@
 		<script type="text/javascript">
 		var notas = '${notas}';
 		var notasParsed = JSON.parse(notas.replace(/&quot;/g,'"'));
+		var comentarios = '${comentarios}';
+		var comentariosParsed = JSON.parse(comentarios.replace(/&quot;/g,'"'));
 		</script>
 		<input type="hidden" value="${estudianteInstance.id}" name="estudianteId" id="estudianteId">
 		<input type="hidden" value="${grupo.id}" name="grupoId" id="grupoId">
@@ -71,7 +73,10 @@
 				<g:each in="${ (0..<grupo?.nivel?.ciclos) }" var="it" status="i">
 					<hr>
 					<span class="muted"><g:message code="org.una.simceg.ciclo.texto.${i+1}" /> Ciclo</span>
-					<textarea class="form-control ciclo-comentario" data-ciclo="${i+1}" rows="3"></textarea>
+					<textarea 	class="form-control ciclo-comentario" 
+								data-ciclo="${i+1}"
+								rows="3">
+					</textarea>
 				</g:each>
 			</div>
 		</div>

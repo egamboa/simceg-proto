@@ -146,8 +146,33 @@ class EstudianteController {
     @Transactional
     @Secured(['ROLE_TEACHER', 'ROLE_ADMIN'])
     def salvaComentario() {
-        print params.hola
+        Comentario nuevoComentario = Comentario.get(params.id)
+        if(nuevoComentario){
+            nuevoComentario.properties = params
+        }else{
+            nuevoComentario = new Comentario(params)
+        }
+        nuevoComentario.save flush:true
         response.status = 200
         render 'success' 
+    }
+
+    @Secured(['ROLE_USER'])
+    def verEstudiante(Estudiante estudianteInstance){
+        ArrayList notas = Nota.findAllByEstudiante(estudianteInstance)
+        ArrayList comentarios = Comentario.findAllByEstudiante(estudianteInstance)
+        ArrayList grupos = []
+        notas.each{it -> 
+            if(!grupos.contains(it.grupo)){
+                grupos.add(it.grupo)
+            }
+        }
+        grupos = grupos.sort{-it.periodo.anio}
+        respond estudianteInstance, model : [
+                                        grupo: params.grupo, 
+                                        notas: notas as JSON, 
+                                        grupos: grupos,
+                                        comentarios: comentarios as JSON
+                                        ]
     }
 }

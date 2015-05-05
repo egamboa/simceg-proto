@@ -5,11 +5,14 @@
              	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
              </li>
              <sec:ifAnyGranted  roles="ROLE_USER">
-             <li>
+             <li class="${controllerName == 'estudiante' ? 'active':''}">
                  <a href="#"><i class="glyphicon glyphicon-user"></i> <span class="fa arrow"></span>Estudiantes</a>
+                 <g:set var="encargado" bean="encargadoService"/>
                  <ul class="nav nav-second-level">
 			        <li>
-                        <a href="#"><i class="glyphicon glyphicon-user"></i></span>Juan Carlos</a>
+                        <g:each in="${encargado.hijos()}" var="hijo">
+                            <g:link controller="estudiante" action="verEstudiante" id="${hijo.id}"><i class="fa fa-users"></i>${hijo.nombreCompleto()}</g:link>
+                        </g:each>
                     </li>
                  </ul>
              </li>

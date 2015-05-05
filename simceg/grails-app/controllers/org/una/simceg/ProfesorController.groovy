@@ -2,6 +2,7 @@ package org.una.simceg
 
 import org.una.simceg.Grupo
 import org.una.simceg.Estudiante
+import grails.converters.JSON
 import grails.transaction.Transactional
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
@@ -111,6 +112,20 @@ class ProfesorController {
 
     @Secured(['ROLE_TEACHER'])
     def verEstudiante(Estudiante estudianteInstance){
-        respond estudianteInstance, model : [grupo: params.grupo]
+        ArrayList notas = Nota.findAllByEstudiante(estudianteInstance)
+        ArrayList comentarios = Comentario.findAllByEstudiante(estudianteInstance)
+        ArrayList grupos = []
+        notas.each{it -> 
+            if(!grupos.contains(it.grupo)){
+                grupos.add(it.grupo)
+            }
+        }
+        grupos = grupos.sort{-it.periodo.anio}
+        respond estudianteInstance, model : [
+                                        grupo: params.grupo, 
+                                        notas: notas as JSON, 
+                                        grupos: grupos,
+                                        comentarios: comentarios as JSON
+                                        ]
     }
 }

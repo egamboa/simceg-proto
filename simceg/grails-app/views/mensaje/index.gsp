@@ -24,7 +24,7 @@
                     <div class="media">
                             <img
                             	alt="User Pic" 
-                            	src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" 
+                            	src="/simceg/assets/Icon-user.png" 
                             	height="40" 
                             	class="pull-left img-circle">
                         <div class="media-body">
