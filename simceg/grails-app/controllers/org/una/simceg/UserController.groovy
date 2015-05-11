@@ -28,7 +28,8 @@ class UserController {
 
     @Transactional
     def save(User userInstance) {
-        def roleInstance = Role.findById(params.Rol.id)
+        print params
+        def roleInstance = Role.findById(params.rol.id)
         if (userInstance == null) {
             notFound()
             return

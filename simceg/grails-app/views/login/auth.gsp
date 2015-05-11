@@ -34,7 +34,7 @@
                <div class="row">
         					<div class="col-md-12">
                     <g:link controller='register' action='forgotPassword' class="pull-left forgot-password">Cambiar Contrase&ntilde;a</g:link>
-                    <button class="btn btn-default pull-right" type="submit">Enviar</button>   
+                    <button class="btn btn-default pull-right" type="submit">Entrar</button>   
                   </div>
 				      </div> 
           </form>
