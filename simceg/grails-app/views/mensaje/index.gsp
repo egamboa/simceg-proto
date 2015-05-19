@@ -79,12 +79,12 @@
 				<div class="col-md-4">
 					<div class="row">
 						<div class="col-lg-12 btn-group btn-group-xs">
-							<h5><g:link class="create btn btn-primary" controller="mensaje" action="create">Nuevo Chat</g:link></h5>
+							<h5><g:link class="create btn btn-primary" controller="mensaje" action="create">Nuevo Mensaje</g:link></h5>
 						</div>
 					</div>
 	                <div class="panel panel-primary chats-holder">
 	                    <div class="panel-heading">
-	                        Chats
+	                        Mensajes
 	                    </div>
 	                    <div class="panel-body">
 	                        <ul class="media-list chat-list">
@@ -99,7 +99,7 @@
 				<div class="col-md-8">
 	                <div class="panel panel-info">
 	                    <div class="panel-heading nombre-chat-activo">
-	                        Chat Activo
+	                        Mensaje Activo
 	                    </div>
 	                    <div class="panel-body">
 	                        <ul class="media-list mensajes-list">
