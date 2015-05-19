@@ -133,7 +133,7 @@ var app = {
         $('#mensaje').css('overflow', 'hidden').autogrow();
     },
     initEmptyChats: function(){
-        this.triggerTemplate('#emptyChats', {mensaje: 'No hay chats.'}, '.chat-list');
+        this.triggerTemplate('#emptyChats', {mensaje: 'No hay mensajes.'}, '.chat-list');
         this.triggerTemplate('#emptyChats', {mensaje: 'No hay mensajes.'}, '.mensajes-list');
     },
     initChats: function(chats){
