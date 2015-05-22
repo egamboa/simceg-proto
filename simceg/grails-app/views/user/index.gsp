@@ -48,7 +48,7 @@
 		                        			${userInstance?.accountLocked ? 'Inactivo' : 'Activo'}
 		                        	</li>
 		                        	<li class="text-right">
-		                        		<g:link class="btn btn-default" action="editar" id="${userInstance.id}">Editar</g:link>
+		                        		<g:link class="btn btn-default" action="edit" id="${userInstance.id}">Editar</g:link>
 		                        	</li>
 		                        </ul>
 		                    </div>
