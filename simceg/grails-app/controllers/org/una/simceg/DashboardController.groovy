@@ -2,6 +2,7 @@ package org.una.simceg
 
 import grails.converters.*
 import org.una.simceg.Evento
+import org.una.simceg.Mensaje
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ROLE_ADMIN', 'ROLE_USER','ROLE_TEACHER'])
@@ -10,36 +11,24 @@ class DashboardController {
 	def springSecurityService
 	
     def index() {
-		render(view: "index")
+    	def user = springSecurityService.currentUser
+
+    	def today = new Date().clearTime()
+		def eventos = Evento.withCriteria {
+		    ge('tiempoInicio', today.minus(15))
+		    lt('tiempoInicio', today.plus(15))
+		}
+
+		def mensajes = Mensaje.withCriteria {
+			eq('receptor', user)
+			eq('visto', false)
+		}
+
+		render(view: "index", model:[eventos:eventos.size(), mensajes: mensajes.size()])
 	}
 
-	def padre(){
-
-	}
-
-	def profesor(){
-		
-	}
-
-	def admin(){
-		
-	}
-
-	def calificar(){
-		render(view:'calificar')
-	}
-	
 	def calendario(){
 		ArrayList eventos = Evento.list()
 		render(view: 'calendar', model:[eventos: eventos as JSON])
-	}
-	
-	def estudiantes(){
-		render(view: 'estudiantes')
-	}
-
-	def notas(){
-		def user = springSecurityService.currentUser
-		render(view:'notas', model:[user: user])
 	}
 }

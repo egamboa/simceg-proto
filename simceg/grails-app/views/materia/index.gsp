@@ -34,7 +34,7 @@
 								<g:each in="${materiaInstanceList}" status="i" var="materiaInstance">
 									<tr class="text-left ${(i % 2) == 0 ? 'even' : 'odd'}">
 										<td>${materiaInstance.descripcion}</td>
-										<td><g:link action="editar" id="${materiaInstance.id}">Editar</g:link></td>
+										<td><g:link action="edit" id="${materiaInstance.id}">Editar</g:link></td>
 									</tr>
 								</g:each>
 								</tbody>

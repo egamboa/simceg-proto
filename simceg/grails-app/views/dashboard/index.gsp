@@ -8,7 +8,7 @@
 		<div id="">
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -16,21 +16,21 @@
                                     <i class="fa fa-envelope fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">50</div>
+                                    <div class="huge">${mensajes}</div>
                                     <div>Nuevos Mensajes!</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="mensajes.gsp">
+                        <g:link controller="mensaje" action="index">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Mensajes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
+                        </g:link>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -38,40 +38,18 @@
                                     <i class="fa fa-calendar fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge">${eventos}</div>
                                     <div>Nuevos Eventos!</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="eventos.gsp">
+                        <g:link action="calendario">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Eventos</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-check-circle fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">2</div>
-                                    <div>Nuevas Calificaciones!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="notas.gsp">
-                            <div class="panel-footer">
-                                <span class="pull-left">Ver Calificaciones</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
+                        </g:link>
                     </div>
                 </div>
             </div>

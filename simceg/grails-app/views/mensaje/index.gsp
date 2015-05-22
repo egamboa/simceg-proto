@@ -109,7 +109,7 @@
 	                        </ul>
 	                    </div>
 	                    <div class="panel-footer row hidden">
-	                        <g:form id="send-message" url="[resource:mensajeInstance, action:'save']" >
+	                        <g:form id="sendMessage" url="[resource:mensajeInstance, action:'save']" >
 								<fieldset class="form row">
 									<div class="col-lg-12 text-left">
 										<div class="row">

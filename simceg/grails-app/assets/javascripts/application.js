@@ -207,8 +207,8 @@ var app = {
         this.triggerTemplate('#templateMensaje', mensajes, '.mensajes-list');
         $('.mensajes-list').scrollTop($('.mensajes-list')[0].scrollHeight);
         $('.nombre-chat-activo').html($('.chat-list .chat.active h5').text());
-        $('#send-message').find('select').find('option').removeAttr('selected');
-        $('#send-message').find('select').find('option[value="' + chat + '"]').attr('selected', 'selected');
+        $('#sendMessage').find('select').find('option').removeAttr('selected');
+        $('#sendMessage').find('select').find('option[value="' + chat + '"]').attr('selected', 'selected');
     },
     checkSeenMessage: function(mensajes, chat){
         var seen = _.map(_.filter(mensajes, function(mensaje){

@@ -121,7 +121,7 @@ log4j.main = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'org.una.simceg.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'org.una.simceg.UserRole'
 grails.plugin.springsecurity.authority.className = 'org.una.simceg.Role'
-
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/dashboard/index'
 grails.plugin.springsecurity.logout.postOnly = false
 
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [

@@ -1,5 +1,7 @@
 package org.una.simceg
 
+import org.una.simceg.User
+import org.una.simceg.UserRole
 import org.una.simceg.Grupo
 import org.una.simceg.Estudiante
 import grails.converters.JSON
@@ -50,7 +52,12 @@ class ProfesorController {
     }
 
     def edit(Profesor profesorInstance) {
-        respond profesorInstance
+        def profes = []
+        User.list().each{ user ->
+            if(UserRole.findByUser(user)?.role?.authority == 'ROLE_TEACHER')
+                profes.add(user)
+        }
+        respond profesorInstance, model: [profes: profes]
     }
 
     @Transactional
