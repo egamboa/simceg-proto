@@ -45,7 +45,7 @@
 		                        		Fecha de ingreso: <g:formatDate date="${profesorInstance.fechaIngreso}"  format="dd - MM - yyyy" />
 		                        	</li>
 		                        	<li class="text-right">
-		                        		<g:link class="btn btn-default" action="editar" id="${profesorInstance.id}">Editar</g:link>
+		                        		<g:link class="btn btn-default" action="edit" id="${profesorInstance.id}">Editar</g:link>
 		                        	</li>
 		                        </ul>
 		                    </div>

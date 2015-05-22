@@ -5,7 +5,13 @@
 			<label for="usuario" class="control-label">
 				<g:message code="profesor.usuario.label" default="Usuario" />
 			</label>
-			
+			<%
+				def profes = []
+				org.una.simceg.User.list().each{ user ->
+					if(org.una.simceg.UserRole.findByUser(user)?.role?.authority == 'ROLE_TEACHER')
+						profes.add(user)
+				}
+			 %>
 			<div class="select-style">
 				<g:select id="usuario" name="usuario.id" from="${profes}" optionKey="id" optionValue="${{it.nombreCompleto()}}" required="" value="${profesorInstance?.usuario?.id}" class="form-control many-to-one"/>
 			</div>

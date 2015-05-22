@@ -52,12 +52,7 @@ class ProfesorController {
     }
 
     def edit(Profesor profesorInstance) {
-        def profes = []
-        User.list().each{ user ->
-            if(UserRole.findByUser(user)?.role?.authority == 'ROLE_TEACHER')
-                profes.add(user)
-        }
-        respond profesorInstance, model: [profes: profes]
+        respond profesorInstance
     }
 
     @Transactional
