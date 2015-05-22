@@ -2,7 +2,7 @@
      <div class="sidebar-nav navbar-collapse collapse" id="sidebar-toggle">
          <ul class="nav" id="side-menu">
              <li class="${controllerName == 'dashboard' && actionName == "index" ? 'active':''}">
-             	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Principal</g:link>
+             	<g:link controller="dashboard" action="index"><i class="fa fa-dashboard fa-fw"></i>Resumen</g:link>
              </li>
              <sec:ifAnyGranted  roles="ROLE_USER">
              <li class="${controllerName == 'estudiante' ? 'active':''}">

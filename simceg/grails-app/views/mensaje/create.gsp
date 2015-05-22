@@ -32,7 +32,7 @@
 					<div class="col-lg-5 text-left">
 						<g:render template="form"/>
 						<div class="text-right">
-							<g:submitButton name="create" class="save btn btn-primary" value="Enviar" />
+							<g:submitButton name="create" class="save btn btn-default" value="Enviar" />
 						</div>
 					</div>
 				</fieldset>

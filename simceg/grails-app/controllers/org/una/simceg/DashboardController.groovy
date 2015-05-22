@@ -14,17 +14,19 @@ class DashboardController {
     	def user = springSecurityService.currentUser
 
     	def today = new Date().clearTime()
-		def eventos = Evento.withCriteria {
+		ArrayList eventos = Evento.withCriteria {
 		    ge('tiempoInicio', today.minus(15))
 		    lt('tiempoInicio', today.plus(15))
 		}
 
-		def mensajes = Mensaje.withCriteria {
+		ArrayList mensajes = Mensaje.withCriteria {
 			eq('receptor', user)
 			eq('visto', false)
 		}
 
-		render(view: "index", model:[eventos:eventos.size(), mensajes: mensajes.size()])
+		ArrayList notificaciones = eventos + mensajes
+
+		render(view: "index", model:[notificaciones:notificaciones, eventosCount:eventos.size(), mensajesCount: mensajes.size()])
 	}
 
 	def calendario(){

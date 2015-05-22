@@ -62,7 +62,7 @@
 			</div>
 			<div class="row">
             	<div class="col-md-2 col-md-offset-10">
-            		<g:link class="edit btn btn-primary" action="edit" resource="${materiaInstance}">Editar</g:link>
+            		<g:link class="edit btn btn-default" action="edit" resource="${materiaInstance}">Editar</g:link>
             	</div>
             </div>
 			<!-- 

@@ -84,7 +84,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <button type="button" class="btn btn-primary ">Calificar <i class="fa fa-arrow-circle-right fa-lg"></i></button>
+                  <button type="button" class="btn btn-default ">Calificar <i class="fa fa-arrow-circle-right fa-lg"></i></button>
           
         </div>
   		</div>

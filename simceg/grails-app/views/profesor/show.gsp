@@ -72,7 +72,7 @@
 			</div>
 			<div class="row">
             	<div class="col-md-12">
-            		<g:link class="pull-right edit btn btn-primary" action="edit" resource="${profesorInstance}">Editar</g:link>
+            		<g:link class="pull-right edit btn btn-default" action="edit" resource="${profesorInstance}">Editar</g:link>
             	</div>
             </div>
             <!-- 

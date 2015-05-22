@@ -18,7 +18,7 @@
 
 		<div class="form-group fieldcontain ${hasErrors(bean: eventoInstance, field: 'tiempoInicio', 'error')} required">
 			<label for="tiempoInicio">
-				<g:message code="evento.tiempoInicio.label" default="Tiempo Inicio" />
+				<g:message code="evento.tiempoInicio.label" default="Fecha y hora de Inicio" />
 			</label>
 			<div class="date">
 				<g:datePicker class="form-control" name="tiempoInicio" precision="minute"  value="${eventoInstance?.tiempoInicio}" relativeYears="[0..1]" />
@@ -27,7 +27,7 @@
 
 		<div class="form-group fieldcontain ${hasErrors(bean: eventoInstance, field: 'tiempoFinal', 'error')} required">
 			<label for="tiempoFinal">
-				<g:message code="evento.tiempoFinal.label" default="Tiempo Final" />
+				<g:message code="evento.tiempoFinal.label" default="Fecha y hora de Cierre" />
 			</label>
 			<div class="date">
 				<g:datePicker class="form-control" name="tiempoFinal" precision="minute"  value="${eventoInstance?.tiempoFinal}" relativeYears="[0..1]" />

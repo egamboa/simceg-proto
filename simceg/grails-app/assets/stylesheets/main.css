@@ -415,10 +415,12 @@ h1.main-title{
 .nav-inner .nav-pills > li > a{
 	border-radius: 0px;
 	border: 1px solid #777;
-	color: #000;
+	color: #fff;
+	background-color: #94111b;
 }
 .nav-inner .nav-pills > li > a:hover, .nav-inner .nav-pills > li > a:focus{
-	color: #fff;
+	color: #333;
+	background-color: #d45058;
 }
 .submit-form input{
 	border: 1px solid #ddd;
@@ -684,4 +686,40 @@ h1.main-title{
 }
 .grupos-table td{
 	vertical-align: middle !important;
+}
+
+.btn.btn-default{
+	color: #fff;
+	background-color: #3b838c;
+	border-color: #ccc;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #96c8d5;
+  border-color: #adadad;
+}
+
+a {
+  color: #94111b;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #d45058;
+  text-decoration: underline;
+}
+
+.panel a{
+	color: #428bca;
+}
+.panel-green a {
+  color: #5cb85c;
+}
+.timeline a.timeline-link{
+	display: block;
+	padding: 10px;
+}
+.timeline a.timeline-link:hover{
+	text-decoration: none;
+	background-color: #eee;
 }

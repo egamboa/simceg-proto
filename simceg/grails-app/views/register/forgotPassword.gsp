@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="text-right">
-			<s2ui:submitButton elementId='reset' form='forgotPasswordForm' class="btn btn-primary" messageCode='Reiniciar Contraseña'/>
+			<s2ui:submitButton elementId='reset' form='forgotPasswordForm' class="btn btn-default" messageCode='Reiniciar Contraseña'/>
 		</div>
 		</g:else>
 

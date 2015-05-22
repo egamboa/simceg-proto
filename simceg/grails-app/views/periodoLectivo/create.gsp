@@ -31,7 +31,7 @@
 						<div class="col-md-5 text-left">
 							<g:render template="form"/>
 							<div class="text-right">
-								<g:submitButton name="create" class="save btn btn-primary" value="Crear" />
+								<g:submitButton name="create" class="save btn btn-default" value="Crear" />
 							</div>
 						</div>
 					</div>

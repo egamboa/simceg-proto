@@ -58,7 +58,7 @@
 						<tr>
 							<td></td>
 							<td>
-								<g:link class="edit btn btn-primary" action="editar" resource="${grupoInstance}">Editar</g:link>
+								<g:link class="edit btn btn-default" action="editar" resource="${grupoInstance}">Editar</g:link>
 							</td>
 						</tr>
 				      </tbody>

@@ -1,3 +1,5 @@
+<%@ page import="org.una.simceg.Mensaje" %>
+<%@ page import="org.una.simceg.Evento" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,7 +18,7 @@
                                     <i class="fa fa-envelope fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">${mensajes}</div>
+                                    <div class="huge">${mensajesCount}</div>
                                     <div>Nuevos Mensajes!</div>
                                 </div>
                             </div>
@@ -38,7 +40,7 @@
                                     <i class="fa fa-calendar fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">${eventos}</div>
+                                    <div class="huge">${eventosCount}</div>
                                     <div>Nuevos Eventos!</div>
                                 </div>
                             </div>
@@ -64,62 +66,45 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <ul class="timeline">
-                                <li>
-                                    <div class="timeline-badge warning"><i class="fa fa-check-circle"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Exposici&oacute;n Insectos</h4>
-                                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> Entrega: 15/05/2014</small>
-                                            </p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>La exposici&oacute;n debe venir acompa&ntilde;ada de una investigaci&oacute;n formal en formato PDF con la siguiente estructura: Introducci&oacute;n, Desarrollo, Conclusi&oacute;n y Bibliograf&iacute;a. Tambi&eacute;n se debe preparar una presentaci&oacute;n en Power Point o similar.</p></br>
-                                            <p><small class="text-muted"><i class="fa fa-check-circle-o"></i> Valor: 5% Nota Trimestral</small>
-                                        </div> 
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge success"><i class="fa fa-calendar"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Domingo Familiar</h4>
-                                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> Fecha: 20/08/2014</small>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Ven y disfrut&aacute; en familia de actividades recreativas y contribuye con la causa de la remodelaci&oacute;n de la cancha multiusos de la escuela.</p>
-                                            <p>Tendremos campeonatos de baloncesto y fut5. Presentaci&oacute;n de la banda y equipo de porrismo. Venta de comidas y un bingo con excelentes premios.</p>
-                                            <p>Te Esperamos!</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="timeline-badge info"><i class="fa fa-envelope"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Falta Entrega Tarea</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Se le recuerda al encargado que el alumno debe presentar las tareas en la fecha respectiva, la tarea de Estudios Sociales ten&iacute;a fecha de entrega para el d&iacute;a 03/03/2014 y el alumno no present&oacute; la misma.</p>
-                                            <hr>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                    <i class="fa fa-gear"></i> Acciones <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">Responder</a>
-                                                    </li>
-                                                    <li><a href="#">Eliminar</a>
-                                                    </li>
-                                                    <li><a href="#">Guardar</a>
-                                                    </li>
-                                                </ul>
+                                <g:each var="notificacion" in="${notificaciones}">
+                                    <g:if test="${notificacion instanceof Evento}">
+                                        <li class="timeline-inverted">
+                                            <div class="timeline-badge success"><i class="fa fa-calendar"></i>
                                             </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                            <div class="timeline-panel">
+                                                <g:link class="timeline-link" action="show" controller="evento" id="${notificacion.id}">
+                                                    <div class="timeline-heading">
+                                                        <h4 class="timeline-title">${notificacion.titulo}</h4>
+                                                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> Fecha y hora de inicio: <g:formatDate date="${notificacion?.tiempoInicio}" format="dd - MM - yyyy hh:mm a"/></small></p>
+                                                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> Fecha y hora de cierre: <g:formatDate date="${notificacion?.tiempoFinal}" format="dd - MM - yyyy hh:mm a"/></small></p>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>${notificacion.descripcion}</p>
+                                                    </div>
+                                                </g:link>
+                                            </div>
+                                        </li>
+                                    </g:if>
+                                    <g:if test="${notificacion instanceof Mensaje}">
+                                        <li>
+                                            <div class="timeline-badge info"><i class="fa fa-envelope"></i>
+                                            </div>
+                                            <div class="timeline-panel">
+                                                <g:link class="timeline-link" action="index" controller="mensaje">
+                                                <div class="timeline-heading">
+                                                    <h4 class="timeline-title">de ${notificacion.emisor}</h4>
+                                                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> Fecha de envio: <g:formatDate date="${notificacion?.fechaEnvio}" format="dd - MM - yyyy hh:mm a"/></small></p>
+                                                </div>
+                                                <div class="timeline-body">
+                                                    <h5>Mensaje:</h5>
+                                                    <p>${notificacion.mensaje}</p>
+                                                    <hr>
+                                                </div>
+                                                </g:link>
+                                            </div>
+                                        </li>
+                                    </g:if>
+                                </g:each>
                             </ul>
                         </div>
                         <!-- /.panel-body -->

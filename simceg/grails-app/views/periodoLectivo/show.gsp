@@ -47,7 +47,7 @@
 						</li>
 						</g:if>
 						<li>
-							<g:link class="btn btn-primary" action="edit" resource="${periodoLectivoInstance}">Editar</g:link>
+							<g:link class="btn btn-default" action="edit" resource="${periodoLectivoInstance}">Editar</g:link>
 						</li>
 					</ul>
 		        </div>

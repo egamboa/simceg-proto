@@ -31,7 +31,7 @@
 					<div class="col-md-5">
 						<g:render template="form"/>
 						<div class="text-right">
-							<g:actionSubmit class="save btn btn-primary" action="update" value="Editar" />
+							<g:actionSubmit class="save btn btn-default" action="update" value="Editar" />
 						</div>
 					</div>
 				</fieldset>

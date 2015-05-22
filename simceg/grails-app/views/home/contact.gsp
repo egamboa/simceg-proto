@@ -64,14 +64,14 @@
                         <label for="inputName" class="control-label">Nombre Completo</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" class="form-control" id="inputName" placeholder="Mahatma Gandhi" required>
+                            <input type="text" class="form-control" id="inputName" placeholder="Nombre Completo" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputTel" class="control-label">N&uacute;mero Tel&eacute;fono</label>
                         <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                          <input type="text" pattern="^[0-9]{8}$" maxlength="8" class="form-control" id="inputTel" placeholder="12345678" data-error="Por Favor ingrese un n&uacute;mero v&aacute;lido" required>
+                          <input type="text" pattern="^[0-9]{8}$" maxlength="8" class="form-control" id="inputTel" placeholder="8888-8888" data-error="Por Favor ingrese un n&uacute;mero v&aacute;lido" required>
                         </div>
                         <span class="help-block with-errors">Escriba solo 8 digitos del n&uacute;mero de tel&eacute;fono</span>
                     </div>
@@ -93,7 +93,7 @@
                     <div id="success"></div>
                     <!-- For success/fail messages -->
                     <div class="text-right">
-                    	<button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
+                    	<button type="submit" id="enviar" class="btn btn-default">Enviar</button>
                     </div>
                 </form>
             </div>

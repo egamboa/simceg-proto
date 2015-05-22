@@ -79,7 +79,7 @@
 				<div class="col-md-4">
 					<div class="row">
 						<div class="col-lg-12 btn-group btn-group-xs">
-							<h5><g:link class="create btn btn-primary" controller="mensaje" action="create">Nuevo Mensaje</g:link></h5>
+							<h5><g:link class="create btn btn-default" controller="mensaje" action="create">Nuevo Mensaje</g:link></h5>
 						</div>
 					</div>
 	                <div class="panel panel-primary chats-holder">
@@ -115,7 +115,7 @@
 										<div class="row">
 											<g:render template="form-chat"/>
 											<div class="text-right col-lg-2">
-												<g:submitButton name="create" class="save btn btn-primary" value="Enviar" />
+												<g:submitButton name="create" class="save btn btn-default" value="Enviar" />
 											</div>
 										</div>
 									</div>
