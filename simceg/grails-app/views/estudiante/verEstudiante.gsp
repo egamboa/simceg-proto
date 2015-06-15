@@ -193,7 +193,11 @@
 					<g:each in="${grupos}" var="grupoH">
 					<div class="row well">
 						<div class="col-lg-12">
-							<h2 class="second-title">Periodo Lectivo: ${grupoH?.periodo?.anio}, Nivel: ${grupoH?.nivel}, Grupo: ${grupoH?.descripcion} </h2>
+							<h2 class="second-title">Periodo Lectivo: ${grupoH?.periodo?.anio}, Nivel: ${grupoH?.nivel}, Grupo: ${grupoH?.descripcion} 
+								<g:link action="imprimirNota" id="${estudianteInstance.id}" params="[grupo: grupoH?.id]" class="btn btn-default pull-right" target="_blank">
+									imprimir
+								</g:link>
+							</h2>
 							<hr>
 							<table class="table table-hover" id="tabla-calificacion">
 						      <thead>

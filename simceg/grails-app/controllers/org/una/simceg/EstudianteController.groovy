@@ -168,6 +168,9 @@ class EstudianteController {
             }
         }
         grupos = grupos.sort{-it.periodo.anio}
+        grupos.each{
+            print it.periodo.anio
+        }
         respond estudianteInstance, model : [
                                         grupo: params.grupo, 
                                         notas: notas as JSON, 
@@ -175,4 +178,31 @@ class EstudianteController {
                                         comentarios: comentarios as JSON
                                         ]
     }
+
+    @Secured(['ROLE_TEACHER', 'ROLE_USER'])
+    def imprimirNota(Estudiante estudianteInstance){
+        Grupo grupo = Grupo.get(params.grupo)
+        ArrayList notas = Nota.findAllByEstudianteAndGrupo(estudianteInstance, grupo)
+        ArrayList comentarios = Comentario.findAllByEstudianteAndGrupo(estudianteInstance, grupo)
+        ArrayList grupos = []
+        notas.each{it -> 
+            if(!grupos.contains(it.grupo)){
+                grupos.add(it.grupo)
+            }
+        }
+        grupos = grupos.sort{-it.periodo.anio}
+        grupos.each{
+            print it.periodo.anio
+        }
+        print notas
+        print comentarios
+        respond estudianteInstance, model : [
+                                        grupo: params.grupo, 
+                                        notas: notas as JSON, 
+                                        grupos: grupos,
+                                        comentarios: comentarios as JSON
+                                        ]
+
+    }
+
 }
